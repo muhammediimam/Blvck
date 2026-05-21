@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlvckCube — Brand Management Firm</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --black: #000;
+  --gray: rgb(122,122,122);
+  --light: #F3F3F3;
+  --white: #fff;
+  --font: 'Montserrat', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: var(--font); font-weight: 300; overflow-x: hidden; cursor: none; }
+
+/* CURSOR */
+.cur { position: fixed; width: 10px; height: 10px; background: var(--white); top: 0; left: 0; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); border-radius: 50%; transition: width .2s, height .2s; }
+.cur-r { position: fixed; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.35); top: 0; left: 0; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); border-radius: 50%; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 28px 60px; background: linear-gradient(to bottom, rgba(0,0,0,.9) 0%, transparent 100%); }
+.n-logo { font-size: 17px; font-weight: 700; letter-spacing: -.02em; color: var(--white); text-decoration: none; }
+.n-links { display: flex; gap: 40px; list-style: none; }
+.n-links a { color: var(--white); text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; opacity: .5; transition: opacity .3s; }
+.n-links a:hover { opacity: 1; }
+.n-cta { background: var(--white); color: var(--black) !important; opacity: 1 !important; padding: 10px 22px; font-size: 10px !important; font-weight: 700 !important; transition: background .3s !important; }
+.n-cta:hover { background: var(--light) !important; }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 60px 90px; position: relative; overflow: hidden; }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 70px 70px; }
+.hero-noise { position: absolute; inset: 0; opacity: .03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 200px; }
+
+/* Animated cube */
+.cube-wrap { position: absolute; right: 7%; top: 50%; transform: translateY(-50%); width: 420px; height: 420px; perspective: 900px; }
+.cube-3d { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; animation: spinCube 25s linear infinite; }
+@keyframes spinCube {
+  0% { transform: rotateX(15deg) rotateY(0deg); }
+  100% { transform: rotateX(15deg) rotateY(360deg); }
+}
+.face { position: absolute; width: 180px; height: 180px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.02); }
+.face.front  { transform: translateZ(90px)  translateX(120px) translateY(120px); }
+.face.back   { transform: translateZ(-90px) rotateY(180deg) translateX(90px) translateY(120px); }
+.face.left   { transform: rotateY(-90deg) translateZ(90px) translateX(120px) translateY(120px); }
+.face.right  { transform: rotateY(90deg)  translateZ(90px) translateX(30px) translateY(120px); }
+.face.top    { transform: rotateX(90deg)  translateZ(90px) translateX(120px) translateY(210px); }
+.face.bottom { transform: rotateX(-90deg) translateZ(90px) translateX(120px) translateY(30px); }
+
+.hero-tag { font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gray); margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+.hero-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gray); }
+.hero-h1 { font-size: clamp(58px, 8.5vw, 128px); font-weight: 900; line-height: .88; letter-spacing: -.045em; max-width: 680px; margin-bottom: 52px; }
+.hero-h1 em { font-style: normal; color: var(--gray); }
+.hero-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
+.hero-sub { font-size: 13px; font-weight: 300; color: var(--gray); max-width: 310px; line-height: 1.9; }
+.hero-btns { display: flex; gap: 16px; }
+.btn-primary { display: inline-flex; align-items: center; gap: 14px; background: var(--white); color: var(--black); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 18px 36px; transition: background .3s; }
+.btn-primary:hover { background: var(--light); }
+.btn-outline { display: inline-flex; align-items: center; gap: 14px; border: 1px solid rgba(255,255,255,.25); color: var(--white); text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: 18px 36px; transition: border-color .3s, background .3s; }
+.btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,.05); }
+.arr { display: inline-flex; align-items: center; }
+.arr::after { content: '→'; margin-left: 6px; transition: transform .3s; }
+.btn-primary:hover .arr::after, .btn-outline:hover .arr::after { transform: translateX(4px); }
+
+/* TICKER */
+.ticker { border-top: 1px solid rgba(255,255,255,.09); border-bottom: 1px solid rgba(255,255,255,.09); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+.ticker-t { display: inline-flex; animation: tick 28s linear infinite; }
+.ti { font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gray); padding: 0 44px; }
+.td { color: rgba(255,255,255,.25); }
+@keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* SECTIONS */
+section { padding: 110px 60px; }
+.s-label { font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gray); margin-bottom: 60px; display: flex; align-items: center; gap: 14px; }
+.s-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gray); }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+.about-h2 { font-size: clamp(38px, 4.5vw, 68px); font-weight: 900; line-height: .92; letter-spacing: -.04em; }
+.about-h2 span { color: var(--gray); }
+.about-right {}
+.about-p { font-size: 14px; font-weight: 300; line-height: 1.9; color: var(--gray); margin-bottom: 24px; }
+.about-p strong { color: var(--white); font-weight: 600; }
+.founder-box { margin-top: 48px; border-left: 2px solid rgba(255,255,255,.15); padding-left: 24px; }
+.founder-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.founder-title { font-size: 11px; font-weight: 400; color: var(--gray); letter-spacing: .06em; margin-bottom: 12px; }
+.founder-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: var(--white); color: var(--black); padding: 5px 12px; }
+.stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.08); margin-top: 80px; }
+.stat { background: var(--black); padding: 32px 28px; }
+.stat-n { font-size: 44px; font-weight: 900; letter-spacing: -.04em; line-height: 1; margin-bottom: 6px; }
+.stat-l { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gray); }
+
+/* PACKAGES */
+.pkg-intro { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 40px; }
+.pkg-h2 { font-size: clamp(36px, 4vw, 60px); font-weight: 900; letter-spacing: -.04em; line-height: .92; }
+.pkg-sub { font-size: 13px; font-weight: 300; color: var(--gray); max-width: 320px; line-height: 1.8; }
+.pkg-tabs { display: flex; gap: 2px; margin-bottom: 32px; }
+.pkg-tab { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 12px 24px; border: 1px solid rgba(255,255,255,.12); color: var(--gray); cursor: pointer; transition: all .25s; background: transparent; font-family: var(--font); }
+.pkg-tab.active, .pkg-tab:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+.pkg-panels > div { display: none; }
+.pkg-panels > div.active { display: grid; }
+.cards-3 { grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.08); }
+.cards-2 { grid-template-columns: repeat(2,1fr); gap: 1px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.08); }
+.pkg-card { background: var(--black); padding: 44px 36px; position: relative; transition: background .35s; }
+.pkg-card:hover { background: rgba(255,255,255,.03); }
+.pkg-card.featured { background: var(--white); color: var(--black); }
+.pkg-card.featured:hover { background: var(--light); }
+.pkg-badge { font-size: 9px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; padding: 5px 12px; background: var(--black); color: var(--white); display: inline-block; margin-bottom: 24px; }
+.pkg-card.featured .pkg-badge { background: var(--black); color: var(--white); }
+.pkg-name { font-size: 20px; font-weight: 900; letter-spacing: -.02em; margin-bottom: 8px; }
+.pkg-sector { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gray); margin-bottom: 28px; }
+.pkg-card.featured .pkg-sector { color: rgba(0,0,0,.5); }
+.pkg-price { font-size: 36px; font-weight: 900; letter-spacing: -.04em; margin-bottom: 4px; line-height: 1; }
+.pkg-price-note { font-size: 10px; font-weight: 500; color: var(--gray); letter-spacing: .08em; margin-bottom: 4px; }
+.pkg-card.featured .pkg-price-note { color: rgba(0,0,0,.5); }
+.pkg-discount { font-size: 10px; font-weight: 700; color: #fff; background: #000; display: inline-block; padding: 3px 8px; margin-bottom: 28px; letter-spacing: .06em; }
+.pkg-card.featured .pkg-discount { background: var(--black); color: var(--white); }
+.pkg-divider { height: 1px; background: rgba(255,255,255,.1); margin-bottom: 24px; }
+.pkg-card.featured .pkg-divider { background: rgba(0,0,0,.1); }
+.pkg-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pkg-list li { font-size: 12px; font-weight: 400; color: var(--gray); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+.pkg-card.featured .pkg-list li { color: rgba(0,0,0,.65); }
+.pkg-list li::before { content: '—'; font-size: 10px; color: var(--gray); flex-shrink: 0; margin-top: 1px; }
+.pkg-card.featured .pkg-list li::before { color: rgba(0,0,0,.35); }
+.pkg-meta { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.08); font-size: 11px; font-weight: 500; color: var(--gray); display: flex; gap: 20px; }
+.pkg-card.featured .pkg-meta { border-color: rgba(0,0,0,.1); color: rgba(0,0,0,.5); }
+
+/* SINGLE SERVICES */
+.singles-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.07); }
+.svc { background: var(--black); padding: 28px 24px; transition: background .3s; }
+.svc:hover { background: rgba(255,255,255,.03); }
+.svc-name { font-size: 13px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }
+.svc-price { font-size: 18px; font-weight: 900; letter-spacing: -.02em; margin-bottom: 4px; }
+.svc-dur { font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); }
+
+/* PROCESS */
+.process { background: var(--light); color: var(--black); }
+.process .s-label { color: var(--gray); }
+.process .s-label::before { background: var(--gray); }
+.process-hd { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; gap: 40px; }
+.process-h2 { font-size: clamp(36px,4vw,60px); font-weight: 900; letter-spacing: -.04em; line-height: .92; }
+.process-p { font-size: 13px; font-weight: 300; line-height: 1.8; color: var(--gray); max-width: 320px; }
+.steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(0,0,0,.1); border: 1px solid rgba(0,0,0,.1); }
+.step { background: var(--light); padding: 40px 32px; }
+.step-n { font-size: 64px; font-weight: 900; letter-spacing: -.06em; line-height: 1; color: rgba(0,0,0,.08); margin-bottom: 32px; }
+.step-title { font-size: 16px; font-weight: 800; margin-bottom: 14px; }
+.step-p { font-size: 12px; font-weight: 300; line-height: 1.8; color: var(--gray); }
+
+/* TESTIMONIALS */
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.07); }
+.testi { background: var(--black); padding: 40px 32px; transition: background .35s; }
+.testi:hover { background: rgba(255,255,255,.03); }
+.testi-quote { font-size: 13px; font-weight: 300; line-height: 1.9; color: var(--gray); margin-bottom: 28px; font-style: italic; }
+.testi-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.testi-role { font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); }
+.testi-flag { font-size: 10px; font-weight: 400; color: rgba(255,255,255,.3); margin-top: 2px; }
+.testi-mark { font-size: 48px; font-weight: 900; color: rgba(255,255,255,.07); line-height: 1; margin-bottom: 16px; font-family: Georgia, serif; }
+
+/* CLIENTS */
+.clients-strip { border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); padding: 48px 60px; }
+.clients-label { font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gray); text-align: center; margin-bottom: 40px; }
+.clients-logos { display: flex; flex-wrap: wrap; gap: 16px 40px; justify-content: center; align-items: center; }
+.client-logo { font-size: 13px; font-weight: 700; color: rgba(255,255,255,.2); letter-spacing: -.01em; transition: color .3s; }
+.client-logo:hover { color: rgba(255,255,255,.6); }
+
+/* CONTACT */
+.contact { background: var(--white); color: var(--black); text-align: center; padding: 160px 60px; }
+.contact .s-label { justify-content: center; color: var(--gray); }
+.contact .s-label::before { background: var(--gray); }
+.contact-h2 { font-size: clamp(52px, 7.5vw, 110px); font-weight: 900; line-height: .88; letter-spacing: -.045em; margin-bottom: 24px; }
+.contact-sub { font-size: 14px; font-weight: 300; color: var(--gray); margin-bottom: 64px; }
+.contact-row { display: flex; justify-content: center; gap: 72px; margin-bottom: 72px; }
+.c-item-label { font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+.c-item-value { font-size: 14px; font-weight: 600; color: var(--black); text-decoration: none; display: block; }
+.c-item-value:hover { text-decoration: underline; }
+.step-note { margin-top: 72px; }
+.step-note-h { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gray); margin-bottom: 24px; }
+.step-boxes { display: flex; justify-content: center; gap: 2px; }
+.step-box { background: var(--light); padding: 20px 28px; font-size: 12px; font-weight: 500; min-width: 160px; }
+.step-box-n { font-size: 22px; font-weight: 900; margin-bottom: 6px; }
+.step-box-t { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); }
+
+/* FOOTER */
+footer { background: var(--black); border-top: 1px solid rgba(255,255,255,.07); padding: 36px 60px; display: flex; align-items: center; justify-content: space-between; }
+.f-logo { font-size: 14px; font-weight: 700; }
+.f-copy { font-size: 10px; color: var(--gray); letter-spacing: .06em; }
+.f-links { display: flex; gap: 28px; list-style: none; }
+.f-links a { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color .3s; }
+.f-links a:hover { color: var(--white); }
+
+/* FADE */
+.fu { opacity: 0; transform: translateY(36px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+.fu.vis { opacity: 1; transform: none; }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
+
+/* LOCATIONS */
+.locs { display: flex; gap: 1px; margin-top: 60px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.08); }
+.loc { background: var(--black); padding: 28px 32px; flex: 1; }
+.loc-city { font-size: 18px; font-weight: 900; letter-spacing: -.02em; margin-bottom: 6px; }
+.loc-detail { font-size: 11px; color: var(--gray); line-height: 1.7; }
+
+@media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  .n-links { display: none; }
+  section { padding: 72px 24px; }
+  .hero { padding: 0 24px 72px; }
+  .hero-h1 { font-size: 52px; }
+  .cube-wrap { display: none; }
+  .about-grid, .pkg-intro, .process-hd { grid-template-columns: 1fr; gap: 40px; flex-direction: column; }
+  .stats-row, .steps { grid-template-columns: repeat(2,1fr); }
+  .cards-3, .testi-grid, .singles-grid { grid-template-columns: 1fr; }
+  .cards-2 { grid-template-columns: 1fr; }
+  .contact-row { flex-direction: column; gap: 32px; }
+  .step-boxes { flex-direction: column; align-items: center; }
+  .locs { flex-direction: column; }
+  footer { flex-direction: column; gap: 20px; text-align: center; }
+  .clients-logos { gap: 12px 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="cur-r" id="curR"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="n-logo">BlvckCube</a>
+  <ul class="n-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testimonials">Clients</a></li>
+    <li><a href="#contact" class="n-cta">Start a Project</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-noise"></div>
+  <div class="cube-wrap">
+    <div class="cube-3d">
+      <div class="face front"></div>
+      <div class="face back"></div>
+      <div class="face left"></div>
+      <div class="face right"></div>
+      <div class="face top"></div>
+      <div class="face bottom"></div>
+    </div>
+  </div>
+  <p class="hero-tag fu">Brand Management Firm &nbsp;·&nbsp; Egypt &nbsp;·&nbsp; Canada</p>
+  <h1 class="hero-h1 fu d1">Architect<br><em>Of Market</em><br>Dominance.</h1>
+  <div class="hero-row fu d2">
+    <p class="hero-sub">We don't just build brands — we forge global legacies. Sharp, bold, and engineered to command authority across every market we enter.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Start a Project <span class="arr"></span></a>
+      <a href="#packages" class="btn-outline">View Packages <span class="arr"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-t">
+    <span class="ti">Brand Management <span class="td">✦</span></span><span class="ti">Visual Identity <span class="td">✦</span></span><span class="ti">Market Dominance <span class="td">✦</span></span><span class="ti">Media Buying <span class="td">✦</span></span><span class="ti">Risk Management <span class="td">✦</span></span><span class="ti">Web Development <span class="td">✦</span></span><span class="ti">Photography <span class="td">✦</span></span><span class="ti">Videography <span class="td">✦</span></span><span class="ti">97% Satisfaction <span class="td">✦</span></span><span class="ti">No Noise. No Randomness. <span class="td">✦</span></span>
+    <span class="ti">Brand Management <span class="td">✦</span></span><span class="ti">Visual Identity <span class="td">✦</span></span><span class="ti">Market Dominance <span class="td">✦</span></span><span class="ti">Media Buying <span class="td">✦</span></span><span class="ti">Risk Management <span class="td">✦</span></span><span class="ti">Web Development <span class="td">✦</span></span><span class="ti">Photography <span class="td">✦</span></span><span class="ti">Videography <span class="td">✦</span></span><span class="ti">97% Satisfaction <span class="td">✦</span></span><span class="ti">No Noise. No Randomness. <span class="td">✦</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="s-label fu">01 — Who We Are</div>
+  <div class="about-grid">
+    <div>
+      <h2 class="about-h2 fu">Sharp.<br><span>Bold.</span><br>Unbreakable.</h2>
+      <div class="locs fu d2">
+        <div class="loc"><div class="loc-city">Cairo</div><div class="loc-detail">HQ · Arab Sheikh Zayed City<br>Giza, Egypt 12588</div></div>
+        <div class="loc"><div class="loc-city">Canada</div><div class="loc-detail">North America<br>Regional Office</div></div>
+      </div>
+    </div>
+    <div class="about-right">
+      <p class="about-p fu">BlvckCube is a <strong>luxury brand management firm</strong> built on uncompromising precision and foundational versatility. We redefine what brand authority means — not through noise, but through deliberate, structured power.</p>
+      <p class="about-p fu d1">Our journey began in 2023, guided by one founding vision and brought to life by five legendary talents — the Dashers. We specialize in <strong>bespoke luxury branding and marketing</strong>, transforming ambitions into iconic legacies.</p>
+      <p class="about-p fu d2">Mastery needs no name. <strong>Dashers weave legacies — unseen, yet unforgettable.</strong> Every decision we make is engineered to eliminate randomness and ensure our partners achieve market dominance.</p>
+      <div class="founder-box fu d3">
+        <div class="founder-name">Muhammad Imam</div>
+        <div class="founder-title">CEO &amp; Founder · 10+ Years in Brand &amp; Marketing</div>
+
+      </div>
+    </div>
+  </div>
+  <div class="stats-row fu">
+    <div class="stat"><div class="stat-n">25+</div><div class="stat-l">Satisfied Clients</div></div>
+    <div class="stat"><div class="stat-n">38+</div><div class="stat-l">Marketing Strategies</div></div>
+    <div class="stat"><div class="stat-n">97%</div><div class="stat-l">Customer Satisfaction</div></div>
+    <div class="stat"><div class="stat-n">7</div><div class="stat-l">Industries Served</div></div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" style="padding-top:0;">
+  <div class="s-label fu">02 — Services &amp; Packages</div>
+  <div class="pkg-intro">
+    <h2 class="pkg-h2 fu">Find Your<br>Package.</h2>
+    <p class="pkg-sub fu d1">From full brand management to single services — pick a package that fits your budget and ambitions. All packages include a free 15-minute discovery call.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="pkg-tabs fu">
+    <button class="pkg-tab active" onclick="showTab('marketing')">Marketing</button>
+    <button class="pkg-tab" onclick="showTab('branding')">Branding</button>
+    <button class="pkg-tab" onclick="showTab('tech')">Technology</button>
+    <button class="pkg-tab" onclick="showTab('singles')">Single Services</button>
+  </div>
+
+  <div class="pkg-panels">
+
+    <!-- MARKETING -->
+    <div id="tab-marketing" class="active cards-3">
+      <div class="pkg-card featured">
+        <div class="pkg-badge">⭐ Top #1 Package</div>
+        <div class="pkg-name">Brand Management</div>
+        <div class="pkg-sector">Marketing · Branding · Technology</div>
+        <div class="pkg-price">60,000 EGP</div>
+        <div class="pkg-price-note">/ Monthly · Annual Contract</div>
+        <div class="pkg-discount">20% OFF on Annual Payment</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>Marketing (Online &amp; Offline)</li>
+          <li>Marketing Analysis</li>
+          <li>Annual Marketing Strategy</li>
+          <li>Content Creation</li>
+          <li>Graphic Designing</li>
+          <li>Website Creation</li>
+          <li>Moderation</li>
+          <li>Media Buying</li>
+          <li>Photography</li>
+          <li>Videography &amp; Video Editing</li>
+          <li>Social Media Accounts Handling</li>
+          <li>Risk Management</li>
+          <li>All Platforms Handling</li>
+        </ul>
+        <div class="pkg-meta"><span>📅 4 Meetings / Month</span><span>📄 Annual Contract</span></div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-name">Cube Package</div>
+        <div class="pkg-sector">Marketing · Technology</div>
+        <div class="pkg-price">45,000 EGP</div>
+        <div class="pkg-price-note">/ Monthly · Annual Contract</div>
+        <div class="pkg-discount">20% OFF on Annual Payment</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>Marketing (Online &amp; Offline)</li>
+          <li>Marketing Analysis</li>
+          <li>Annual Marketing Strategy</li>
+          <li>Content Creation</li>
+          <li>Graphic Designing</li>
+          <li>Moderation</li>
+          <li>Media Buying</li>
+          <li>Photography</li>
+          <li>Video Editing</li>
+          <li>Social Media Platforms Handling</li>
+        </ul>
+        <div class="pkg-meta"><span>📅 4 Meetings / Month</span><span>📄 Annual Contract</span></div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-name">Blvck Package</div>
+        <div class="pkg-sector">Marketing</div>
+        <div class="pkg-price">30,000 EGP</div>
+        <div class="pkg-price-note">/ Monthly · Annual Contract</div>
+        <div class="pkg-discount">20% OFF on Annual Payment</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>Marketing (Online &amp; Offline)</li>
+          <li>Marketing Analysis</li>
+          <li>Content Creation</li>
+          <li>Graphic Designing</li>
+          <li>Moderation</li>
+          <li>Media Buying</li>
+          <li>Video Editing</li>
+          <li>Social Media Platforms Handling</li>
+        </ul>
+        <div class="pkg-meta"><span>📅 2 Meetings / Month</span><span>📄 Annual Contract</span></div>
+      </div>
+      <!-- Dash Lite spans below -->
+      <div class="pkg-card" style="grid-column: span 3;">
+        <div class="pkg-name">Blvck-Lite Package</div>
+        <div class="pkg-sector">Marketing — Entry Level</div>
+        <div style="display:flex;gap:60px;align-items:flex-start;flex-wrap:wrap;">
+          <div>
+            <div class="pkg-price">20,000 EGP</div>
+            <div class="pkg-price-note">/ Monthly · Annual Contract</div>
+            <div class="pkg-discount">20% OFF on Annual Payment</div>
+            <div class="pkg-meta" style="margin-top:16px;"><span>📅 2 Meetings / Month</span></div>
+          </div>
+          <div class="pkg-divider" style="width:1px;height:auto;min-height:80px;align-self:stretch;background:rgba(255,255,255,.1);margin:0;"></div>
+          <ul class="pkg-list" style="flex:1;min-width:200px;">
+            <li>Online Marketing</li>
+            <li>Content Creation</li>
+            <li>Graphic Designing</li>
+            <li>Moderation</li>
+            <li>3 Social Media Platforms Handling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRANDING -->
+    <div id="tab-branding" class="cards-3">
+      <div class="pkg-card featured">
+        <div class="pkg-badge">Platinum</div>
+        <div class="pkg-name">Platinum Branding</div>
+        <div class="pkg-sector">Branding</div>
+        <div class="pkg-price">27,500 EGP</div>
+        <div class="pkg-price-note">One-time · Up to 45 Days</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>2× Logo Designs + 2 Sets Minor Changes</li>
+          <li>Primary &amp; Secondary Logo + Logo Mark</li>
+          <li>Social Media Profile Logo</li>
+          <li>Colour, Style &amp; Competitor Research</li>
+          <li>Full Logo Usage Rights</li>
+          <li>Email Signature &amp; Letterhead (PDF)</li>
+          <li>All Printable Designs (PDF Print-Ready)</li>
+          <li>Guideline &amp; Identity + Mini-Usage Guide</li>
+          <li>Final Files: JPEG, PNG, SVG, PDF</li>
+        </ul>
+        <div class="pkg-meta"><span>📅 2 Meetings</span><span>⏱ Up to 45 Days</span></div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-name">Premium Branding</div>
+        <div class="pkg-sector">Branding</div>
+        <div class="pkg-price">22,500 EGP</div>
+        <div class="pkg-price-note">One-time · Up to 45 Days</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>2× Logo Designs + 2 Sets Minor Changes</li>
+          <li>Primary &amp; Secondary Logo + Logo Mark</li>
+          <li>Social Media Profile Logo</li>
+          <li>Colour, Style &amp; Competitor Research</li>
+          <li>Full Logo Usage Rights</li>
+          <li>Letterhead Design (PDF)</li>
+          <li>Business Card Designs (PDF Print-Ready)</li>
+          <li>Final Files: JPEG, PNG, SVG, PDF</li>
+        </ul>
+        <div class="pkg-meta"><span>📅 2 Meetings</span><span>⏱ Up to 45 Days</span></div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-name">Basic Branding</div>
+        <div class="pkg-sector">Branding</div>
+        <div class="pkg-price">17,500 EGP</div>
+        <div class="pkg-price-note">One-time · Up to 45 Days</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>1× Logo Design + 2 Sets Minor Changes</li>
+          <li>Primary &amp; Secondary Logo + Logo Mark</li>
+          <li>Social Media Profile Logo</li>
+          <li>Colour, Style &amp; Competitor Research</li>
+          <li>Full Logo Usage Rights</li>
+          <li>Final Files: JPEG, PNG, SVG, PDF</li>
+        </ul>
+        <div class="pkg-meta"><span>📅 2 Meetings</span><span>⏱ Up to 45 Days</span></div>
+      </div>
+    </div>
+
+    <!-- TECH -->
+    <div id="tab-tech" class="cards-2">
+      <div class="pkg-card featured">
+        <div class="pkg-badge">Full Stack</div>
+        <div class="pkg-name">Full Development Web Creation</div>
+        <div class="pkg-sector">Technology</div>
+        <div class="pkg-price">24,500 EGP</div>
+        <div class="pkg-price-note">One-time · 45 Days</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>UI/UX Design</li>
+          <li>Web Securing</li>
+          <li>Full Web Creation</li>
+          <li>6 Months Moderation</li>
+          <li>SEO Optimizing</li>
+          <li>Response &amp; Performance Optimization</li>
+          <li>Bugs Fixing</li>
+        </ul>
+        <div class="pkg-meta"><span>📅 3 Meetings</span><span>⏱ 45 Days</span></div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-name">Standard Web Creation</div>
+        <div class="pkg-sector">Technology</div>
+        <div class="pkg-price">17,500 EGP</div>
+        <div class="pkg-price-note">One-time · Up to 45 Days</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>UI/UX Design</li>
+          <li>Web Securing</li>
+          <li>Web Creation</li>
+          <li>3 Months Moderation</li>
+          <li>SEO Optimizing</li>
+        </ul>
+        <div class="pkg-meta"><span>📅 3 Meetings</span><span>⏱ Up to 45 Days</span></div>
+      </div>
+    </div>
+
+    <!-- SINGLES -->
+    <div id="tab-singles">
+      <div class="singles-grid">
+        <div class="svc"><div class="svc-name">Marketing Annual Plan</div><div class="svc-price">9,000 EGP</div><div class="svc-dur">25 Days</div></div>
+        <div class="svc"><div class="svc-name">Market Analysis</div><div class="svc-price">8,000 EGP</div><div class="svc-dur">25 Days</div></div>
+        <div class="svc"><div class="svc-name">Marketing Strategy</div><div class="svc-price">7,500 EGP</div><div class="svc-dur">25 Days</div></div>
+        <div class="svc"><div class="svc-name">Content Plan</div><div class="svc-price">5,000 EGP</div><div class="svc-dur">25 Days</div></div>
+        <div class="svc"><div class="svc-name">Content Plan + Designs</div><div class="svc-price">8,000 EGP</div><div class="svc-dur">25 Days</div></div>
+        <div class="svc"><div class="svc-name">Media Buying</div><div class="svc-price">10,000 EGP<br><span style="font-size:10px;color:var(--gray);">+ 5% on Spend / 10% on Sales</span></div><div class="svc-dur">30 Days</div></div>
+        <div class="svc"><div class="svc-name">Moderation</div><div class="svc-price">2,500 EGP</div><div class="svc-dur">30 Days</div></div>
+        <div class="svc"><div class="svc-name">Photoshoot</div><div class="svc-price">12,000 EGP</div><div class="svc-dur">By Arrangement</div></div>
+        <div class="svc"><div class="svc-name">Videoshoot (up to 6 min + editing)</div><div class="svc-price">14,000 EGP</div><div class="svc-dur">By Arrangement</div></div>
+        <div class="svc"><div class="svc-name">Video Editing (up to 8 min)</div><div class="svc-price">5,500 EGP</div><div class="svc-dur">5 Days</div></div>
+        <div class="svc"><div class="svc-name">Reel Creation (3 × 60-sec Reels)</div><div class="svc-price">6,000 EGP</div><div class="svc-dur">By Arrangement</div></div>
+        <div class="svc"><div class="svc-name">Website Bug Fixing</div><div class="svc-price">5,000 EGP</div><div class="svc-dur">1 Day</div></div>
+        <div class="svc"><div class="svc-name">Website Editing</div><div class="svc-price">8,500 EGP</div><div class="svc-dur">5 Days</div></div>
+        <div class="svc"><div class="svc-name">Website Moderation</div><div class="svc-price">12,500 EGP</div><div class="svc-dur">30 Days</div></div>
+      </div>
+      <p style="margin-top:24px;font-size:12px;color:var(--gray);text-align:center;">Need something custom? <a href="#contact" style="color:var(--white);">Contact us</a> and we'll build a quote around your needs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="s-label fu">03 — How We Work</div>
+  <div class="process-hd">
+    <h2 class="process-h2 fu">Four Steps.<br>Zero Noise.</h2>
+    <p class="process-p fu d1">Every engagement follows the same mathematical precision that defines our identity. From the first call to ongoing guardianship.</p>
+  </div>
+  <div class="steps">
+    <div class="step fu"><div class="step-n">01</div><div class="step-title">Choose Your Package</div><p class="step-p">Browse our packages and services. Select what suits your budget and goals — or reach out and we'll guide you to the right fit.</p></div>
+    <div class="step fu d1"><div class="step-n">02</div><div class="step-title">15-Min Discovery Call</div><p class="step-p">We hop on a free 15-minute call to meet, understand your brand vision, and further discuss the scope of your project.</p></div>
+    <div class="step fu d2"><div class="step-n">03</div><div class="step-title">Quote &amp; Contract</div><p class="step-p">We send a formal quotation based on our discussion. Once approved, we set a meeting to sign the Contract, Client Agreement, and Code of Conduct.</p></div>
+    <div class="step fu d3"><div class="step-n">04</div><div class="step-title">We Build Your Legacy</div><p class="step-p">The Dashers get to work. Precise execution, structured reporting, and consistent delivery — until your brand commands the market.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="s-label fu">04 — What Clients Say</div>
+  <div class="testi-grid">
+    <div class="testi fu">
+      <div class="testi-mark">"</div>
+      <p class="testi-quote">Excellent. They did everything as good as I could have hoped and I would recommend them to anyone!</p>
+      <div class="testi-name">Evan O'Ceallaigh</div>
+      <div class="testi-role">Founder, UGC HUB</div>
+      <div class="testi-flag">Ireland</div>
+    </div>
+    <div class="testi fu d1">
+      <div class="testi-mark">"</div>
+      <p class="testi-quote">Excellent in delivering the work. Very skilled and very accommodating. They delivered an excellent job in a short timeline.</p>
+      <div class="testi-name">Jamana Alzadjali</div>
+      <div class="testi-role">Managing Partner, 3rd Street Donuts</div>
+      <div class="testi-flag">United Arab Emirates</div>
+    </div>
+    <div class="testi fu d2">
+      <div class="testi-mark">"</div>
+      <p class="testi-quote">We recently collaborated to develop our brand and marketing strategy, and we are absolutely thrilled with the outcome from the initial consultation to the end.</p>
+      <div class="testi-name">Dan Dragomir</div>
+      <div class="testi-role">Marketing Director, Cyrus</div>
+      <div class="testi-flag">United States</div>
+    </div>
+    <div class="testi fu">
+      <div class="testi-mark">"</div>
+      <p class="testi-quote">Changing the brand direction and creating a new marketing strategy was challenging to be done in a perfect way — Blue Dash's team nailed it.</p>
+      <div class="testi-name">Ibrahim Saad</div>
+      <div class="testi-role">Founder, Hero Plast</div>
+      <div class="testi-flag">Egypt</div>
+    </div>
+    <div class="testi fu d1">
+      <div class="testi-mark">"</div>
+      <p class="testi-quote">Very fast, professional and talented. Exactly the team you want building your brand.</p>
+      <div class="testi-name">Amr Safaan</div>
+      <div class="testi-role">Founder, CTO</div>
+      <div class="testi-flag">Egypt</div>
+    </div>
+    <div class="testi fu d2">
+      <div class="testi-mark">"</div>
+      <p class="testi-quote">Great work as always, great management as always. I like how perfectly they move forward every single time.</p>
+      <div class="testi-name">Mohamed El-Fath</div>
+      <div class="testi-role">Founder, Zidan-IT</div>
+      <div class="testi-flag">Egypt</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS LOGOS -->
+<div class="clients-strip fu">
+  <p class="clients-label">Trusted by brands across 7+ industries</p>
+  <div class="clients-logos">
+    <span class="client-logo">AlliottGlobalAlliance</span>
+    <span class="client-logo">Home Warehouse</span>
+    <span class="client-logo">E.SPACES</span>
+    <span class="client-logo">BASKET</span>
+    <span class="client-logo">careerbuilder</span>
+    <span class="client-logo">CYRUS</span>
+    <span class="client-logo">jQuery</span>
+    <span class="client-logo">Magnolia Bakery</span>
+    <span class="client-logo">ArvinMeritor</span>
+    <span class="client-logo">TDB Singapore</span>
+    <span class="client-logo">Première</span>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="s-label">05 — Let's Work</div>
+  <h2 class="contact-h2 fu">Ready to<br>Dominate.</h2>
+  <p class="contact-sub fu d1">Start with a free 15-minute call. No commitment, no noise — just results.</p>
+  <div class="contact-row fu d2">
+    <div class="c-item">
+      <div class="c-item-label">Email</div>
+      <a href="mailto:info@blvckcube.com" class="c-item-value">info@blvckcube.com</a>
+    </div>
+    <div class="c-item">
+      <div class="c-item-label">Phone</div>
+      <a href="tel:+201100040605" class="c-item-value">+20 11 000 40 605</a>
+    </div>
+    <div class="c-item">
+      <div class="c-item-label">Website</div>
+      <a href="https://blvckcube.com" class="c-item-value">blvckcube.com</a>
+    </div>
+    <div class="c-item">
+      <div class="c-item-label">Social</div>
+      <a href="https://instagram.com/blvckcube.co" class="c-item-value">@blvckcube.co</a>
+    </div>
+  </div>
+  <div class="fu d3">
+    <a href="mailto:info@blvckcube.com" class="btn-primary" style="margin: 0 auto;">Book a Free 15-Min Call <span class="arr"></span></a>
+  </div>
+  <div class="step-note fu">
+    <p class="step-note-h">How It Works</p>
+    <div class="step-boxes">
+      <div class="step-box"><div class="step-box-n">1</div><div class="step-box-t">Select Package</div></div>
+      <div class="step-box"><div class="step-box-n">2</div><div class="step-box-t">Free 15-Min Call</div></div>
+      <div class="step-box"><div class="step-box-n">3</div><div class="step-box-t">Quote Approval</div></div>
+      <div class="step-box"><div class="step-box-n">4</div><div class="step-box-t">Sign Contract</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="f-logo">BlvckCube</span>
+  <p class="f-copy">© 2025–2026 BlvckCube. All rights reserved.</p>
+  <ul class="f-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#testimonials">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+// Custom cursor
+const cur = document.getElementById('cur');
+const curR = document.getElementById('curR');
+let mx=0, my=0, rx=0, ry=0;
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  cur.style.left=mx+'px'; cur.style.top=my+'px';
+});
+(function animR(){
+  rx += (mx-rx)*.1; ry += (my-ry)*.1;
+  curR.style.left=rx+'px'; curR.style.top=ry+'px';
+  requestAnimationFrame(animR);
+})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ cur.style.width='18px'; cur.style.height='18px'; curR.style.width='52px'; curR.style.height='52px'; });
+  el.addEventListener('mouseleave',()=>{ cur.style.width='10px'; cur.style.height='10px'; curR.style.width='36px'; curR.style.height='36px'; });
+});
+
+// Scroll fade
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } }), { threshold: 0.08 });
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+setTimeout(()=>{ document.querySelectorAll('.hero .fu').forEach(el=>el.classList.add('vis')); }, 80);
+
+// Package tabs
+function showTab(tab){
+  document.querySelectorAll('.pkg-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.pkg-panels > div').forEach(p=>{ p.classList.remove('active'); p.style.display='none'; });
+  event.target.classList.add('active');
+  const panel = document.getElementById('tab-'+tab);
+  panel.classList.add('active');
+  panel.style.display = tab==='singles' ? 'block' : (tab==='tech' ? 'grid' : 'grid');
+}
+// init
+document.getElementById('tab-marketing').style.display='grid';
+['branding','tech','singles'].forEach(t=>{ const p=document.getElementById('tab-'+t); if(p) p.style.display='none'; });
+</script>
+</body>
+</html>
