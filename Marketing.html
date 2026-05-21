@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing — BlvckCube</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#000;--gray:rgb(122,122,122);--light:#F3F3F3;--white:#fff;--font:'Montserrat',sans-serif;--pad:clamp(20px,5vw,60px);}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:var(--font);font-weight:300;overflow-x:hidden;cursor:none;}
+@media(pointer:fine){.cur{position:fixed;width:10px;height:10px;background:var(--white);top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);border-radius:50%;transition:width .18s,height .18s;}.cur-r{position:fixed;width:36px;height:36px;border:1px solid rgba(255,255,255,.35);top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);border-radius:50%;transition:width .25s,height .25s;}}
+@media(pointer:coarse){.cur,.cur-r{display:none;}body{cursor:auto;}}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:24px var(--pad);background:rgba(0,0,0,.95);}
+.n-logo{font-size:clamp(14px,2vw,17px);font-weight:700;letter-spacing:-.02em;color:var(--white);text-decoration:none;}
+.n-links{display:flex;gap:clamp(20px,3vw,40px);list-style:none;}
+.n-links a{color:var(--white);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.5;transition:opacity .3s;}
+.n-links a:hover,.n-links a.active{opacity:1;}
+.n-cta{background:var(--white);color:var(--black)!important;opacity:1!important;padding:10px 20px;font-size:10px!important;font-weight:700!important;}
+.n-portal{background:transparent;border:1px solid rgba(255,255,255,.3);color:var(--white)!important;opacity:1!important;padding:10px 20px;font-size:10px!important;font-weight:700!important;letter-spacing:.14em;text-transform:uppercase;}
+.n-portal:hover{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.6)!important;}
+.n-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.n-burger span{display:block;width:22px;height:1.5px;background:var(--white);transition:transform .3s,opacity .3s;}
+.n-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.n-burger.open span:nth-child(2){opacity:0;}
+.n-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.n-mobile{display:none;position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:36px;}
+.n-mobile.open{display:flex;}
+.n-mobile a{color:var(--white);text-decoration:none;font-size:clamp(22px,5vw,36px);font-weight:900;letter-spacing:-.03em;opacity:.7;transition:opacity .3s;}
+.n-mobile a:hover{opacity:1;}
+
+/* PAGE HERO */
+.page-hero{padding:clamp(120px,16vh,180px) var(--pad) clamp(60px,8vh,80px);position:relative;border-bottom:1px solid rgba(255,255,255,.08);}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.breadcrumb{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);margin-bottom:28px;display:flex;align-items:center;gap:10px;}
+.breadcrumb a{color:var(--gray);text-decoration:none;transition:color .3s;}
+.breadcrumb a:hover{color:var(--white);}
+.breadcrumb span{color:rgba(255,255,255,.2);}
+.page-h1{font-size:clamp(52px,10vw,140px);font-weight:900;line-height:.85;letter-spacing:-.05em;margin-bottom:28px;}
+.page-h1 em{font-style:normal;color:var(--gray);}
+.page-intro{font-size:clamp(13px,1.5vw,15px);font-weight:300;color:var(--gray);max-width:560px;line-height:1.9;}
+.page-hero-meta{display:flex;gap:clamp(28px,5vw,60px);margin-top:48px;flex-wrap:wrap;}
+.meta-item{display:flex;flex-direction:column;gap:6px;}
+.meta-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);}
+.meta-val{font-size:clamp(13px,1.6vw,15px);font-weight:700;}
+
+section{padding:clamp(64px,9vh,100px) var(--pad);}
+.s-label{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);margin-bottom:clamp(36px,5vh,56px);display:flex;align-items:center;gap:14px;}
+.s-label::before{content:'';display:block;width:28px;height:1px;background:var(--gray);}
+
+/* PACKAGES GRID */
+.pkg-h2{font-size:clamp(32px,4.5vw,60px);font-weight:900;letter-spacing:-.04em;line-height:.92;margin-bottom:48px;}
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);}
+.cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);}
+.pkg-card{background:var(--black);padding:clamp(28px,4vw,44px) clamp(22px,3vw,36px);position:relative;transition:background .35s;}
+.pkg-card:hover{background:rgba(255,255,255,.03);}
+.pkg-card.featured{background:var(--white);color:var(--black);}
+.pkg-card.featured:hover{background:var(--light);}
+.pkg-badge{font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;background:var(--black);color:var(--white);display:inline-block;margin-bottom:24px;}
+.pkg-card.featured .pkg-badge{background:var(--black);color:var(--white);}
+.pkg-name{font-size:clamp(16px,2vw,20px);font-weight:900;letter-spacing:-.02em;margin-bottom:8px;}
+.pkg-sector{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:28px;}
+.pkg-card.featured .pkg-sector{color:rgba(0,0,0,.5);}
+.pkg-price{font-size:clamp(26px,3.5vw,36px);font-weight:900;letter-spacing:-.04em;margin-bottom:4px;line-height:1;}
+.pkg-price-note{font-size:10px;font-weight:500;color:var(--gray);letter-spacing:.08em;margin-bottom:4px;}
+.pkg-card.featured .pkg-price-note{color:rgba(0,0,0,.5);}
+.pkg-discount{font-size:10px;font-weight:700;color:#fff;background:#000;display:inline-block;padding:3px 8px;margin-bottom:28px;letter-spacing:.06em;}
+.pkg-divider{height:1px;background:rgba(255,255,255,.1);margin-bottom:24px;}
+.pkg-card.featured .pkg-divider{background:rgba(0,0,0,.1);}
+.pkg-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.pkg-list li{font-size:12px;font-weight:400;color:var(--gray);display:flex;gap:10px;align-items:flex-start;line-height:1.5;}
+.pkg-card.featured .pkg-list li{color:rgba(0,0,0,.65);}
+.pkg-list li::before{content:'—';font-size:10px;color:var(--gray);flex-shrink:0;margin-top:1px;}
+.pkg-card.featured .pkg-list li::before{color:rgba(0,0,0,.35);}
+.pkg-meta{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:11px;font-weight:500;color:var(--gray);display:flex;gap:20px;flex-wrap:wrap;}
+.pkg-card.featured .pkg-meta{border-color:rgba(0,0,0,.1);color:rgba(0,0,0,.5);}
+.pkg-cta{margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);text-decoration:none;transition:gap .3s;}
+.pkg-cta:hover{gap:14px;}
+.pkg-card.featured .pkg-cta{color:var(--black);}
+
+/* SINGLES */
+.singles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);}
+.svc{background:var(--black);padding:clamp(20px,2.5vw,28px) clamp(16px,2vw,24px);transition:background .3s;}
+.svc:hover{background:rgba(255,255,255,.03);}
+.svc-name{font-size:13px;font-weight:600;margin-bottom:10px;line-height:1.3;}
+.svc-price{font-size:18px;font-weight:900;letter-spacing:-.02em;margin-bottom:4px;}
+.svc-dur{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);}
+
+/* CTA BAND */
+.cta-band{background:var(--white);color:var(--black);padding:clamp(64px,10vh,100px) var(--pad);text-align:center;}
+.cta-band h2{font-size:clamp(32px,5vw,64px);font-weight:900;letter-spacing:-.04em;line-height:.92;margin-bottom:20px;}
+.cta-band p{font-size:14px;font-weight:300;color:var(--gray);margin-bottom:40px;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:12px;background:var(--black);color:var(--white);text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:16px 32px;transition:background .3s,transform .2s;}
+.btn-primary:hover{background:#111;transform:translateY(-1px);}
+.btn-outline-dark{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(0,0,0,.25);color:var(--black);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:16px 32px;transition:all .3s;}
+.btn-outline-dark:hover{border-color:var(--black);background:rgba(0,0,0,.05);}
+.arr::after{content:'→';display:inline-block;transition:transform .3s;}
+.btn-primary:hover .arr::after,.btn-outline-dark:hover .arr::after{transform:translateX(5px);}
+
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:clamp(24px,4vh,36px) var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.f-logo{font-size:14px;font-weight:700;}
+.f-copy{font-size:10px;color:var(--gray);letter-spacing:.06em;}
+.f-links{display:flex;gap:24px;list-style:none;}
+.f-links a{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .3s;}
+.f-links a:hover{color:var(--white);}
+.fu{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+.fu.vis{opacity:1;transform:none;}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+
+/* Other sectors nav */
+.other-sectors{padding:clamp(48px,7vh,80px) var(--pad);border-top:1px solid rgba(255,255,255,.08);}
+.other-sectors h3{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;}
+.sector-links{display:flex;flex-wrap:wrap;gap:2px;}
+.sector-link{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--white);text-decoration:none;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:12px 20px;transition:all .3s;}
+.sector-link:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);}
+.sector-link.current{background:var(--white);color:var(--black);border-color:var(--white);}
+
+@media(max-width:900px){.n-links{display:none;}.n-burger{display:flex;}.cards-3{grid-template-columns:1fr;}.cards-2{grid-template-columns:1fr;}}
+@media(max-width:480px){.singles-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="cur-r" id="curR"></div>
+
+<div class="n-mobile" id="mobileNav">
+  <a href="../index.html" onclick="closeMobile()">Home</a>
+  <a href="marketing.html" onclick="closeMobile()">Marketing</a>
+  <a href="branding.html" onclick="closeMobile()">Branding</a>
+  <a href="technology.html" onclick="closeMobile()">Technology</a>
+  <a href="photography.html" onclick="closeMobile()">Photography</a>
+  <a href="videography.html" onclick="closeMobile()">Videography</a>
+  <a href="../portal.html" onclick="closeMobile()">Client Portal</a>
+</div>
+
+<nav id="mainNav">
+  <a href="../index.html" class="n-logo">BlvckCube</a>
+  <ul class="n-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#sectors">Services</a></li>
+    <li><a href="../index.html#process">Process</a></li>
+    <li><a href="../index.html#testimonials">Clients</a></li>
+    <li><a href="../portal.html" class="n-portal">Client Portal</a></li>
+    <li><a href="../index.html#contact" class="n-cta">Start a Project</a></li>
+  </ul>
+  <button class="n-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="breadcrumb">
+    <a href="../index.html">BlvckCube</a>
+    <span>/</span>
+    <span style="color:var(--white);">Marketing</span>
+  </div>
+  <h1 class="page-h1 fu">Market<br><em>ing.</em></h1>
+  <p class="page-intro fu d1">Full-spectrum marketing execution — online and offline. From strategy to content to media buying, we engineer your market presence with zero noise and maximum impact.</p>
+  <div class="page-hero-meta fu d2">
+    <div class="meta-item"><div class="meta-label">Starting From</div><div class="meta-val">20,000 EGP / mo</div></div>
+    <div class="meta-item"><div class="meta-label">Packages</div><div class="meta-val">4 Tiers</div></div>
+    <div class="meta-item"><div class="meta-label">Contract</div><div class="meta-val">Annual</div></div>
+    <div class="meta-item"><div class="meta-label">Meetings</div><div class="meta-val">2–4 / Month</div></div>
+  </div>
+</div>
+
+<section>
+  <div class="s-label fu">Packages</div>
+  <h2 class="pkg-h2 fu">Choose Your<br>Marketing Tier.</h2>
+
+  <div class="cards-3" style="margin-bottom:2px;">
+    <div class="pkg-card featured fu">
+      <div class="pkg-badge">⭐ Top #1 Package</div>
+      <div class="pkg-name">Brand Management</div>
+      <div class="pkg-sector">Marketing · Branding · Technology</div>
+      <div class="pkg-price">60,000 EGP</div>
+      <div class="pkg-price-note">/ Monthly · Annual Contract</div>
+      <div class="pkg-discount">20% OFF on Annual Payment</div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-list">
+        <li>Marketing (Online &amp; Offline)</li>
+        <li>Marketing Analysis</li>
+        <li>Annual Marketing Strategy</li>
+        <li>Content Creation</li>
+        <li>Graphic Designing</li>
+        <li>Website Creation</li>
+        <li>Moderation</li>
+        <li>Media Buying</li>
+        <li>Photography</li>
+        <li>Videography &amp; Video Editing</li>
+        <li>Social Media Accounts Handling</li>
+        <li>Risk Management</li>
+        <li>All Platforms Handling</li>
+      </ul>
+      <div class="pkg-meta"><span>📅 4 Meetings / Month</span><span>📄 Annual Contract</span></div>
+      <a href="../portal.html?pkg=brand-management" class="pkg-cta">Select Package →</a>
+    </div>
+    <div class="pkg-card fu d1">
+      <div class="pkg-name">Cube Package</div>
+      <div class="pkg-sector">Marketing · Technology</div>
+      <div class="pkg-price">45,000 EGP</div>
+      <div class="pkg-price-note">/ Monthly · Annual Contract</div>
+      <div class="pkg-discount">20% OFF on Annual Payment</div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-list">
+        <li>Marketing (Online &amp; Offline)</li>
+        <li>Marketing Analysis</li>
+        <li>Annual Marketing Strategy</li>
+        <li>Content Creation</li>
+        <li>Graphic Designing</li>
+        <li>Moderation</li>
+        <li>Media Buying</li>
+        <li>Photography</li>
+        <li>Video Editing</li>
+        <li>Social Media Platforms Handling</li>
+      </ul>
+      <div class="pkg-meta"><span>📅 4 Meetings / Month</span><span>📄 Annual Contract</span></div>
+      <a href="../portal.html?pkg=cube" class="pkg-cta">Select Package →</a>
+    </div>
+    <div class="pkg-card fu d2">
+      <div class="pkg-name">Blvck Package</div>
+      <div class="pkg-sector">Marketing</div>
+      <div class="pkg-price">30,000 EGP</div>
+      <div class="pkg-price-note">/ Monthly · Annual Contract</div>
+      <div class="pkg-discount">20% OFF on Annual Payment</div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-list">
+        <li>Marketing (Online &amp; Offline)</li>
+        <li>Marketing Analysis</li>
+        <li>Content Creation</li>
+        <li>Graphic Designing</li>
+        <li>Moderation</li>
+        <li>Media Buying</li>
+        <li>Video Editing</li>
+        <li>Social Media Platforms Handling</li>
+      </ul>
+      <div class="pkg-meta"><span>📅 2 Meetings / Month</span><span>📄 Annual Contract</span></div>
+      <a href="../portal.html?pkg=blvck" class="pkg-cta">Select Package →</a>
+    </div>
+  </div>
+
+  <!-- Blvck-Lite wide card -->
+  <div style="border:1px solid rgba(255,255,255,.08);border-top:none;">
+    <div class="pkg-card fu" style="display:grid;grid-template-columns:auto 1px 1fr;gap:48px;align-items:start;">
+      <div>
+        <div class="pkg-name">Blvck-Lite Package</div>
+        <div class="pkg-sector">Marketing — Entry Level</div>
+        <div class="pkg-price">20,000 EGP</div>
+        <div class="pkg-price-note">/ Monthly · Annual Contract</div>
+        <div class="pkg-discount">20% OFF on Annual Payment</div>
+        <div class="pkg-meta" style="margin-top:16px;"><span>📅 2 Meetings / Month</span></div>
+        <a href="../portal.html?pkg=blvck-lite" class="pkg-cta" style="margin-top:16px;display:inline-flex;">Select Package →</a>
+      </div>
+      <div style="background:rgba(255,255,255,.08);align-self:stretch;"></div>
+      <ul class="pkg-list" style="align-self:center;">
+        <li>Online Marketing</li>
+        <li>Content Creation</li>
+        <li>Graphic Designing</li>
+        <li>Moderation</li>
+        <li>3 Social Media Platforms Handling</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="s-label fu">Single Services</div>
+  <h2 class="pkg-h2 fu">À La Carte<br>Marketing.</h2>
+  <div class="singles-grid">
+    <div class="svc fu"><div class="svc-name">Marketing Annual Plan</div><div class="svc-price">9,000 EGP</div><div class="svc-dur">25 Days</div></div>
+    <div class="svc fu d1"><div class="svc-name">Market Analysis</div><div class="svc-price">8,000 EGP</div><div class="svc-dur">25 Days</div></div>
+    <div class="svc fu d2"><div class="svc-name">Marketing Strategy</div><div class="svc-price">7,500 EGP</div><div class="svc-dur">25 Days</div></div>
+    <div class="svc fu"><div class="svc-name">Content Plan</div><div class="svc-price">5,000 EGP</div><div class="svc-dur">25 Days</div></div>
+    <div class="svc fu d1"><div class="svc-name">Content Plan + Designs</div><div class="svc-price">8,000 EGP</div><div class="svc-dur">25 Days</div></div>
+    <div class="svc fu d2"><div class="svc-name">Media Buying</div><div class="svc-price">10,000 EGP</div><div class="svc-dur" style="font-size:9px;">+ 5% on Spend / 10% on Sales · 30 Days</div></div>
+    <div class="svc fu"><div class="svc-name">Moderation</div><div class="svc-price">2,500 EGP</div><div class="svc-dur">30 Days</div></div>
+  </div>
+</section>
+
+<div class="other-sectors">
+  <h3>Other Sectors</h3>
+  <div class="sector-links">
+    <a href="marketing.html" class="sector-link current">Marketing</a>
+    <a href="branding.html" class="sector-link">Branding</a>
+    <a href="technology.html" class="sector-link">Technology</a>
+    <a href="photography.html" class="sector-link">Photography</a>
+    <a href="videography.html" class="sector-link">Videography</a>
+    <a href="brand-management.html" class="sector-link">Brand Management</a>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Ready to Dominate<br>Your Market?</h2>
+  <p>Select a package above or start with a free 15-minute discovery call.</p>
+  <div class="cta-btns">
+    <a href="../portal.html" class="btn-primary">Open Client Portal <span class="arr"></span></a>
+    <a href="mailto:info@blvckcube.com" class="btn-outline-dark">Book a Free Call <span class="arr"></span></a>
+  </div>
+</div>
+
+<footer>
+  <span class="f-logo">BlvckCube</span>
+  <p class="f-copy">© 2025–2026 BlvckCube. All rights reserved.</p>
+  <ul class="f-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#sectors">Services</a></li>
+    <li><a href="../portal.html">Client Portal</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+if(cur){let mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});(function anim(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;if(curR){curR.style.left=rx+'px';curR.style.top=ry+'px';}requestAnimationFrame(anim);})();document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';if(curR){curR.style.width='54px';curR.style.height='54px';}});el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';if(curR){curR.style.width='36px';curR.style.height='36px';}});});}
+const burger=document.getElementById('burger'),mNav=document.getElementById('mobileNav');
+burger.addEventListener('click',()=>{burger.classList.toggle('open');mNav.classList.toggle('open');document.body.style.overflow=mNav.classList.contains('open')?'hidden':'';});
+function closeMobile(){burger.classList.remove('open');mNav.classList.remove('open');document.body.style.overflow='';}
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:0.07,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+setTimeout(()=>document.querySelectorAll('.page-hero .fu').forEach(el=>el.classList.add('vis')),100);
+</script>
+</body>
+</html>
