@@ -1,15 +1,33 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="blvckcube.css">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BlvckCube — Platform</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="BlvckCube — luxury brand management firm based in Cairo, Egypt and Canada. We forge brand authority through precision, strategy, and bespoke creative excellence.">
+<meta property="og:title" content="BlvckCube — Architect of Market Dominance">
+<meta property="og:description" content="Luxury brand management. Sharp, bold, engineered to command authority across every market.">
+<meta property="og:type" content="website">
+<title>BlvckCube — Architect of Market Dominance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blvckcube.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
+  /* ── Color Palette ── */
+  --card:#0a0a0a;--ring:#525252;--input:#262626;--muted:#262626;
+  --accent:#262626;--border:#262626;--radius:0.625rem;
+  --chart-1:#91c5ff;--chart-2:#3a81f6;--chart-3:#2563ef;--chart-4:#1a4eda;--chart-5:#1f3fad;
+  --popover:#0a0a0a;--primary:#fafafa;--sidebar:#0a0a0a;--secondary:#262626;
+  --background:#0a0a0a;--foreground:#fafafa;--destructive:#e7000b;
+  --muted-foreground:#a1a1a1;--accent-foreground:#fafafa;--primary-foreground:#0a0a0a;
+  --card-foreground:#fafafa;--sidebar-primary:#fafafa;--sidebar-foreground:#fafafa;
+  --sidebar-accent:#262626;--sidebar-border:#262626;--sidebar-ring:#525252;
+  --sidebar-accent-foreground:#fafafa;--sidebar-primary-foreground:#0a0a0a;
+  --destructive-foreground:#ffffff;
+  /* ── Site Tokens ── */
   --black:#000;--white:#fff;
   --g9:#0a0a0a;--g8:#111;--g7:#1a1a1a;--g6:#222;--g5:#333;
   --g4:#555;--g3:#888;--g2:#bbb;--g1:#e5e5e5;--g0:#f8f8f8;
@@ -38,6 +56,111 @@ body{background:var(--black);color:var(--white);font-family:var(--fb);font-weigh
 .nLinks a:hover,.nLinks a.act{color:var(--white);}
 .nCta{background:var(--white)!important;color:var(--black)!important;padding:9px 20px!important;font-weight:700!important;transition:background .2s!important;}
 .nCta:hover{background:var(--g1)!important;}
+/* ══ MARQUEE CTA ══ */
+.vmCta{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,96px);align-items:center;}
+.vmCtaLeft{display:flex;flex-direction:column;gap:clamp(22px,3vh,34px);max-width:520px;}
+.vmCtaH2{font-family:var(--fd);font-size:clamp(30px,4.5vw,62px);font-weight:800;letter-spacing:-.04em;line-height:.92;}
+.vmCtaP{font-size:clamp(13px,1.5vw,15.5px);font-weight:300;color:rgba(255,255,255,.42);line-height:1.85;max-width:440px;}
+.vmCtaBtns{display:flex;flex-wrap:wrap;gap:14px;}
+.vmRight{position:relative;height:clamp(360px,52vh,620px);overflow:hidden;}
+.vmGradT{pointer-events:none;position:absolute;top:0;left:0;right:0;height:160px;background:linear-gradient(to bottom,var(--black),rgba(0,0,0,.5) 60%,transparent);z-index:2;}
+.vmGradB{pointer-events:none;position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(to top,var(--black),rgba(0,0,0,.5) 60%,transparent);z-index:2;}
+.vmOuter{height:100%;overflow:hidden;}
+.vmTrack{display:flex;flex-direction:column;animation:vmScrollV 22s linear infinite;}
+.vmItem{font-family:var(--fd);font-size:clamp(28px,4.2vw,60px);font-weight:300;letter-spacing:-.04em;line-height:1.05;padding:clamp(16px,2.8vh,28px) 0;color:rgba(255,255,255,.18);}
+@keyframes vmScrollV{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+/* ══ LIGHT MODE ══ */
+html.light{color-scheme:light;--card:#ffffff;--ring:#a1a1a1;--input:#e5e5e5;--muted:#f5f5f5;--accent:#f5f5f5;--border:#e5e5e5;--popover:#ffffff;--primary:#171717;--sidebar:#fafafa;--secondary:#f5f5f5;--background:#ffffff;--foreground:#0a0a0a;--muted-foreground:#737373;--accent-foreground:#171717;--primary-foreground:#fafafa;--card-foreground:#0a0a0a;--sidebar-primary:#171717;--sidebar-foreground:#0a0a0a;--sidebar-accent:#f5f5f5;--sidebar-border:#e5e5e5;--sidebar-ring:#a1a1a1;--sidebar-accent-foreground:#171717;--sidebar-primary-foreground:#fafafa;--destructive-foreground:#ffffff;--black:#f3f3f3;--white:#0a0a0a;--g9:#e9e9e9;--g8:#e0e0e0;--g7:#d4d4d4;--g6:#c5c5c5;--g5:#b5b5b5;--g4:#888;--g3:#555;--g2:#333;--g1:#1a1a1a;--g0:#0a0a0a;--gold:#d4a853;--gold2:rgba(212,168,83,.1);--gold3:rgba(212,168,83,.05);}
+html.light body{background:#f3f3f3;color:#0a0a0a;}
+html.light #mNav{background:linear-gradient(rgba(243,243,243,.95),transparent);}
+html.light #mNav.sc{background:rgba(243,243,243,.97);border-bottom-color:rgba(0,0,0,.08);}
+html.light .nLogo,html.light #themeBtn{color:#0a0a0a;}
+html.light .nLinks a{color:rgba(0,0,0,.45);}
+html.light .nLinks a:hover,html.light .nLinks a.act{color:#0a0a0a;}
+html.light .nCta{background:#0a0a0a!important;color:#f3f3f3!important;}
+html.light .nCta:hover{background:#222!important;}
+html.light .nBurger span{background:#0a0a0a;}
+html.light #mobMenu{background:rgba(243,243,243,.99);}
+html.light #mobMenu a{color:rgba(0,0,0,.7);}
+html.light .hero{background:#f3f3f3;}
+html.light .hGrid{background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);}
+html.light .hH1{color:#0a0a0a;}
+html.light .hH1 em{color:rgba(0,0,0,.15);}
+html.light .ahBadge{border-color:rgba(0,0,0,.1);color:rgba(0,0,0,.5);}
+html.light .ahBadge:hover{border-color:rgba(0,0,0,.25);color:rgba(0,0,0,.8);}
+html.light .ahStatic{color:rgba(0,0,0,.32);}
+html.light .ahSub{color:rgba(0,0,0,.45);}
+html.light .ahWord{color:rgba(212,168,83,.9);}
+html.light .hSub{color:rgba(0,0,0,.5);}
+html.light .bO{border-color:rgba(0,0,0,.2);color:#0a0a0a;}
+html.light .bO:hover{border-color:rgba(0,0,0,.6);background:rgba(0,0,0,.04);}
+html.light .bP{background:#0a0a0a;color:#f3f3f3;}
+html.light .bP:hover{background:#222;}
+html.light .scLine{background:linear-gradient(#0a0a0a,transparent);}
+html.light .scInd{color:#0a0a0a;}
+/* ABOUT */
+html.light .sLbl{color:rgba(0,0,0,.4);}
+html.light .sLbl::before{background:rgba(0,0,0,.2);}
+html.light .abH2 span{color:rgba(0,0,0,.15);}
+html.light .abP{color:rgba(0,0,0,.5);}
+html.light .abP strong{color:#0a0a0a;}
+html.light .foundRole{color:rgba(0,0,0,.42);}
+html.light .statsRow{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
+html.light .stat{background:#f3f3f3;}
+html.light .stat:hover{background:rgba(0,0,0,.04);}
+html.light .statL{color:rgba(0,0,0,.4);}
+html.light .locs{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
+html.light .loc{background:#f3f3f3;}
+html.light .locD{color:rgba(0,0,0,.42);}
+/* PACKAGES */
+html.light .pkgSub{color:rgba(0,0,0,.45);}
+html.light .pkgTab{border-color:rgba(0,0,0,.12);color:rgba(0,0,0,.45);}
+html.light .pkgTab.on,html.light .pkgTab:hover{background:#0a0a0a;color:#f3f3f3;border-color:#0a0a0a;}
+html.light .c3,html.light .c2{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
+html.light .pkC{background:#e9e9e9;}
+html.light .pkC:hover{background:rgba(0,0,0,.04);}
+html.light .pkC.feat{background:#0a0a0a;color:#f3f3f3;}
+html.light .pkC.feat:hover{background:#222;}
+html.light .pkSec{color:rgba(0,0,0,.38);}
+html.light .pkNote{color:rgba(0,0,0,.42);}
+html.light .pkDiv{background:rgba(0,0,0,.09);}
+html.light .pkList li{color:rgba(0,0,0,.55);}
+html.light .pkList li::before{color:rgba(0,0,0,.25);}
+html.light .pkMeta{border-color:rgba(0,0,0,.09);color:rgba(0,0,0,.42);}
+html.light .pkSelBtn{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,.12);color:#0a0a0a;}
+html.light .pkSelBtn:hover{background:rgba(0,0,0,.12);}
+/* SINGLE SERVICES */
+html.light .svcsGrid{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
+html.light .svc{background:#e9e9e9;}
+html.light .svc:hover{background:rgba(0,0,0,.04);}
+html.light .svcDur{color:rgba(0,0,0,.38);}
+html.light .svcBtn{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.09);color:rgba(0,0,0,.55);}
+html.light .svcBtn:hover{background:rgba(0,0,0,.11);color:#0a0a0a;}
+/* PROCESS */
+html.light .procSec{background:rgba(0,0,0,.025);border-color:rgba(0,0,0,.07);}
+html.light .procP{color:rgba(0,0,0,.45);}
+html.light .stepGrid{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
+html.light .stepC{background:#f3f3f3;}
+html.light .stepN{color:rgba(0,0,0,.06);}
+html.light .stepP{color:rgba(0,0,0,.45);}
+/* TESTIMONIALS */
+html.light .testiGrid{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
+html.light .testi{background:#f3f3f3;}
+html.light .testi:hover{background:rgba(0,0,0,.04);}
+html.light .testiQ{color:rgba(0,0,0,.55);}
+html.light .testiRole{color:rgba(0,0,0,.38);}
+html.light .testiFlag{color:rgba(0,0,0,.28);}
+html.light .testiMk{color:rgba(0,0,0,.1);}
+/* CLIENT LOGOS */
+html.light .cliStrip{border-color:rgba(0,0,0,.07);}
+html.light .cliLbl{color:rgba(0,0,0,.3);}
+html.light .cliLogo{color:rgba(0,0,0,.18);}
+html.light .cliLogo:hover{color:rgba(0,0,0,.55);}
+/* FOOTER */
+html.light footer.mFoot{background:#f3f3f3;border-color:rgba(0,0,0,.07);}
+html.light .fCopy{color:rgba(0,0,0,.3);}
+html.light .fLinks a{color:rgba(0,0,0,.38);}
+html.light .fLinks a:hover{color:#0a0a0a;}
 .nBurger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
 .nBurger span{display:block;width:20px;height:1px;background:var(--white);transition:transform .3s,opacity .3s;}
 .nBurger.op span:nth-child(1){transform:translateY(6px) rotate(45deg);}
@@ -49,14 +172,32 @@ body{background:var(--black);color:var(--white);font-family:var(--fb);font-weigh
 #mobMenu a:hover{color:var(--white);}
 
 /* ══ HERO ══ */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(20px,5vw,60px) clamp(60px,8vh,100px);position:relative;overflow:hidden;}
-.hGrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:60px 60px;}
-.hOrb{position:absolute;width:700px;height:700px;right:-8%;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(212,168,83,.055) 0%,transparent 65%);pointer-events:none;}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(80px,12vh,120px) clamp(20px,5vw,60px);position:relative;overflow:hidden;}
+/* ══ ANIMATED HERO ══ */
+.ahWrap{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:2;width:100%;}
+.ahBadge{display:inline-flex;align-items:center;gap:10px;padding:9px 20px;border:1px solid rgba(255,255,255,.1);border-radius:9999px;font-size:11.5px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.52);cursor:pointer;transition:border-color .25s,color .25s,background .25s;margin-bottom:clamp(28px,4.5vh,48px);text-decoration:none;background:rgba(255,255,255,.02);}
+.ahBadge:hover{border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.82);background:rgba(255,255,255,.04);}
+.ahBadge svg{width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.ahH1{font-family:var(--fd);font-size:clamp(44px,7.5vw,108px);font-weight:800;line-height:1.0;letter-spacing:-.04em;margin-bottom:clamp(22px,3.5vh,36px);}
+.ahStatic{display:block;color:rgba(255,255,255,.42);}
+.ahCycleWrap{display:block;position:relative;overflow:hidden;height:1.08em;margin-top:.08em;}
+.ahWord{display:block;color:var(--gold);position:absolute;width:100%;left:0;top:0;line-height:inherit;}
+@keyframes wordIn{from{opacity:0;transform:translateY(70%)}to{opacity:1;transform:translateY(0)}}
+@keyframes wordOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-70%)}}
+.ahWord.in{animation:wordIn .55s cubic-bezier(.34,1.36,.64,1) forwards;}
+.ahWord.out{animation:wordOut .38s cubic-bezier(.55,.06,.68,.19) forwards;}
+.ahSub{font-size:clamp(14px,1.55vw,16px);font-weight:300;color:rgba(255,255,255,.36);max-width:min(500px,88vw);line-height:2.0;margin-bottom:clamp(32px,5vh,52px);}
+.ahBtns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.hGrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:60px 60px;z-index:2;pointer-events:none;}
+.hOrb{position:absolute;width:700px;height:700px;right:-8%;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(212,168,83,.12) 0%,transparent 65%);pointer-events:none;}
+#threeHero{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+#threeHero canvas{display:block;width:100%!important;height:100%!important;}
+.heroGrad{position:absolute;inset:0;background:linear-gradient(to top,#000 0%,rgba(0,0,0,.72) 35%,rgba(0,0,0,.18) 72%,transparent 100%);z-index:1;pointer-events:none;}
 .cubeScene{position:absolute;right:clamp(2%,7%,10%);top:50%;transform:translateY(-50%);width:clamp(180px,24vw,380px);height:clamp(180px,24vw,380px);perspective:clamp(400px,55vw,800px);pointer-events:none;}
 .cube3d{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:cRot 20s cubic-bezier(.45,.05,.55,.95) infinite;}
 @keyframes cRot{0%{transform:rotateX(20deg) rotateY(0)}25%{transform:rotateX(10deg) rotateY(90deg)}50%{transform:rotateX(20deg) rotateY(180deg)}75%{transform:rotateX(10deg) rotateY(270deg)}100%{transform:rotateX(20deg) rotateY(360deg)}}
-.cf{position:absolute;inset:0;border:1px solid rgba(212,168,83,.16);background:rgba(212,168,83,.01);}
-.cf::after{content:'';position:absolute;inset:14%;border:1px solid rgba(212,168,83,.05);}
+.cf{position:absolute;inset:0;border:1px solid rgba(212,168,83,.25);background:rgba(212,168,83,.03);}
+.cf::after{content:'';position:absolute;inset:14%;border:1px solid rgba(212,168,83,.1);}
 .cf-f{transform:translateZ(calc(clamp(90px,12vw,190px)))}
 .cf-b{transform:rotateY(180deg) translateZ(calc(clamp(90px,12vw,190px)))}
 .cf-l{transform:rotateY(-90deg) translateZ(calc(clamp(90px,12vw,190px)))}
@@ -73,8 +214,8 @@ body{background:var(--black);color:var(--white);font-family:var(--fb);font-weigh
 .cp:nth-child(6){top:10%;right:10%;animation:cf2 6s ease-in-out infinite 1.5s;}
 @keyframes cf1{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-16px) scale(1.6)}}
 @keyframes cf2{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(12px) scale(.6)}}
-.hEye{font-size:clamp(9px,1.1vw,11px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,.8);margin-bottom:clamp(18px,3vh,28px);display:flex;align-items:center;gap:14px;}
-.hEye::before{content:'';display:block;width:24px;height:1px;background:rgba(212,168,83,.45);}
+.hEye{font-size:clamp(9px,1.1vw,11px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:clamp(18px,3vh,28px);display:flex;align-items:center;gap:14px;opacity:.8;}
+.hEye::before{content:'';display:block;width:24px;height:1px;background:var(--gold);opacity:.55;}
 .hH1{font-family:var(--fd);font-size:clamp(44px,9vw,124px);font-weight:800;line-height:.88;letter-spacing:-.05em;max-width:min(700px,72vw);margin-bottom:clamp(36px,5vh,60px);}
 .hH1 em{font-style:normal;color:rgba(255,255,255,.18);}
 .hRow{display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(20px,4vw,48px);}
@@ -115,7 +256,7 @@ body{background:var(--black);color:var(--white);font-family:var(--fb);font-weigh
 .abGrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,100px);align-items:start;}
 .abH2{font-family:var(--fd);font-size:clamp(34px,5vw,66px);font-weight:800;line-height:.92;letter-spacing:-.04em;}
 .abH2 span{color:rgba(255,255,255,.18);}
-.abP{font-size:13px;font-weight:300;line-height:2;color:rgba(255,255,255,.42);margin-bottom:20px;}
+.abP{font-size:clamp(13.5px,1.35vw,15.5px);font-weight:300;line-height:2;color:rgba(255,255,255,.42);margin-bottom:20px;}
 .abP strong{color:var(--white);font-weight:500;}
 .foundBox{margin-top:38px;border-left:2px solid rgba(212,168,83,.28);padding-left:18px;}
 .foundName{font-family:var(--fd);font-size:14px;font-weight:700;margin-bottom:4px;}
@@ -137,7 +278,7 @@ body{background:var(--black);color:var(--white);font-family:var(--fb);font-weigh
 .pkgTabs{display:flex;gap:2px;margin-bottom:26px;flex-wrap:wrap;}
 .pkgTab{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:11px 20px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.38);cursor:pointer;transition:all .2s;background:transparent;font-family:var(--fb);}
 .pkgTab.on,.pkgTab:hover{background:var(--white);color:var(--black);border-color:var(--white);}
-.pkgPanels>div{display:none;}.pkgPanels>.on{display:grid;}
+.pkgPanels>div{display:none;}.pkgPanels>.on{display:block;}
 .c3{grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.055);}
 .c2{grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.055);}
 .pkC{background:var(--g9);padding:clamp(24px,4vw,38px) clamp(18px,3vw,30px);position:relative;transition:background .28s;cursor:pointer;}
@@ -176,6 +317,107 @@ body{background:var(--black);color:var(--white);font-family:var(--fb);font-weigh
 .svcBtn{margin-top:11px;padding:7px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.45);font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;font-family:var(--fb);transition:all .18s;width:100%;}
 .svcBtn:hover{background:rgba(255,255,255,.1);color:var(--white);}
 
+/* ══ BENTO GRID ══ */
+.bentoGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:900px){.bentoGrid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.bentoGrid{grid-template-columns:1fr;}}
+.bentoCard{position:relative;padding:20px;border-radius:12px;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .28s;border:1px solid rgba(255,255,255,.08);background:var(--g9);cursor:pointer;will-change:transform;}
+.bentoCard:hover,.bentoCard.ph{transform:translateY(-2px);box-shadow:0 2px 16px rgba(255,255,255,.04);}
+.bentoCard.span2{grid-column:span 2;}
+.bentoCard.spanAll{grid-column:1/-1;}
+@media(max-width:600px){.bentoCard.span2,.bentoCard.spanAll{grid-column:span 1;}}
+.bentoDots{position:absolute;inset:0;opacity:0;transition:opacity .3s;background-image:radial-gradient(circle at center,rgba(255,255,255,.025) 1px,transparent 1px);background-size:4px 4px;pointer-events:none;}
+.bentoCard:hover .bentoDots,.bentoCard.ph .bentoDots{opacity:1;}
+.bentoBorder{position:absolute;inset:0;z-index:-1;border-radius:12px;padding:1px;background:linear-gradient(135deg,transparent,rgba(255,255,255,.07),transparent);opacity:0;transition:opacity .3s;pointer-events:none;}
+.bentoCard:hover .bentoBorder,.bentoCard.ph .bentoBorder{opacity:1;}
+.bentoInner{position:relative;display:flex;flex-direction:column;gap:12px;}
+.bentoTop{display:flex;align-items:center;justify-content:space-between;}
+.bentoIcon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.07);flex-shrink:0;transition:background .3s;}
+.bentoCard:hover .bentoIcon,.bentoCard.ph .bentoIcon{background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04));}
+.bentoStatus{font-size:10px;font-weight:600;padding:4px 9px;border-radius:6px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);letter-spacing:.04em;transition:background .3s;}
+.bentoCard:hover .bentoStatus{background:rgba(255,255,255,.13);}
+.bentoBody{display:flex;flex-direction:column;gap:5px;}
+.bentoTitle{font-size:14.5px;font-weight:600;color:var(--white);letter-spacing:-.02em;line-height:1.3;}
+.bentoMeta{font-size:12px;font-weight:400;color:rgba(255,255,255,.3);margin-left:8px;font-family:var(--fb);}
+.bentoDes{font-size:13px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.75;}
+.bentoFoot{display:flex;align-items:center;justify-content:space-between;margin-top:4px;flex-wrap:wrap;gap:6px;}
+.bentoTags{display:flex;flex-wrap:wrap;gap:5px;}
+.bentoTag{font-size:10px;padding:3px 8px;border-radius:5px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.35);transition:background .2s;backdrop-filter:blur(4px);}
+.bentoCard:hover .bentoTag{background:rgba(255,255,255,.1);}
+.bentoCta{font-size:10px;font-weight:600;color:rgba(255,255,255,.28);opacity:0;transition:opacity .25s;white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;}
+.bentoCard:hover .bentoCta{opacity:1;}
+/* bento light mode */
+html.light .bentoCard{background:#ebebeb;border-color:rgba(0,0,0,.07);}
+html.light .bentoCard:hover,html.light .bentoCard.ph{box-shadow:0 2px 16px rgba(0,0,0,.06);}
+html.light .bentoDots{background-image:radial-gradient(circle at center,rgba(0,0,0,.03) 1px,transparent 1px);}
+html.light .bentoBorder{background:linear-gradient(135deg,transparent,rgba(0,0,0,.05),transparent);}
+html.light .bentoIcon{background:rgba(0,0,0,.06);}
+html.light .bentoCard:hover .bentoIcon,html.light .bentoCard.ph .bentoIcon{background:linear-gradient(135deg,rgba(0,0,0,.11),rgba(0,0,0,.03));}
+html.light .bentoStatus{background:rgba(0,0,0,.06);color:rgba(0,0,0,.45);}
+html.light .bentoCard:hover .bentoStatus{background:rgba(0,0,0,.11);}
+html.light .bentoTitle{color:#0a0a0a;}
+html.light .bentoMeta{color:rgba(0,0,0,.35);}
+html.light .bentoDes{color:rgba(0,0,0,.5);}
+html.light .bentoTag{background:rgba(0,0,0,.06);color:rgba(0,0,0,.42);}
+html.light .bentoCard:hover .bentoTag{background:rgba(0,0,0,.11);}
+html.light .bentoCta{color:rgba(0,0,0,.3);}
+
+/* ══ PRICING PLANS ══ */
+.pkPlanRow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;}
+@media(max-width:1100px){.pkPlanRow{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.pkPlanRow{grid-template-columns:1fr;}}
+.pkPlanRow3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
+@media(max-width:900px){.pkPlanRow3{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.pkPlanRow3{grid-template-columns:1fr;}}
+.pkPlanRow2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px;}
+@media(max-width:600px){.pkPlanRow2{grid-template-columns:1fr;}}
+.pkPlanCard{position:relative;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(160deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,.02) 100%);padding:clamp(22px,3vw,36px) clamp(18px,2.5vw,28px);cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;display:flex;flex-direction:column;}
+.pkPlanCard:hover{transform:translateY(-5px);box-shadow:0 16px 50px rgba(0,0,0,.5);}
+.pkPlanCard.pop{border-color:var(--gold);box-shadow:0 0 36px rgba(212,168,83,.14);}
+.pkPlanCard.pop:hover{box-shadow:0 16px 60px rgba(212,168,83,.22),0 0 36px rgba(212,168,83,.12);}
+.pkPopBadge{display:inline-flex;align-items:center;padding:4px 12px;background:var(--gold);color:#000;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;border-radius:100px;margin-bottom:20px;width:fit-content;}
+.pkPlanBadge{display:inline-flex;align-items:center;padding:4px 12px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.45);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:100px;margin-bottom:20px;width:fit-content;}
+.pkPlanName{font-family:var(--fd);font-size:clamp(18px,2.2vw,24px);font-weight:800;letter-spacing:-.03em;margin-bottom:7px;line-height:1.1;}
+.pkPlanDesc{font-size:12px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.8;margin-bottom:20px;}
+.pkPlanPrice{font-family:var(--fd);font-size:clamp(28px,3.8vw,40px);font-weight:800;line-height:1;margin-bottom:4px;letter-spacing:-.03em;}
+.pkPlanPrice sup{font-size:.42em;font-weight:700;vertical-align:super;letter-spacing:.04em;color:rgba(255,255,255,.5);}
+.pkPlanPriceSub{font-size:10px;color:rgba(255,255,255,.32);letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px;}
+.pkDivider{height:1px;background:rgba(255,255,255,.08);margin:0 0 18px;}
+.pkPlanFeats{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:11px;flex:1;}
+.pkPlanFeats li{display:flex;align-items:flex-start;gap:10px;font-size:12px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.5;}
+.pkFeatCheck{flex-shrink:0;width:14px;height:14px;color:var(--gold);margin-top:1px;}
+.pkPlanCta{width:100%;padding:13px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:rgba(255,255,255,.88);font-size:11.5px;font-weight:700;letter-spacing:.08em;cursor:pointer;transition:background .25s,border-color .25s;font-family:var(--fb);}
+.pkPlanCta:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);}
+.pkPlanCard.pop .pkPlanCta{background:var(--gold);border-color:var(--gold);color:#000;}
+.pkPlanCard.pop .pkPlanCta:hover{background:#e6b85c;border-color:#e6b85c;}
+.pkCmpWrap{margin-top:clamp(36px,5vh,58px);}
+.pkCmpHd{font-family:var(--fd);font-size:13px;font-weight:700;color:rgba(255,255,255,.3);margin-bottom:16px;text-transform:uppercase;letter-spacing:.1em;}
+.pkCmpScroll{overflow-x:auto;}
+.pkCmpTable{width:100%;border-collapse:collapse;font-size:12px;min-width:520px;}
+.pkCmpTable th{padding:12px 16px;font-weight:700;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);border-bottom:1px solid rgba(255,255,255,.07);}
+.pkCmpTable th:first-child{text-align:left;}
+.pkCmpTable th:not(:first-child){text-align:center;}
+.pkCmpTable th.pkPopH{color:var(--gold);}
+.pkCmpTable td{padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.04);color:rgba(255,255,255,.5);}
+.pkCmpTable td:first-child{color:rgba(255,255,255,.58);font-weight:400;text-align:left;}
+.pkCmpTable td:not(:first-child){text-align:center;}
+.pkCmpTable tr:last-child td{border-bottom:none;}
+.pkCmpChk{color:var(--gold);font-size:14px;font-weight:700;}
+.pkCmpDsh{color:rgba(255,255,255,.15);font-size:14px;}
+.pkCmpVal{color:rgba(255,255,255,.45);font-size:11px;}
+.pkSingleGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px;}
+@media(max-width:1100px){.pkSingleGrid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:700px){.pkSingleGrid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:430px){.pkSingleGrid{grid-template-columns:1fr;}}
+.pkSingleCard{border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px 18px;cursor:pointer;transition:background .25s,border-color .25s,transform .3s var(--ease);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:8px;}
+.pkSingleCard:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);transform:translateY(-3px);}
+.pkSingleName{font-size:13px;font-weight:600;line-height:1.3;}
+.pkSinglePrice{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--gold);}
+.pkSingleDesc{font-size:11px;font-weight:300;color:rgba(255,255,255,.36);line-height:1.7;flex:1;}
+.pkSingleMeta{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.22);}
+.pkSingleCta{margin-top:2px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);transition:color .2s;}
+.pkSingleCard:hover .pkSingleCta{color:var(--gold);}
+
 /* PROCESS */
 .procSec{background:rgba(255,255,255,.018);border-top:1px solid rgba(255,255,255,.045);border-bottom:1px solid rgba(255,255,255,.045);}
 .procHd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(46px,7vh,70px);gap:30px;}
@@ -184,18 +426,25 @@ body{background:var(--black);color:var(--white);font-family:var(--fb);font-weigh
 .stepGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.055);}
 .stepC{background:var(--g9);padding:clamp(22px,4vw,38px) clamp(16px,3vw,26px);}
 .stepN{font-family:var(--fd);font-size:clamp(42px,6vw,58px);font-weight:800;letter-spacing:-.06em;line-height:1;color:rgba(255,255,255,.035);margin-bottom:18px;}
-.stepT{font-size:clamp(12px,1.6vw,14.5px);font-weight:600;margin-bottom:9px;}
+.stepT{font-size:clamp(13.5px,1.5vw,15.5px);font-weight:600;margin-bottom:9px;}
 .stepP{font-size:11.5px;font-weight:300;line-height:1.9;color:rgba(255,255,255,.38);}
 
 /* TESTIMONIALS */
-.testiGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.055);}
-.testi{background:var(--g9);padding:clamp(22px,4vw,34px) clamp(16px,3vw,26px);transition:background .28s;}
-.testi:hover{background:rgba(255,255,255,.022);}
-.testiQ{font-size:12.5px;font-weight:300;line-height:1.95;color:rgba(255,255,255,.38);margin-bottom:22px;font-style:italic;}
-.testiName{font-family:var(--fd);font-size:12.5px;font-weight:700;margin-bottom:3px;}
-.testiRole{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);}
-.testiFlag{font-size:9.5px;color:rgba(255,255,255,.18);margin-top:2px;}
-.testiMk{font-family:Georgia,serif;font-size:42px;color:rgba(212,168,83,.13);line-height:1;margin-bottom:14px;}
+.tColsOuter{width:100%;overflow:hidden;mask-image:linear-gradient(to bottom,transparent 0%,black 12%,black 88%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 12%,black 88%,transparent 100%);max-height:520px;}
+.tColsWrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.tCol{overflow:hidden;}
+.tColTrack{display:flex;flex-direction:column;gap:16px;}
+.tColTrack.up{animation:tScrollUp 22s linear infinite;}
+.tColTrack.dn{animation:tScrollDown 26s linear infinite;}
+.tCard{background:linear-gradient(135deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,.025) 100%);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:clamp(20px,2.5vw,28px);display:flex;flex-direction:column;gap:14px;}
+.tCardMk{font-family:Georgia,serif;font-size:38px;color:rgba(212,168,83,.22);line-height:1;}
+.tCardQ{font-size:13px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.65);font-style:italic;flex:1;}
+.tCardFoot{display:flex;flex-direction:column;gap:3px;padding-top:10px;border-top:1px solid rgba(255,255,255,.07);}
+.tCardName{font-family:var(--fd);font-size:13px;font-weight:700;color:#fff;}
+.tCardRole{font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.36);}
+.tCardFlag{font-size:10px;color:rgba(255,255,255,.22);}
+@keyframes tScrollUp{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@keyframes tScrollDown{from{transform:translateY(-50%)}to{transform:translateY(0)}}
 
 /* CLIENTS */
 .cliStrip{border-top:1px solid rgba(255,255,255,.055);border-bottom:1px solid rgba(255,255,255,.055);padding:clamp(34px,6vh,54px) clamp(20px,5vw,60px);}
@@ -482,7 +731,8 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
   .pkgIntro{flex-direction:column;align-items:flex-start;}
   .procHd{flex-direction:column;gap:18px;}
   .stepGrid{grid-template-columns:repeat(2,1fr);}
-  .testiGrid{grid-template-columns:repeat(2,1fr);}
+  .tColsWrap{grid-template-columns:repeat(2,1fr);}
+  .tColsWrap .tCol:nth-child(3){display:none;}
   .statsRow{grid-template-columns:repeat(2,1fr);}
   .c3,.c2{grid-template-columns:1fr;}
   .sidebar{transform:translateX(-100%);}
@@ -493,13 +743,17 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 }
 @media(max-width:600px){
   .cubeScene{display:none;}
+  .ahH1{font-size:clamp(38px,11vw,60px);}
+  .ahBtns{flex-direction:column;width:100%;}
+  .ahBtns .bP,.ahBtns .bO{flex:1;justify-content:center;}
   .hH1{max-width:100%;}
   .hRow{flex-direction:column;align-items:flex-start;gap:22px;}
   .hSub{max-width:100%;}
   .hBtns{width:100%;}
   .bP,.bO{flex:1;justify-content:center;}
   .stepGrid{grid-template-columns:1fr;}
-  .testiGrid{grid-template-columns:1fr;}
+  .tColsWrap{grid-template-columns:1fr;}
+  .tColsWrap .tCol:nth-child(2),.tColsWrap .tCol:nth-child(3){display:none;}
   .metrics{grid-template-columns:1fr 1fr;}
   .ctaRow{flex-direction:column;align-items:center;gap:22px;}
   .locs{flex-direction:column;}
@@ -525,18 +779,28 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
     <li><a onclick="scrollTo_('#testimonials')">Clients</a></li>
     <li><a class="nCta" onclick="goTo('auth')">Client Portal</a></li>
   </ul>
+  <button id="themeBtn" aria-label="Toggle theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><defs><mask id="moonMask"><rect width="100%" height="100%" fill="white"/><circle class="t-mask-c" cx="33" cy="0" r="9" fill="black"/></mask></defs><circle class="t-circle" cx="12" cy="12" r="5" fill="currentColor" stroke="none" mask="url(#moonMask)"/><g class="t-rays"><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="5.64" y1="5.64" x2="4.22" y2="4.22"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/><line x1="5.64" y1="18.36" x2="4.22" y2="19.78"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/></g></svg></button>
   <button class="nBurger" id="mBurger" onclick="toggleMob()"><span></span><span></span><span></span></button>
 </nav>
 <section class="hero" id="hero">
-  <div class="hGrid"></div><div class="hOrb"></div>
-  <div class="cubeScene"><div class="cube3d"><div class="cf cf-f"></div><div class="cf cf-b"></div><div class="cf cf-l"></div><div class="cf cf-r"></div><div class="cf cf-t"></div><div class="cf cf-d"></div></div><div class="cPts"><div class="cp"></div><div class="cp"></div><div class="cp"></div><div class="cp"></div><div class="cp"></div><div class="cp"></div></div></div>
-  <p class="hEye fu">Brand Management Firm &nbsp;·&nbsp; Egypt &nbsp;·&nbsp; Canada</p>
-  <h1 class="hH1 fu d1">Architect<br><em>Of Market</em><br>Dominance.</h1>
-  <div class="hRow fu d2">
-    <p class="hSub">We don't just build brands — we forge global legacies. Sharp, bold, engineered to command authority across every market we enter.</p>
-    <div class="hBtns">
-      <button class="bP" onclick="goTo('auth')">Start a Project <span class="arr"></span></button>
+  <div id="threeHero"></div>
+  <div class="heroGrad"></div>
+  <div class="hGrid"></div>
+  <div class="ahWrap">
+    <a class="ahBadge fu" onclick="scrollTo_('#about')">
+      Explore our approach
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <h1 class="ahH1 fu d1">
+      <span class="ahStatic">We architect</span>
+      <span class="ahCycleWrap">
+        <span class="ahWord in" id="ahWord">Dominance.</span>
+      </span>
+    </h1>
+    <p class="ahSub fu d2">We don't just build brands — we forge global legacies. Sharp, bold, engineered to command authority across every market we enter.</p>
+    <div class="ahBtns fu d3">
       <button class="bO" onclick="scrollTo_('#packages')">View Packages <span class="arr"></span></button>
+      <button class="bP" onclick="goTo('auth')">Start a Project <span class="arr"></span></button>
     </div>
   </div>
   <div class="scInd fu d3"><span>Scroll</span><div class="scLine"></div></div>
@@ -578,39 +842,253 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
     <button class="pkgTab" onclick="mTab('singles',this)">Single Services</button>
   </div>
   <div class="pkgPanels">
-    <div id="mt-marketing" class="on c3">
-      <div class="pkC feat"><div class="pkBadge">⭐ Top Package</div><div class="pkName">Brand Management</div><div class="pkSec">Marketing · Branding · Technology</div><div class="pkPr">60,000 EGP</div><div class="pkNote">/ Monthly · Annual Contract</div><div class="pkDisc">20% OFF Annual Payment</div><div class="pkDiv"></div><ul class="pkList"><li>Marketing (Online &amp; Offline)</li><li>Marketing Analysis</li><li>Annual Marketing Strategy</li><li>Content Creation</li><li>Graphic Designing</li><li>Website Creation</li><li>Moderation &amp; Media Buying</li><li>Photography &amp; Videography</li><li>Social Media Handling</li><li>Risk Management</li></ul><div class="pkMeta"><span>📅 4 Meetings/Month</span><span>📄 Annual Contract</span></div><button class="pkSelBtn" onclick="startPkg('Brand Management','60,000 EGP/mo')">Select This Package →</button></div>
-      <div class="pkC"><div class="pkName">Cube Package</div><div class="pkSec">Marketing · Technology</div><div class="pkPr">45,000 EGP</div><div class="pkNote">/ Monthly · Annual Contract</div><div class="pkDisc">20% OFF Annual Payment</div><div class="pkDiv"></div><ul class="pkList"><li>Marketing (Online &amp; Offline)</li><li>Marketing Analysis</li><li>Annual Strategy</li><li>Content Creation</li><li>Graphic Designing</li><li>Moderation &amp; Media Buying</li><li>Photography &amp; Video Editing</li><li>Social Media Handling</li></ul><div class="pkMeta"><span>📅 4 Meetings/Month</span><span>📄 Annual Contract</span></div><button class="pkSelBtn" onclick="startPkg('Cube Package','45,000 EGP/mo')">Select This Package →</button></div>
-      <div class="pkC"><div class="pkName">Blvck Package</div><div class="pkSec">Marketing</div><div class="pkPr">30,000 EGP</div><div class="pkNote">/ Monthly · Annual Contract</div><div class="pkDisc">20% OFF Annual Payment</div><div class="pkDiv"></div><ul class="pkList"><li>Marketing (Online &amp; Offline)</li><li>Marketing Analysis</li><li>Content Creation</li><li>Graphic Designing</li><li>Moderation &amp; Media Buying</li><li>Video Editing</li><li>Social Media Handling</li></ul><div class="pkMeta"><span>📅 2 Meetings/Month</span><span>📄 Annual Contract</span></div><button class="pkSelBtn" onclick="startPkg('Blvck Package','30,000 EGP/mo')">Select This Package →</button></div>
-      <div class="pkC" style="grid-column:1/-1;"><div class="pkName">Blvck-Lite Package</div><div class="pkSec">Marketing — Entry Level</div><div style="display:flex;gap:56px;align-items:flex-start;flex-wrap:wrap;"><div><div class="pkPr">20,000 EGP</div><div class="pkNote">/ Monthly · Annual Contract</div><div class="pkDisc">20% OFF Annual Payment</div><div class="pkMeta" style="margin-top:10px;border:none;padding:0;"><span>📅 2 Meetings/Month</span></div><button class="pkSelBtn" style="margin-top:14px;max-width:240px;" onclick="startPkg('Blvck-Lite Package','20,000 EGP/mo')">Select →</button></div><ul class="pkList" style="flex:1;min-width:200px;margin-top:6px;"><li>Online Marketing</li><li>Content Creation</li><li>Graphic Designing</li><li>Moderation</li><li>3 Social Media Platforms</li></ul></div></div>
-    </div>
-    <div id="mt-branding" class="c3">
-      <div class="pkC feat"><div class="pkBadge">Platinum</div><div class="pkName">Platinum Branding</div><div class="pkSec">Branding</div><div class="pkPr">27,500 EGP</div><div class="pkNote">One-time · Up to 45 Days</div><div class="pkDiv"></div><ul class="pkList"><li>2× Logo Designs + 2 Sets Minor Changes</li><li>Primary &amp; Secondary Logo + Mark</li><li>Social Media Profile Logo</li><li>Colour, Style &amp; Competitor Research</li><li>Email Signature &amp; Letterhead</li><li>All Printable Designs (PDF)</li><li>Guideline &amp; Identity Guide</li><li>Files: JPEG, PNG, SVG, PDF</li></ul><div class="pkMeta"><span>📅 2 Meetings</span><span>⏱ 45 Days</span></div><button class="pkSelBtn" onclick="startPkg('Platinum Branding','27,500 EGP')">Select This Package →</button></div>
-      <div class="pkC"><div class="pkName">Premium Branding</div><div class="pkSec">Branding</div><div class="pkPr">22,500 EGP</div><div class="pkNote">One-time · Up to 45 Days</div><div class="pkDiv"></div><ul class="pkList"><li>2× Logo Designs + 2 Sets Changes</li><li>Primary &amp; Secondary Logo + Mark</li><li>Social Media Profile Logo</li><li>Colour, Style &amp; Competitor Research</li><li>Letterhead Design (PDF)</li><li>Business Card Designs (PDF)</li><li>Files: JPEG, PNG, SVG, PDF</li></ul><div class="pkMeta"><span>📅 2 Meetings</span><span>⏱ 45 Days</span></div><button class="pkSelBtn" onclick="startPkg('Premium Branding','22,500 EGP')">Select This Package →</button></div>
-      <div class="pkC"><div class="pkName">Basic Branding</div><div class="pkSec">Branding</div><div class="pkPr">17,500 EGP</div><div class="pkNote">One-time · Up to 45 Days</div><div class="pkDiv"></div><ul class="pkList"><li>1× Logo Design + 2 Sets Changes</li><li>Primary &amp; Secondary Logo + Mark</li><li>Social Media Profile Logo</li><li>Colour, Style &amp; Competitor Research</li><li>Files: JPEG, PNG, SVG, PDF</li></ul><div class="pkMeta"><span>📅 2 Meetings</span><span>⏱ 45 Days</span></div><button class="pkSelBtn" onclick="startPkg('Basic Branding','17,500 EGP')">Select This Package →</button></div>
-    </div>
-    <div id="mt-tech" class="c2">
-      <div class="pkC feat"><div class="pkBadge">Full Stack</div><div class="pkName">Full Development Web Creation</div><div class="pkSec">Technology</div><div class="pkPr">24,500 EGP</div><div class="pkNote">One-time · 45 Days</div><div class="pkDiv"></div><ul class="pkList"><li>UI/UX Design</li><li>Web Securing</li><li>Full Web Creation</li><li>6 Months Moderation</li><li>SEO Optimizing</li><li>Performance Optimization</li><li>Bugs Fixing</li></ul><div class="pkMeta"><span>📅 3 Meetings</span><span>⏱ 45 Days</span></div><button class="pkSelBtn" onclick="startPkg('Full Development Web Creation','24,500 EGP')">Select This Package →</button></div>
-      <div class="pkC"><div class="pkName">Standard Web Creation</div><div class="pkSec">Technology</div><div class="pkPr">17,500 EGP</div><div class="pkNote">One-time · Up to 45 Days</div><div class="pkDiv"></div><ul class="pkList"><li>UI/UX Design</li><li>Web Securing</li><li>Web Creation</li><li>3 Months Moderation</li><li>SEO Optimizing</li></ul><div class="pkMeta"><span>📅 3 Meetings</span><span>⏱ 45 Days</span></div><button class="pkSelBtn" onclick="startPkg('Standard Web Creation','17,500 EGP')">Select This Package →</button></div>
-    </div>
-    <div id="mt-singles">
-      <div class="svcsGrid">
-        <div class="svc"><div class="svcName">Marketing Annual Plan</div><div class="svcPr">9,000 EGP</div><div class="svcDur">25 Days</div><button class="svcBtn" onclick="startPkg('Marketing Annual Plan','9,000 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Market Analysis</div><div class="svcPr">8,000 EGP</div><div class="svcDur">25 Days</div><button class="svcBtn" onclick="startPkg('Market Analysis','8,000 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Marketing Strategy</div><div class="svcPr">7,500 EGP</div><div class="svcDur">25 Days</div><button class="svcBtn" onclick="startPkg('Marketing Strategy','7,500 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Content Plan</div><div class="svcPr">5,000 EGP</div><div class="svcDur">25 Days</div><button class="svcBtn" onclick="startPkg('Content Plan','5,000 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Content Plan + Designs</div><div class="svcPr">8,000 EGP</div><div class="svcDur">25 Days</div><button class="svcBtn" onclick="startPkg('Content Plan + Designs','8,000 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Media Buying</div><div class="svcPr">10,000 EGP</div><div class="svcDur" style="font-size:8.5px">+ 5% on Spend · 30 Days</div><button class="svcBtn" onclick="startPkg('Media Buying','10,000 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Moderation</div><div class="svcPr">2,500 EGP</div><div class="svcDur">30 Days</div><button class="svcBtn" onclick="startPkg('Moderation','2,500 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Photoshoot</div><div class="svcPr">12,000 EGP</div><div class="svcDur">By Arrangement</div><button class="svcBtn" onclick="startPkg('Photoshoot','12,000 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Videoshoot (up to 6 min)</div><div class="svcPr">14,000 EGP</div><div class="svcDur">By Arrangement</div><button class="svcBtn" onclick="startPkg('Videoshoot','14,000 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Video Editing (up to 8 min)</div><div class="svcPr">5,500 EGP</div><div class="svcDur">5 Days</div><button class="svcBtn" onclick="startPkg('Video Editing','5,500 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Reel Creation (3 × 60s)</div><div class="svcPr">6,000 EGP</div><div class="svcDur">By Arrangement</div><button class="svcBtn" onclick="startPkg('Reel Creation','6,000 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Website Bug Fixing</div><div class="svcPr">5,000 EGP</div><div class="svcDur">1 Day</div><button class="svcBtn" onclick="startPkg('Website Bug Fixing','5,000 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Website Editing</div><div class="svcPr">8,500 EGP</div><div class="svcDur">5 Days</div><button class="svcBtn" onclick="startPkg('Website Editing','8,500 EGP')">Select →</button></div>
-        <div class="svc"><div class="svcName">Website Moderation</div><div class="svcPr">12,500 EGP</div><div class="svcDur">30 Days</div><button class="svcBtn" onclick="startPkg('Website Moderation','12,500 EGP')">Select →</button></div>
+
+    <!-- ── MARKETING ── -->
+    <div id="mt-marketing" class="on">
+      <div class="pkPlanRow">
+
+        <div class="pkPlanCard" onclick="startPkg('Blvck-Lite Package','20,000 EGP/mo')">
+          <span class="pkPlanBadge">Entry Level</span>
+          <div class="pkPlanName">Blvck-Lite</div>
+          <div class="pkPlanDesc">Entry-level marketing for growing brands across 3 platforms, monthly.</div>
+          <div class="pkPlanPrice">20,000<sup>EGP</sup></div>
+          <div class="pkPlanPriceSub">per month</div>
+          <div class="pkDivider"></div>
+          <ul class="pkPlanFeats">
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Content Creation</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Graphic Design</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Social Media Moderation (3 platforms)</li>
+          </ul>
+          <button class="pkPlanCta" onclick="event.stopPropagation();startPkg('Blvck-Lite Package','20,000 EGP/mo')">Select Plan →</button>
+        </div>
+
+        <div class="pkPlanCard" onclick="startPkg('Blvck Package','30,000 EGP/mo')">
+          <span class="pkPlanBadge">Standard</span>
+          <div class="pkPlanName">Blvck Package</div>
+          <div class="pkPlanDesc">Core online marketing — strategy, content, design, moderation, media buying &amp; video editing.</div>
+          <div class="pkPlanPrice">30,000<sup>EGP</sup></div>
+          <div class="pkPlanPriceSub">per month</div>
+          <div class="pkDivider"></div>
+          <ul class="pkPlanFeats">
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Content Creation &amp; Design</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Marketing Strategy</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Media Buying Management</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Video Editing</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Full Social Media Moderation</li>
+          </ul>
+          <button class="pkPlanCta" onclick="event.stopPropagation();startPkg('Blvck Package','30,000 EGP/mo')">Select Plan →</button>
+        </div>
+
+        <div class="pkPlanCard pop" onclick="startPkg('Cube Package','45,000 EGP/mo')">
+          <span class="pkPopBadge">Most Popular</span>
+          <div class="pkPlanName">Cube Package</div>
+          <div class="pkPlanDesc">Marketing + tech powerhouse with photography &amp; video production. Annual contract, 20% OFF.</div>
+          <div class="pkPlanPrice">45,000<sup>EGP</sup></div>
+          <div class="pkPlanPriceSub">per month · annual contract</div>
+          <div class="pkDivider"></div>
+          <ul class="pkPlanFeats">
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Everything in Blvck Package</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Brand Photography</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Video Production &amp; Editing</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>All Social Platforms</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>20% Annual Discount</li>
+          </ul>
+          <button class="pkPlanCta" onclick="event.stopPropagation();startPkg('Cube Package','45,000 EGP/mo')">Select Plan →</button>
+        </div>
+
+        <div class="pkPlanCard" onclick="startPkg('Brand Management','60,000 EGP/mo')">
+          <span class="pkPlanBadge">Full Service</span>
+          <div class="pkPlanName">Brand Management</div>
+          <div class="pkPlanDesc">Full-service brand dominance — marketing, branding, web, photography, media buying &amp; risk management. Annual, 20% OFF.</div>
+          <div class="pkPlanPrice">60,000<sup>EGP</sup></div>
+          <div class="pkPlanPriceSub">per month · annual contract</div>
+          <div class="pkDivider"></div>
+          <ul class="pkPlanFeats">
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Everything in Cube Package</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Website Management</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Risk Management</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Dedicated Account Manager</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>20% Annual Discount</li>
+          </ul>
+          <button class="pkPlanCta" onclick="event.stopPropagation();startPkg('Brand Management','60,000 EGP/mo')">Select Plan →</button>
+        </div>
+
+      </div>
+      <div class="pkCmpWrap">
+        <div class="pkCmpHd">Compare Plans</div>
+        <div class="pkCmpScroll">
+          <table class="pkCmpTable">
+            <thead><tr><th>Feature</th><th>Blvck-Lite</th><th>Blvck</th><th class="pkPopH">Cube</th><th>Brand Mgmt</th></tr></thead>
+            <tbody>
+              <tr><td>Content Creation</td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Graphic Design</td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Social Moderation</td><td><span class="pkCmpVal">3 platforms</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Marketing Strategy</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Media Buying</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Video Editing</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Brand Photography</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Website Management</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Risk Management</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Annual 20% Discount</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
+
+    <!-- ── BRANDING ── -->
+    <div id="mt-branding">
+      <div class="pkPlanRow3">
+
+        <div class="pkPlanCard" onclick="startPkg('Basic Branding','17,500 EGP')">
+          <span class="pkPlanBadge">Basic</span>
+          <div class="pkPlanName">Basic Branding</div>
+          <div class="pkPlanDesc">1 logo design with revisions — primary &amp; secondary marks, social media logo, full file delivery.</div>
+          <div class="pkPlanPrice">17,500<sup>EGP</sup></div>
+          <div class="pkPlanPriceSub">one-time · 45 days</div>
+          <div class="pkDivider"></div>
+          <ul class="pkPlanFeats">
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>1 Logo Design + Revisions</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Primary &amp; Secondary Marks</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Social Media Logo</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>JPEG / PNG / SVG / PDF Delivery</li>
+          </ul>
+          <button class="pkPlanCta" onclick="event.stopPropagation();startPkg('Basic Branding','17,500 EGP')">Select Plan →</button>
+        </div>
+
+        <div class="pkPlanCard" onclick="startPkg('Premium Branding','22,500 EGP')">
+          <span class="pkPlanBadge">Premium</span>
+          <div class="pkPlanName">Premium Branding</div>
+          <div class="pkPlanDesc">2 logo concepts, business card, letterhead, social media logo &amp; complete file delivery.</div>
+          <div class="pkPlanPrice">22,500<sup>EGP</sup></div>
+          <div class="pkPlanPriceSub">one-time · 45 days</div>
+          <div class="pkDivider"></div>
+          <ul class="pkPlanFeats">
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>2 Logo Concepts</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Business Card + Letterhead</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Social Media Logo</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Complete File Delivery</li>
+          </ul>
+          <button class="pkPlanCta" onclick="event.stopPropagation();startPkg('Premium Branding','22,500 EGP')">Select Plan →</button>
+        </div>
+
+        <div class="pkPlanCard pop" onclick="startPkg('Platinum Branding','27,500 EGP')">
+          <span class="pkPopBadge">Full Identity</span>
+          <div class="pkPlanName">Platinum Branding</div>
+          <div class="pkPlanDesc">Full identity system — brand guidelines, all printables, email signature &amp; complete identity guide.</div>
+          <div class="pkPlanPrice">27,500<sup>EGP</sup></div>
+          <div class="pkPlanPriceSub">one-time · 45 days</div>
+          <div class="pkDivider"></div>
+          <ul class="pkPlanFeats">
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>2 Logo Concepts</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Brand Guideline &amp; Identity Guide</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Email Signature + Letterhead</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>All Printables</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Complete File Delivery</li>
+          </ul>
+          <button class="pkPlanCta" onclick="event.stopPropagation();startPkg('Platinum Branding','27,500 EGP')">Select Plan →</button>
+        </div>
+
+      </div>
+      <div class="pkCmpWrap">
+        <div class="pkCmpHd">Compare Plans</div>
+        <div class="pkCmpScroll">
+          <table class="pkCmpTable">
+            <thead><tr><th>Feature</th><th>Basic</th><th>Premium</th><th class="pkPopH">Platinum</th></tr></thead>
+            <tbody>
+              <tr><td>Logo Concepts</td><td><span class="pkCmpVal">1</span></td><td><span class="pkCmpVal">2</span></td><td><span class="pkCmpVal">2</span></td></tr>
+              <tr><td>Primary &amp; Secondary Marks</td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Social Media Logo</td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Business Card</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Letterhead</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Brand Guidelines</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Identity Guide</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Email Signature</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>All Printables</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Delivery Timeline</td><td><span class="pkCmpVal">45 days</span></td><td><span class="pkCmpVal">45 days</span></td><td><span class="pkCmpVal">45 days</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TECHNOLOGY ── -->
+    <div id="mt-tech">
+      <div class="pkPlanRow2">
+
+        <div class="pkPlanCard" onclick="startPkg('Standard Web Creation','17,500 EGP')">
+          <span class="pkPlanBadge">Standard</span>
+          <div class="pkPlanName">Standard Web</div>
+          <div class="pkPlanDesc">UI/UX design, website build, security, SEO optimization &amp; 3 months of moderation support.</div>
+          <div class="pkPlanPrice">17,500<sup>EGP</sup></div>
+          <div class="pkPlanPriceSub">one-time · 45 days</div>
+          <div class="pkDivider"></div>
+          <ul class="pkPlanFeats">
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>UI/UX Design</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Website Build + Security</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>SEO Optimization</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>3 Months Moderation Support</li>
+          </ul>
+          <button class="pkPlanCta" onclick="event.stopPropagation();startPkg('Standard Web Creation','17,500 EGP')">Select Plan →</button>
+        </div>
+
+        <div class="pkPlanCard pop" onclick="startPkg('Full Development Web Creation','24,500 EGP')">
+          <span class="pkPopBadge">Full Stack</span>
+          <div class="pkPlanName">Full Development</div>
+          <div class="pkPlanDesc">Complete full-stack build — UI/UX, secure development, SEO, performance tuning, bug fixes &amp; 6 months support.</div>
+          <div class="pkPlanPrice">24,500<sup>EGP</sup></div>
+          <div class="pkPlanPriceSub">one-time · 45 days</div>
+          <div class="pkDivider"></div>
+          <ul class="pkPlanFeats">
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Everything in Standard</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Full-Stack Development</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Performance Tuning + Bug Fixes</li>
+            <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>6 Months Moderation Support</li>
+          </ul>
+          <button class="pkPlanCta" onclick="event.stopPropagation();startPkg('Full Development Web Creation','24,500 EGP')">Select Plan →</button>
+        </div>
+
+      </div>
+      <div class="pkCmpWrap">
+        <div class="pkCmpHd">Compare Plans</div>
+        <div class="pkCmpScroll">
+          <table class="pkCmpTable">
+            <thead><tr><th>Feature</th><th>Standard</th><th class="pkPopH">Full Development</th></tr></thead>
+            <tbody>
+              <tr><td>UI/UX Design</td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Website Build + Security</td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>SEO Optimization</td><td><span class="pkCmpChk">✓</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Full-Stack Development</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Performance Tuning</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Bug Fixes Included</td><td><span class="pkCmpDsh">—</span></td><td><span class="pkCmpChk">✓</span></td></tr>
+              <tr><td>Moderation Support</td><td><span class="pkCmpVal">3 months</span></td><td><span class="pkCmpVal">6 months</span></td></tr>
+              <tr><td>Delivery Timeline</td><td><span class="pkCmpVal">45 days</span></td><td><span class="pkCmpVal">45 days</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SINGLE SERVICES ── -->
+    <div id="mt-singles">
+      <div class="pkSingleGrid">
+        <div class="pkSingleCard" onclick="startPkg('Marketing Annual Plan','9,000 EGP')"><div class="pkSingleName">Marketing Annual Plan</div><div class="pkSinglePrice">9,000 EGP</div><div class="pkSingleDesc">Comprehensive 12-month marketing roadmap tailored to your brand goals.</div><div class="pkSingleMeta">25 Days</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Market Analysis','8,000 EGP')"><div class="pkSingleName">Market Analysis</div><div class="pkSinglePrice">8,000 EGP</div><div class="pkSingleDesc">Deep-dive competitor research and market positioning report.</div><div class="pkSingleMeta">25 Days</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Marketing Strategy','7,500 EGP')"><div class="pkSingleName">Marketing Strategy</div><div class="pkSinglePrice">7,500 EGP</div><div class="pkSingleDesc">Actionable brand strategy with channel plan, messaging, and KPI framework.</div><div class="pkSingleMeta">25 Days</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Content Plan','5,000 EGP')"><div class="pkSingleName">Content Plan</div><div class="pkSinglePrice">5,000 EGP</div><div class="pkSingleDesc">Monthly content calendar with topic clusters and post timing.</div><div class="pkSingleMeta">25 Days</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Content Plan + Designs','8,000 EGP')"><div class="pkSingleName">Content Plan + Designs</div><div class="pkSinglePrice">8,000 EGP</div><div class="pkSingleDesc">Content calendar plus all graphic designs ready to publish.</div><div class="pkSingleMeta">25 Days</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Media Buying','10,000 EGP')"><div class="pkSingleName">Media Buying</div><div class="pkSinglePrice">10,000 EGP <span style="font-size:10px;font-weight:400;color:rgba(212,168,83,.6)">+ 5% spend</span></div><div class="pkSingleDesc">Paid ad management — budget allocation, creative testing, performance reporting.</div><div class="pkSingleMeta">30 Days</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Moderation','2,500 EGP')"><div class="pkSingleName">Moderation</div><div class="pkSinglePrice">2,500 EGP</div><div class="pkSingleDesc">Daily community management — replies, DMs, and engagement across social platforms.</div><div class="pkSingleMeta">30 Days</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Photoshoot','12,000 EGP')"><div class="pkSingleName">Photoshoot</div><div class="pkSinglePrice">12,000 EGP</div><div class="pkSingleDesc">Professional brand photography session — product, portrait, or lifestyle.</div><div class="pkSingleMeta">By Arrangement</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Videoshoot','14,000 EGP')"><div class="pkSingleName">Videoshoot</div><div class="pkSinglePrice">14,000 EGP</div><div class="pkSingleDesc">Full video production — scripting, filming, and raw footage delivery. Up to 6 minutes.</div><div class="pkSingleMeta">By Arrangement</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Video Editing','5,500 EGP')"><div class="pkSingleName">Video Editing</div><div class="pkSinglePrice">5,500 EGP</div><div class="pkSingleDesc">Professional edit — cuts, colour grade, captions, music, motion graphics. Up to 8 min.</div><div class="pkSingleMeta">5 Days</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Reel Creation','6,000 EGP')"><div class="pkSingleName">Reel Creation</div><div class="pkSinglePrice">6,000 EGP</div><div class="pkSingleDesc">Three 60-second short-form reels — filmed, edited, and optimised for social media.</div><div class="pkSingleMeta">By Arrangement</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Website Bug Fixing','5,000 EGP')"><div class="pkSingleName">Website Bug Fixing</div><div class="pkSinglePrice">5,000 EGP</div><div class="pkSingleDesc">Rapid diagnosis and resolution of website bugs, broken links, and performance issues.</div><div class="pkSingleMeta">1 Day</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Website Editing','8,500 EGP')"><div class="pkSingleName">Website Editing</div><div class="pkSinglePrice">8,500 EGP</div><div class="pkSingleDesc">Content updates, design tweaks, and structural improvements to an existing website.</div><div class="pkSingleMeta">5 Days</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Website Moderation','12,500 EGP')"><div class="pkSingleName">Website Moderation</div><div class="pkSinglePrice">12,500 EGP</div><div class="pkSingleDesc">Monthly website upkeep — content updates, security checks, and performance monitoring.</div><div class="pkSingleMeta">30 Days</div><div class="pkSingleCta">SELECT →</div></div>
+      </div>
+    </div>
+
   </div>
 </section>
 <!-- PROCESS -->
@@ -627,13 +1105,44 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 <!-- TESTIMONIALS -->
 <section class="ms" id="testimonials">
   <div class="sLbl fu">04 — What Clients Say</div>
-  <div class="testiGrid">
-    <div class="testi fu"><div class="testiMk">"</div><p class="testiQ">Excellent. They did everything as good as I could have hoped and I would recommend them to anyone!</p><div class="testiName">Evan O'Ceallaigh</div><div class="testiRole">Founder, UGC HUB</div><div class="testiFlag">Ireland</div></div>
-    <div class="testi fu d1"><div class="testiMk">"</div><p class="testiQ">Excellent in delivering the work. Very skilled and very accommodating. Delivered an excellent job in a short timeline.</p><div class="testiName">Jamana Alzadjali</div><div class="testiRole">Managing Partner, 3rd Street Donuts</div><div class="testiFlag">United Arab Emirates</div></div>
-    <div class="testi fu d2"><div class="testiMk">"</div><p class="testiQ">We recently collaborated to develop our brand and marketing strategy, and we are absolutely thrilled with the outcome.</p><div class="testiName">Dan Dragomir</div><div class="testiRole">Marketing Director, Cyrus</div><div class="testiFlag">United States</div></div>
-    <div class="testi fu"><div class="testiMk">"</div><p class="testiQ">Changing the brand direction and creating a new marketing strategy was challenging — BlvckCube's team nailed it.</p><div class="testiName">Ibrahim Saad</div><div class="testiRole">Founder, Hero Plast</div><div class="testiFlag">Egypt</div></div>
-    <div class="testi fu d1"><div class="testiMk">"</div><p class="testiQ">Very fast, professional and talented. Exactly the team you want building your brand.</p><div class="testiName">Amr Safaan</div><div class="testiRole">Founder, CTO</div><div class="testiFlag">Egypt</div></div>
-    <div class="testi fu d2"><div class="testiMk">"</div><p class="testiQ">Great work as always, great management as always. I like how perfectly they move forward every single time.</p><div class="testiName">Mohamed El-Fath</div><div class="testiRole">Founder, Zidan-IT</div><div class="testiFlag">Egypt</div></div>
+  <div class="pkgIntro" style="margin-bottom:clamp(32px,5vh,48px);"><h2 class="pkgH2 fu">What Clients<br>Say.</h2><p class="pkgSub fu d1">Real results. Real clients. Across 7+ industries and 4 continents.</p></div>
+  <div class="tColsOuter">
+    <div class="tColsWrap">
+
+      <!-- Col 1 — scrolls up, 22s -->
+      <div class="tCol">
+        <div class="tColTrack up">
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">Excellent. They did everything as good as I could have hoped and I would recommend them to anyone!</p><div class="tCardFoot"><div class="tCardName">Evan O'Ceallaigh</div><div class="tCardRole">Founder, UGC HUB</div><div class="tCardFlag">Ireland</div></div></div>
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">We recently collaborated to develop our brand and marketing strategy, and we are absolutely thrilled with the outcome.</p><div class="tCardFoot"><div class="tCardName">Dan Dragomir</div><div class="tCardRole">Marketing Director, Cyrus</div><div class="tCardFlag">United States</div></div></div>
+          <!-- duplicate for seamless loop -->
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">Excellent. They did everything as good as I could have hoped and I would recommend them to anyone!</p><div class="tCardFoot"><div class="tCardName">Evan O'Ceallaigh</div><div class="tCardRole">Founder, UGC HUB</div><div class="tCardFlag">Ireland</div></div></div>
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">We recently collaborated to develop our brand and marketing strategy, and we are absolutely thrilled with the outcome.</p><div class="tCardFoot"><div class="tCardName">Dan Dragomir</div><div class="tCardRole">Marketing Director, Cyrus</div><div class="tCardFlag">United States</div></div></div>
+        </div>
+      </div>
+
+      <!-- Col 2 — scrolls down, 26s -->
+      <div class="tCol">
+        <div class="tColTrack dn">
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">Excellent in delivering the work. Very skilled and very accommodating. Delivered an excellent job in a short timeline.</p><div class="tCardFoot"><div class="tCardName">Jamana Alzadjali</div><div class="tCardRole">Managing Partner, 3rd Street Donuts</div><div class="tCardFlag">United Arab Emirates</div></div></div>
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">Changing the brand direction and creating a new marketing strategy was challenging — BlvckCube's team nailed it.</p><div class="tCardFoot"><div class="tCardName">Ibrahim Saad</div><div class="tCardRole">Founder, Hero Plast</div><div class="tCardFlag">Egypt</div></div></div>
+          <!-- duplicate -->
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">Excellent in delivering the work. Very skilled and very accommodating. Delivered an excellent job in a short timeline.</p><div class="tCardFoot"><div class="tCardName">Jamana Alzadjali</div><div class="tCardRole">Managing Partner, 3rd Street Donuts</div><div class="tCardFlag">United Arab Emirates</div></div></div>
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">Changing the brand direction and creating a new marketing strategy was challenging — BlvckCube's team nailed it.</p><div class="tCardFoot"><div class="tCardName">Ibrahim Saad</div><div class="tCardRole">Founder, Hero Plast</div><div class="tCardFlag">Egypt</div></div></div>
+        </div>
+      </div>
+
+      <!-- Col 3 — scrolls up, 20s -->
+      <div class="tCol">
+        <div class="tColTrack up" style="animation-duration:20s;">
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">Very fast, professional and talented. Exactly the team you want building your brand.</p><div class="tCardFoot"><div class="tCardName">Amr Safaan</div><div class="tCardRole">Founder &amp; CTO</div><div class="tCardFlag">Egypt</div></div></div>
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">Great work as always, great management as always. I like how perfectly they move forward every single time.</p><div class="tCardFoot"><div class="tCardName">Mohamed El-Fath</div><div class="tCardRole">Founder, Zidan-IT</div><div class="tCardFlag">Egypt</div></div></div>
+          <!-- duplicate -->
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">Very fast, professional and talented. Exactly the team you want building your brand.</p><div class="tCardFoot"><div class="tCardName">Amr Safaan</div><div class="tCardRole">Founder &amp; CTO</div><div class="tCardFlag">Egypt</div></div></div>
+          <div class="tCard"><div class="tCardMk">"</div><p class="tCardQ">Great work as always, great management as always. I like how perfectly they move forward every single time.</p><div class="tCardFoot"><div class="tCardName">Mohamed El-Fath</div><div class="tCardRole">Founder, Zidan-IT</div><div class="tCardFlag">Egypt</div></div></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 <div class="cliStrip fu"><p class="cliLbl">Trusted by brands across 7+ industries</p><div class="cliLogos"><span class="cliLogo">AlliottGlobalAlliance</span><span class="cliLogo">Home Warehouse</span><span class="cliLogo">E.SPACES</span><span class="cliLogo">BASKET</span><span class="cliLogo">careerbuilder</span><span class="cliLogo">CYRUS</span><span class="cliLogo">Magnolia Bakery</span><span class="cliLogo">ArvinMeritor</span><span class="cliLogo">TDB Singapore</span><span class="cliLogo">Première</span></div></div>
@@ -1038,6 +1547,47 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 <div class="modalBg" id="mClientDetail"><div class="modal"><div class="mHead"><span class="mTitle" id="cDetailName">Client Detail</span><button class="mClose" onclick="closeModal('mClientDetail')">✕</button></div><div class="mBody"><div style="display:grid;gap:9px;margin-bottom:18px;font-size:12px;"><div style="display:flex;justify-content:space-between;"><span style="color:rgba(255,255,255,.4)">Email</span><span id="cDetailEmail"></span></div><div style="display:flex;justify-content:space-between;"><span style="color:rgba(255,255,255,.4)">Company</span><span id="cDetailCompany"></span></div><div style="display:flex;justify-content:space-between;"><span style="color:rgba(255,255,255,.4)">Client Since</span><span id="cDetailSince"></span></div></div><div class="panTitle" style="font-size:13px;margin-bottom:11px;">Projects</div><div id="cDetailProjs"></div></div><div class="mFoot"><button class="bO" onclick="closeModal('mClientDetail')">Close</button></div></div></div>
 
 <script>
+/* ── Theme Toggle ── */
+(function(){
+  var html=document.documentElement;
+  if(localStorage.getItem('bc_theme')==='light') html.classList.add('light');
+  var _ac=null,_buf=null;
+  function tickSound(){
+    try{
+      if(!_ac) _ac=new(window.AudioContext||window.webkitAudioContext)();
+      if(_ac.state==='suspended') _ac.resume();
+      var rate=_ac.sampleRate,len=Math.floor(rate*0.006);
+      if(!_buf||_buf.sampleRate!==rate){
+        _buf=_ac.createBuffer(1,len,rate);
+        var ch=_buf.getChannelData(0);
+        for(var i=0;i<len;i++){var t=i/len;ch[i]=(Math.sin(2*Math.PI*3400*t)*.6+(Math.random()*2-1)*.4)*Math.pow(1-t,3);}
+      }
+      var src=_ac.createBufferSource(),g=_ac.createGain();
+      src.buffer=_buf;g.gain.value=0.08;src.connect(g);g.connect(_ac.destination);src.start();
+    }catch(e){}
+  }
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var isLight=html.classList.toggle('light');
+    localStorage.setItem('bc_theme',isLight?'light':'dark');
+    tickSound();
+  });
+})();
+/* ── Animated Hero Word Cycle ── */
+(function(){
+  var words=['Dominance.','Authority.','Influence.','Identity.','Legacy.'];
+  var idx=0;
+  var el=document.getElementById('ahWord');
+  if(!el)return;
+  function cycle(){
+    el.className='ahWord out';
+    setTimeout(function(){
+      idx=(idx+1)%words.length;
+      el.textContent=words[idx];
+      el.className='ahWord in';
+    },380);
+  }
+  setInterval(cycle,2400);
+})();
 
 const DB={
   users:[
@@ -1143,19 +1693,14 @@ function animN(el){
 const sObs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){en.target.querySelectorAll('[data-t]').forEach(animN);sObs.unobserve(en.target);}}),{threshold:.5});
 qa('.statsRow').forEach(r=>sObs.observe(r));
 
-const cSc=q('.cubeScene');
-if(cSc&&window.matchMedia('(pointer:fine)').matches){
-  document.addEventListener('mousemove',e=>{const rx=(e.clientY/window.innerHeight-.5)*9;const ry=(e.clientX/window.innerWidth-.5)*-9;cSc.style.transform=`translateY(-50%) rotateX(${rx}deg) rotateY(${ry}deg)`;},{passive:true});
-}
-
 /* PKG TABS */
 function mTab(tab,btn){
   qa('.pkgTab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
   qa('.pkgPanels>div').forEach(p=>{p.classList.remove('on');p.style.display='none';});
   const panel=q('#mt-'+tab);if(!panel)return;
-  panel.classList.add('on');panel.style.display=tab==='singles'?'block':'grid';
+  panel.classList.add('on');panel.style.display='block';
 }
-const firstPkg=q('#mt-marketing');if(firstPkg)firstPkg.style.display='grid';
+const firstPkg=q('#mt-marketing');if(firstPkg)firstPkg.style.display='block';
 ['branding','tech','singles'].forEach(t=>{const p=q('#mt-'+t);if(p)p.style.display='none';});
 
 function startPkg(name,price){
@@ -1590,6 +2135,144 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(au){au.addEventListener('input',()=>{const s=au.value.toLowerCase();qa('#adminUserTable tr').forEach(r=>{r.style.display=r.textContent.toLowerCase().includes(s)?'':'none';});});}
 });
 
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script>
+(function initAnomalousMatter(){
+  var mount=document.getElementById('threeHero');
+  if(!mount||typeof THREE==='undefined')return;
+
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(75,mount.clientWidth/mount.clientHeight,0.1,1000);
+  camera.position.z=3;
+
+  var renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+  renderer.setSize(mount.clientWidth,mount.clientHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  mount.appendChild(renderer.domElement);
+
+  var geometry=new THREE.IcosahedronGeometry(1.2,10);
+
+  var vertexShader=[
+    'uniform float time;',
+    'varying vec3 vNormal;',
+    'varying vec3 vPosition;',
+    'vec3 mod289v3(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}',
+    'vec4 mod289v4(vec4 x){return x-floor(x*(1.0/289.0))*289.0;}',
+    'vec4 permute(vec4 x){return mod289v4(((x*34.0)+1.0)*x);}',
+    'vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}',
+    'float snoise(vec3 v){',
+    '  const vec2 C=vec2(1.0/6.0,1.0/3.0);',
+    '  const vec4 D=vec4(0.0,0.5,1.0,2.0);',
+    '  vec3 i=floor(v+dot(v,C.yyy));',
+    '  vec3 x0=v-i+dot(i,C.xxx);',
+    '  vec3 g=step(x0.yzx,x0.xyz);',
+    '  vec3 l=1.0-g;',
+    '  vec3 i1=min(g.xyz,l.zxy);',
+    '  vec3 i2=max(g.xyz,l.zxy);',
+    '  vec3 x1=x0-i1+C.xxx;',
+    '  vec3 x2=x0-i2+C.yyy;',
+    '  vec3 x3=x0-D.yyy;',
+    '  i=mod289v3(i);',
+    '  vec4 p=permute(permute(permute(i.z+vec4(0.0,i1.z,i2.z,1.0))+i.y+vec4(0.0,i1.y,i2.y,1.0))+i.x+vec4(0.0,i1.x,i2.x,1.0));',
+    '  float n_=0.142857142857;',
+    '  vec3 ns=n_*D.wyz-D.xzx;',
+    '  vec4 j=p-49.0*floor(p*ns.z*ns.z);',
+    '  vec4 x_=floor(j*ns.z);',
+    '  vec4 y_=floor(j-7.0*x_);',
+    '  vec4 x=x_*ns.x+ns.yyyy;',
+    '  vec4 y=y_*ns.x+ns.yyyy;',
+    '  vec4 h=1.0-abs(x)-abs(y);',
+    '  vec4 b0=vec4(x.xy,y.xy);',
+    '  vec4 b1=vec4(x.zw,y.zw);',
+    '  vec4 s0=floor(b0)*2.0+1.0;',
+    '  vec4 s1=floor(b1)*2.0+1.0;',
+    '  vec4 sh=-step(h,vec4(0.0));',
+    '  vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy;',
+    '  vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;',
+    '  vec3 p0=vec3(a0.xy,h.x);',
+    '  vec3 p1=vec3(a0.zw,h.y);',
+    '  vec3 p2=vec3(a1.xy,h.z);',
+    '  vec3 p3=vec3(a1.zw,h.w);',
+    '  vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));',
+    '  p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;',
+    '  vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0);',
+    '  m=m*m;',
+    '  return 42.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));',
+    '}',
+    'void main(){',
+    '  vNormal=normal;',
+    '  vPosition=position;',
+    '  float displacement=snoise(position*2.0+time*0.5)*0.2;',
+    '  vec3 newPosition=position+normal*displacement;',
+    '  gl_Position=projectionMatrix*modelViewMatrix*vec4(newPosition,1.0);',
+    '}'
+  ].join('\n');
+
+  var fragmentShader=[
+    'uniform vec3 color;',
+    'uniform vec3 pointLightPos;',
+    'varying vec3 vNormal;',
+    'varying vec3 vPosition;',
+    'void main(){',
+    '  vec3 n=normalize(vNormal);',
+    '  vec3 lightDir=normalize(pointLightPos-vPosition);',
+    '  float diffuse=max(dot(n,lightDir),0.0);',
+    '  float fresnel=1.0-dot(n,vec3(0.0,0.0,1.0));',
+    '  fresnel=pow(fresnel,2.0);',
+    '  vec3 finalColor=color*diffuse+color*fresnel*0.5;',
+    '  gl_FragColor=vec4(finalColor,1.0);',
+    '}'
+  ].join('\n');
+
+  var material=new THREE.ShaderMaterial({
+    uniforms:{
+      time:{value:0},
+      pointLightPos:{value:new THREE.Vector3(0,0,5)},
+      color:{value:new THREE.Color('#d4a853')}
+    },
+    vertexShader:vertexShader,
+    fragmentShader:fragmentShader,
+    wireframe:true
+  });
+
+  var mesh=new THREE.Mesh(geometry,material);
+  scene.add(mesh);
+
+  var pointLight=new THREE.PointLight(0xffffff,1,100);
+  pointLight.position.set(0,0,5);
+  scene.add(pointLight);
+
+  var frameId;
+  function animate(t){
+    material.uniforms.time.value=t*0.0003;
+    mesh.rotation.y+=0.0005;
+    mesh.rotation.x+=0.0002;
+    renderer.render(scene,camera);
+    frameId=requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+
+  window.addEventListener('resize',function(){
+    if(!mount.clientWidth)return;
+    camera.aspect=mount.clientWidth/mount.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(mount.clientWidth,mount.clientHeight);
+  },{passive:true});
+
+  if(window.matchMedia('(pointer:fine)').matches){
+    window.addEventListener('mousemove',function(e){
+      var x=(e.clientX/window.innerWidth)*2-1;
+      var y=-(e.clientY/window.innerHeight)*2+1;
+      var vec=new THREE.Vector3(x,y,0.5).unproject(camera);
+      var dir=vec.sub(camera.position).normalize();
+      var dist=-camera.position.z/dir.z;
+      var pos=camera.position.clone().add(dir.multiplyScalar(dist));
+      pointLight.position.copy(pos);
+      material.uniforms.pointLightPos.value.copy(pos);
+    },{passive:true});
+  }
+})();
 </script>
 </body>
 </html>
