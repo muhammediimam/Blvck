@@ -396,6 +396,42 @@ footer.sfoot{
   .cta-btns{flex-direction:column;align-items:center;}
   .scroll-ind{display:none;}
 }
+/* ══ UNIFIED HEADER ══ */
+#bc-promo{position:fixed;top:0;left:0;right:0;z-index:600;height:36px;background:#fff;color:#000;display:flex;align-items:center;justify-content:center;gap:12px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;}
+.bc-promo-dot{color:rgba(0,0,0,.3);}
+.bc-promo-close{position:absolute;right:14px;background:none;border:none;cursor:pointer;font-size:18px;color:#000;opacity:.4;transition:opacity .2s;font-family:inherit;line-height:1;padding:0;}
+.bc-promo-close:hover{opacity:1;}
+#bc-nav{position:fixed;top:36px;left:0;right:0;z-index:500;height:66px;background:#000;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,60px);}
+.bc-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
+.bc-logo img{height:40px;width:auto;display:block;}
+.bc-nav-links{display:flex;align-items:center;gap:clamp(10px,1.6vw,24px);list-style:none;}
+.bc-nav-links a{color:rgba(255,255,255,.42);text-decoration:none;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transition:color .22s;white-space:nowrap;}
+.bc-nav-links a:hover,.bc-nav-links a.active{color:#fff;}
+.bc-actions{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.bc-login{color:rgba(255,255,255,.45);text-decoration:none;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transition:color .22s;white-space:nowrap;}
+.bc-login:hover{color:#fff;}
+.bc-signup{display:inline-flex;color:rgba(255,255,255,.45);text-decoration:none;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18);padding:7px 14px;transition:border-color .22s,color .22s;white-space:nowrap;}
+.bc-signup:hover{border-color:rgba(255,255,255,.55);color:#fff;}
+.bc-cta{display:inline-flex;align-items:center;background:#fff;color:#000;text-decoration:none;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:10px 18px;transition:background .2s;white-space:nowrap;}
+.bc-cta:hover{background:#e5e5e5;}
+.bc-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.bc-burger span{display:block;width:20px;height:1px;background:#fff;transition:transform .3s,opacity .3s;}
+.bc-burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.bc-burger.open span:nth-child(2){opacity:0;}
+.bc-burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+#bc-mob{display:none;position:fixed;inset:0;background:rgba(0,0,0,.98);z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px;}
+#bc-mob.open{display:flex;}
+#bc-mob a{color:rgba(255,255,255,.65);text-decoration:none;font-family:'Montserrat',sans-serif;font-size:clamp(20px,5vw,34px);font-weight:800;letter-spacing:-.02em;transition:color .2s;}
+#bc-mob a:hover{color:#fff;}
+.bc-mob-auth{display:flex;gap:14px;margin-top:8px;}
+.bc-mob-auth a{font-size:14px!important;}
+.bc-mob-x{position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:26px;color:rgba(255,255,255,.4);font-family:inherit;transition:color .2s;padding:0;}
+.bc-mob-x:hover{color:#fff;}
+.bc-old{display:block;font-size:12px;font-weight:500;color:rgba(255,255,255,.32);text-decoration:line-through;margin-bottom:3px;}
+.bc-sale{display:inline-flex;align-items:center;padding:2px 9px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.2);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border-radius:100px;margin-bottom:8px;}
+@media(max-width:1100px){.bc-nav-links{gap:clamp(8px,1.1vw,14px);}.bc-cta{display:none;}}
+@media(max-width:900px){.bc-nav-links{display:none;}.bc-burger{display:flex;}.bc-login,.bc-signup{display:none;}}
+body{padding-top:36px!important;}
 </style>
 </head>
 <body>
@@ -409,22 +445,44 @@ footer.sfoot{
   <a href="index.html" style="font-size:clamp(14px,3.5vw,20px);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:10px;">Book a Call →</a>
 </div>
 
+<!-- PROMO BANNER -->
+<div id="bc-promo">
+  <span class="bc-promo-dot">✦</span>
+  <span>20% OFF All Services — Limited Time Offer</span>
+  <span class="bc-promo-dot">✦</span>
+  <button class="bc-promo-close" onclick="var p=this.parentElement;p.style.display='none';document.getElementById('bc-nav').style.top='0'">×</button>
+</div>
 <!-- NAV -->
-<nav class="snav">
-  <a href="index.html" class="snav-logo">
-    <img src="BlvckLogo.svg" alt="BlvckCube" style="height:42px;display:block;">
-  </a>
-  <ul class="snav-links">
-    <li><a href="index.html">← Back to Site</a></li>
-    <li><a href="service-marketing.html">Marketing</a></li>
-    <li><a href="service-branding.html">Branding</a></li>
-    <li><a href="service-technology.html">Technology</a></li>
-    <li><a href="index.html" class="snav-cta">Book a Call</a></li>
-  </ul>
-  <button class="snav-burger" id="s-burger" onclick="(function(){var b=document.getElementById('s-burger'),m=document.getElementById('mob-menu');b.classList.toggle('open');m.classList.toggle('open');})()">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<header id="bc-nav">
+  <a href="index.html" class="bc-logo"><img src="BlvckLogo.svg" alt="BlvckCube"></a>
+  <div class="bc-nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="service-marketing.html">Marketing</a>
+    <a href="service-branding.html">Branding</a>
+    <a href="service-technology.html">Technology</a>
+    <a href="service-singles.html" class="active">Singles</a>
+    <a href="index.html#projects">Projects</a>
+  </div>
+  <div class="bc-actions">
+    <a href="index.html" class="bc-login">Log In</a>
+    <a href="index.html" class="bc-signup">Sign Up</a>
+    <a href="index.html#contact" class="bc-cta">Start a Project →</a>
+    <button class="bc-burger" id="bc-b" onclick="this.classList.toggle('open');document.getElementById('bc-mob').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<!-- MOBILE MENU -->
+<div id="bc-mob">
+  <button class="bc-mob-x" onclick="document.getElementById('bc-b').classList.remove('open');this.parentElement.classList.remove('open')">×</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="service-marketing.html">Marketing</a>
+  <a href="service-branding.html">Branding</a>
+  <a href="service-technology.html">Technology</a>
+  <a href="service-singles.html">Singles</a>
+  <a href="index.html#projects">Projects</a>
+  <div class="bc-mob-auth"><a href="index.html">Log In</a><a href="index.html">Sign Up</a></div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -462,7 +520,8 @@ footer.sfoot{
     <!-- Marketing Annual Plan -->
     <div class="svc-card">
       <div class="svc-name">Marketing Annual Plan</div>
-      <div class="svc-price">9,000 EGP</div>
+      <div class="bc-old">9,000 EGP</div>
+      <div class="svc-price">7,200 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">25 Days</div>
       <p class="svc-desc">Comprehensive 12-month marketing roadmap tailored to your brand goals.</p>
@@ -472,7 +531,8 @@ footer.sfoot{
     <!-- Market Analysis -->
     <div class="svc-card">
       <div class="svc-name">Market Analysis</div>
-      <div class="svc-price">8,000 EGP</div>
+      <div class="bc-old">8,000 EGP</div>
+      <div class="svc-price">6,400 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">25 Days</div>
       <p class="svc-desc">Deep-dive competitor research and market positioning report.</p>
@@ -482,7 +542,8 @@ footer.sfoot{
     <!-- Marketing Strategy -->
     <div class="svc-card">
       <div class="svc-name">Marketing Strategy</div>
-      <div class="svc-price">7,500 EGP</div>
+      <div class="bc-old">7,500 EGP</div>
+      <div class="svc-price">6,000 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">25 Days</div>
       <p class="svc-desc">Actionable brand strategy with channel plan, messaging, and KPI framework.</p>
@@ -492,7 +553,8 @@ footer.sfoot{
     <!-- Content Plan -->
     <div class="svc-card">
       <div class="svc-name">Content Plan</div>
-      <div class="svc-price">5,000 EGP</div>
+      <div class="bc-old">5,000 EGP</div>
+      <div class="svc-price">4,000 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">25 Days</div>
       <p class="svc-desc">Monthly content calendar with topic clusters and post timing.</p>
@@ -502,7 +564,8 @@ footer.sfoot{
     <!-- Content Plan + Designs -->
     <div class="svc-card">
       <div class="svc-name">Content Plan + Designs</div>
-      <div class="svc-price">8,000 EGP</div>
+      <div class="bc-old">8,000 EGP</div>
+      <div class="svc-price">6,400 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">25 Days</div>
       <p class="svc-desc">Content calendar plus all graphic designs ready to publish.</p>
@@ -512,7 +575,8 @@ footer.sfoot{
     <!-- Media Buying -->
     <div class="svc-card">
       <div class="svc-name">Media Buying</div>
-      <div class="svc-price">10,000 EGP</div>
+      <div class="bc-old">10,000 EGP</div>
+      <div class="svc-price">8,000 EGP</div>
       <div class="svc-price-note">+ 5% of ad spend</div>
       <div class="svc-delivery">30 Days</div>
       <p class="svc-desc">Paid ad management — budget allocation, creative testing, performance reporting.</p>
@@ -522,7 +586,8 @@ footer.sfoot{
     <!-- Moderation -->
     <div class="svc-card">
       <div class="svc-name">Moderation</div>
-      <div class="svc-price">2,500 EGP</div>
+      <div class="bc-old">2,500 EGP</div>
+      <div class="svc-price">2,000 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">30 Days</div>
       <p class="svc-desc">Daily community management — replies, DMs, and engagement across social platforms.</p>
@@ -532,7 +597,8 @@ footer.sfoot{
     <!-- Photoshoot -->
     <div class="svc-card">
       <div class="svc-name">Photoshoot</div>
-      <div class="svc-price">12,000 EGP</div>
+      <div class="bc-old">12,000 EGP</div>
+      <div class="svc-price">9,600 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">By Arrangement</div>
       <p class="svc-desc">Professional brand photography session — product, portrait, or lifestyle.</p>
@@ -542,7 +608,8 @@ footer.sfoot{
     <!-- Videoshoot -->
     <div class="svc-card">
       <div class="svc-name">Videoshoot</div>
-      <div class="svc-price">14,000 EGP</div>
+      <div class="bc-old">14,000 EGP</div>
+      <div class="svc-price">11,200 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">By Arrangement</div>
       <p class="svc-desc">Full video production — scripting, filming, and raw footage delivery. Up to 6 minutes.</p>
@@ -552,7 +619,8 @@ footer.sfoot{
     <!-- Video Editing -->
     <div class="svc-card">
       <div class="svc-name">Video Editing</div>
-      <div class="svc-price">5,500 EGP</div>
+      <div class="bc-old">5,500 EGP</div>
+      <div class="svc-price">4,400 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">5 Days</div>
       <p class="svc-desc">Professional edit — cuts, colour grade, captions, music, motion graphics. Up to 8 min.</p>
@@ -562,7 +630,8 @@ footer.sfoot{
     <!-- Reel Creation -->
     <div class="svc-card">
       <div class="svc-name">Reel Creation</div>
-      <div class="svc-price">6,000 EGP</div>
+      <div class="bc-old">6,000 EGP</div>
+      <div class="svc-price">4,800 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">By Arrangement</div>
       <p class="svc-desc">Three 60-second short-form reels — filmed, edited, and optimised for social media.</p>
@@ -572,7 +641,8 @@ footer.sfoot{
     <!-- Website Bug Fixing -->
     <div class="svc-card">
       <div class="svc-name">Website Bug Fixing</div>
-      <div class="svc-price">5,000 EGP</div>
+      <div class="bc-old">5,000 EGP</div>
+      <div class="svc-price">4,000 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">1 Day</div>
       <p class="svc-desc">Rapid diagnosis and resolution of website bugs, broken links, and performance issues.</p>
@@ -582,7 +652,8 @@ footer.sfoot{
     <!-- Website Editing -->
     <div class="svc-card">
       <div class="svc-name">Website Editing</div>
-      <div class="svc-price">8,500 EGP</div>
+      <div class="bc-old">8,500 EGP</div>
+      <div class="svc-price">6,800 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">5 Days</div>
       <p class="svc-desc">Content updates, design tweaks, and structural improvements to an existing website.</p>
@@ -592,7 +663,8 @@ footer.sfoot{
     <!-- Website Moderation -->
     <div class="svc-card">
       <div class="svc-name">Website Moderation</div>
-      <div class="svc-price">12,500 EGP</div>
+      <div class="bc-old">12,500 EGP</div>
+      <div class="svc-price">10,000 EGP</div>
       <div class="svc-price-note">&nbsp;</div>
       <div class="svc-delivery">30 Days</div>
       <p class="svc-desc">Monthly website upkeep — content updates, security checks, and performance monitoring.</p>

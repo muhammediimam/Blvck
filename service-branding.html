@@ -451,23 +451,84 @@ tbody td:not(:first-child){text-align:center;}
   .footer-nav{gap:8px 20px;}
   #footer{flex-direction:column;gap:24px;}
 }
+/* ══ UNIFIED HEADER ══ */
+#bc-promo{position:fixed;top:0;left:0;right:0;z-index:600;height:36px;background:#fff;color:#000;display:flex;align-items:center;justify-content:center;gap:12px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;}
+.bc-promo-dot{color:rgba(0,0,0,.3);}
+.bc-promo-close{position:absolute;right:14px;background:none;border:none;cursor:pointer;font-size:18px;color:#000;opacity:.4;transition:opacity .2s;font-family:inherit;line-height:1;padding:0;}
+.bc-promo-close:hover{opacity:1;}
+#bc-nav{position:fixed;top:36px;left:0;right:0;z-index:500;height:66px;background:#000;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,60px);}
+.bc-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
+.bc-logo img{height:40px;width:auto;display:block;}
+.bc-nav-links{display:flex;align-items:center;gap:clamp(10px,1.6vw,24px);list-style:none;}
+.bc-nav-links a{color:rgba(255,255,255,.42);text-decoration:none;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transition:color .22s;white-space:nowrap;}
+.bc-nav-links a:hover,.bc-nav-links a.active{color:#fff;}
+.bc-actions{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.bc-login{color:rgba(255,255,255,.45);text-decoration:none;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transition:color .22s;white-space:nowrap;}
+.bc-login:hover{color:#fff;}
+.bc-signup{display:inline-flex;color:rgba(255,255,255,.45);text-decoration:none;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18);padding:7px 14px;transition:border-color .22s,color .22s;white-space:nowrap;}
+.bc-signup:hover{border-color:rgba(255,255,255,.55);color:#fff;}
+.bc-cta{display:inline-flex;align-items:center;background:#fff;color:#000;text-decoration:none;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:10px 18px;transition:background .2s;white-space:nowrap;}
+.bc-cta:hover{background:#e5e5e5;}
+.bc-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.bc-burger span{display:block;width:20px;height:1px;background:#fff;transition:transform .3s,opacity .3s;}
+.bc-burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.bc-burger.open span:nth-child(2){opacity:0;}
+.bc-burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+#bc-mob{display:none;position:fixed;inset:0;background:rgba(0,0,0,.98);z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px;}
+#bc-mob.open{display:flex;}
+#bc-mob a{color:rgba(255,255,255,.65);text-decoration:none;font-family:'Montserrat',sans-serif;font-size:clamp(20px,5vw,34px);font-weight:800;letter-spacing:-.02em;transition:color .2s;}
+#bc-mob a:hover{color:#fff;}
+.bc-mob-auth{display:flex;gap:14px;margin-top:8px;}
+.bc-mob-auth a{font-size:14px!important;}
+.bc-mob-x{position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;font-size:26px;color:rgba(255,255,255,.4);font-family:inherit;transition:color .2s;padding:0;}
+.bc-mob-x:hover{color:#fff;}
+.bc-old{display:block;font-size:12px;font-weight:500;color:rgba(255,255,255,.32);text-decoration:line-through;margin-bottom:3px;}
+.bc-sale{display:inline-flex;align-items:center;padding:2px 9px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.2);font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border-radius:100px;margin-bottom:8px;}
+@media(max-width:1100px){.bc-nav-links{gap:clamp(8px,1.1vw,14px);}.bc-cta{display:none;}}
+@media(max-width:900px){.bc-nav-links{display:none;}.bc-burger{display:flex;}.bc-login,.bc-signup{display:none;}}
+body{padding-top:36px!important;}
 </style>
 </head>
 <body>
 
+<!-- PROMO BANNER -->
+<div id="bc-promo">
+  <span class="bc-promo-dot">✦</span>
+  <span>20% OFF All Services — Limited Time Offer</span>
+  <span class="bc-promo-dot">✦</span>
+  <button class="bc-promo-close" onclick="var p=this.parentElement;p.style.display='none';document.getElementById('bc-nav').style.top='0'">×</button>
+</div>
 <!-- NAV -->
-<nav id="nav">
-  <a class="nav-logo" href="index.html">
-    <img src="BlvckLogo.svg" alt="BlvckCube">
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">← Back to Site</a></li>
-    <li><a href="service-marketing.html">Marketing</a></li>
-    <li><a href="service-technology.html">Technology</a></li>
-    <li><a href="service-singles.html">Single Services</a></li>
-  </ul>
-  <a class="nav-cta" href="index.html">Book a Call</a>
-</nav>
+<header id="bc-nav">
+  <a href="index.html" class="bc-logo"><img src="BlvckLogo.svg" alt="BlvckCube"></a>
+  <div class="bc-nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="service-marketing.html">Marketing</a>
+    <a href="service-branding.html" class="active">Branding</a>
+    <a href="service-technology.html">Technology</a>
+    <a href="service-singles.html">Singles</a>
+    <a href="index.html#projects">Projects</a>
+  </div>
+  <div class="bc-actions">
+    <a href="index.html" class="bc-login">Log In</a>
+    <a href="index.html" class="bc-signup">Sign Up</a>
+    <a href="index.html#contact" class="bc-cta">Start a Project →</a>
+    <button class="bc-burger" id="bc-b" onclick="this.classList.toggle('open');document.getElementById('bc-mob').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<!-- MOBILE MENU -->
+<div id="bc-mob">
+  <button class="bc-mob-x" onclick="document.getElementById('bc-b').classList.remove('open');this.parentElement.classList.remove('open')">×</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="service-marketing.html">Marketing</a>
+  <a href="service-branding.html">Branding</a>
+  <a href="service-technology.html">Technology</a>
+  <a href="service-singles.html">Singles</a>
+  <a href="index.html#projects">Projects</a>
+  <div class="bc-mob-auth"><a href="index.html">Log In</a><a href="index.html">Sign Up</a></div>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -524,9 +585,11 @@ tbody td:not(:first-child){text-align:center;}
     <!-- Basic -->
     <div class="plan-card">
       <div class="plan-tier">Basic</div>
+      <span class="bc-sale">20% OFF</span>
       <h3 class="plan-name">Basic Branding</h3>
+      <span class="bc-old">17,500 EGP</span>
       <div class="plan-price">
-        <span class="amount">17,500</span>
+        <span class="amount">14,000</span>
         <span class="currency">EGP</span>
       </div>
       <div class="plan-meta">
@@ -546,9 +609,11 @@ tbody td:not(:first-child){text-align:center;}
     <!-- Premium -->
     <div class="plan-card">
       <div class="plan-tier">Premium</div>
+      <span class="bc-sale">20% OFF</span>
       <h3 class="plan-name">Premium Branding</h3>
+      <span class="bc-old">22,500 EGP</span>
       <div class="plan-price">
-        <span class="amount">22,500</span>
+        <span class="amount">18,000</span>
         <span class="currency">EGP</span>
       </div>
       <div class="plan-meta">
@@ -569,9 +634,11 @@ tbody td:not(:first-child){text-align:center;}
     <div class="plan-card featured">
       <span class="featured-badge">Full Identity</span>
       <div class="plan-tier">Platinum</div>
+      <span class="bc-sale">20% OFF</span>
       <h3 class="plan-name">Platinum Branding</h3>
+      <span class="bc-old">27,500 EGP</span>
       <div class="plan-price">
-        <span class="amount">27,500</span>
+        <span class="amount">22,000</span>
         <span class="currency">EGP</span>
       </div>
       <div class="plan-meta">
