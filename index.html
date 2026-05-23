@@ -762,6 +762,20 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 @media(max-width:400px){.metrics{grid-template-columns:1fr;}}
 .mobSbToggle{display:none;align-items:center;justify-content:center;width:34px;height:34px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);cursor:pointer;color:var(--white);font-size:18px;margin-bottom:18px;}
 @media(max-width:900px){.mobSbToggle{display:flex;}}
+
+/* ══ HOVER GLOW BUTTONS ══ */
+.bP,.bO,.bG,.bD,.nCta{position:relative;overflow:hidden;}
+.btn-glow{
+  position:absolute;
+  width:220px;height:220px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,0.32) 0%,transparent 70%);
+  transform:translate(-50%,-50%) scale(0);
+  transition:transform 0.4s cubic-bezier(.16,1,.3,1),opacity 0.3s;
+  pointer-events:none;
+  opacity:0;
+  z-index:0;
+}
 </style>
 </head>
 <body>
@@ -2028,6 +2042,7 @@ function goTo(v){
   const el=q('#V-'+v);if(el)el.classList.add('on');
   window.scrollTo(0,0);
   if(v==='auth'&&!window._authSphereInit){window._authSphereInit=true;setTimeout(initAuthSphere,60);}
+  setTimeout(initHoverGlow,80);
 }
 
 /* MARKETING */
@@ -2496,7 +2511,26 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(ci){ci.addEventListener('input',()=>{const s=ci.value.toLowerCase();qa('.cliRow').forEach(r=>{r.style.display=r.textContent.toLowerCase().includes(s)?'':'none';});});}
   const au=q('#adminUserSrch');
   if(au){au.addEventListener('input',()=>{const s=au.value.toLowerCase();qa('#adminUserTable tr').forEach(r=>{r.style.display=r.textContent.toLowerCase().includes(s)?'':'none';});});}
+
+  initHoverGlow();
 });
+
+function initHoverGlow(){
+  document.querySelectorAll('.bP,.bO,.bG,.bD,.nCta').forEach(btn=>{
+    if(btn.querySelector('.btn-glow'))return;
+    const g=document.createElement('span');
+    g.className='btn-glow';
+    btn.insertBefore(g,btn.firstChild);
+    Array.from(btn.children).forEach(c=>{if(c!==g){c.style.position='relative';c.style.zIndex='1';}});
+    btn.addEventListener('mousemove',e=>{
+      const r=btn.getBoundingClientRect();
+      g.style.left=(e.clientX-r.left)+'px';
+      g.style.top=(e.clientY-r.top)+'px';
+    });
+    btn.addEventListener('mouseenter',()=>{g.style.transform='translate(-50%,-50%) scale(1.5)';g.style.opacity='1';});
+    btn.addEventListener('mouseleave',()=>{g.style.transform='translate(-50%,-50%) scale(0)';g.style.opacity='0';});
+  });
+}
 
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
