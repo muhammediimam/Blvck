@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Single Services — BlvckCube</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --black:#000;
+  --white:#fff;
+  --gold:#f4f4f4;
+  --gold2:rgba(244,244,244,.15);
+  --gold3:rgba(244,244,244,.08);
+  --g9:#0a0a0a;
+  --g8:#111;
+  --g7:#1a1a1a;
+  --g6:#222;
+  --g5:#333;
+  --g4:#555;
+  --g3:#888;
+  --g2:#bbb;
+  --g1:#e5e5e5;
+  --g0:#f8f8f8;
+  --fd:'Montserrat',sans-serif;
+  --fb:'Montserrat',sans-serif;
+  --nh:66px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{background:var(--black);color:var(--white);font-family:var(--fb);font-weight:500;overflow-x:hidden;}
+
+/* ── NAV ── */
+nav.snav{
+  position:fixed;top:0;left:0;right:0;z-index:400;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(20px,5vw,60px);
+  height:var(--nh);
+  background:#000;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.snav-logo{display:flex;align-items:center;text-decoration:none;}
+.snav-links{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px);list-style:none;}
+.snav-links a{
+  color:rgba(255,255,255,.45);
+  text-decoration:none;
+  font-size:10.5px;font-weight:500;
+  letter-spacing:.13em;text-transform:uppercase;
+  transition:color .25s;
+  white-space:nowrap;
+}
+.snav-links a:hover{color:var(--white);}
+.snav-cta{
+  background:var(--white)!important;
+  color:var(--black)!important;
+  padding:9px 20px!important;
+  font-weight:700!important;
+  transition:background .2s!important;
+}
+.snav-cta:hover{background:var(--g1)!important;}
+.snav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.snav-burger span{display:block;width:20px;height:1px;background:var(--white);transition:transform .3s,opacity .3s;}
+.snav-burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.snav-burger.open span:nth-child(2){opacity:0;}
+.snav-burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+#mob-menu{
+  display:none;
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.98);
+  z-index:399;
+  flex-direction:column;align-items:center;justify-content:center;gap:28px;
+}
+#mob-menu.open{display:flex;}
+#mob-menu a{
+  color:rgba(255,255,255,.7);
+  text-decoration:none;
+  font-family:var(--fd);
+  font-size:clamp(22px,5.5vw,40px);
+  font-weight:700;
+  transition:color .2s;
+}
+#mob-menu a:hover{color:var(--white);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:clamp(100px,14vh,130px) clamp(20px,5vw,60px) clamp(60px,8vh,90px);
+  position:relative;overflow:hidden;
+  text-align:center;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:60px 60px;
+  z-index:0;pointer-events:none;
+}
+.hero-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 40%,transparent 100%);
+  z-index:1;pointer-events:none;
+}
+.hero-orb{
+  position:absolute;
+  width:800px;height:800px;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(244,244,244,.07) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.hero-inner{position:relative;z-index:2;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 20px;
+  border:1px solid rgba(255,255,255,.1);
+  font-size:11px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);
+  background:rgba(255,255,255,.02);
+  margin-bottom:clamp(28px,4.5vh,48px);
+}
+.hero-badge::before{
+  content:'';display:block;
+  width:5px;height:5px;
+  background:var(--gold);
+  opacity:.7;
+  flex-shrink:0;
+}
+.hero-h1{
+  font-family:var(--fd);
+  font-size:clamp(42px,7.5vw,102px);
+  font-weight:700;
+  line-height:.98;
+  letter-spacing:-.04em;
+  margin-bottom:clamp(22px,3.5vh,34px);
+}
+.hero-h1 .dim{color:rgba(255,255,255,.2);}
+.hero-sub{
+  font-size:clamp(13.5px,1.45vw,15.5px);
+  font-weight:500;
+  color:rgba(255,255,255,.35);
+  max-width:min(540px,88vw);
+  line-height:1.9;
+  margin:0 auto clamp(34px,5vh,52px);
+}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+
+/* ── BUTTONS ── */
+.btn-p{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--white);color:var(--black);
+  text-decoration:none;
+  font-size:10px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:15px 30px;
+  transition:background .22s,transform .18s;
+  cursor:pointer;border:none;font-family:var(--fb);
+}
+.btn-p:hover{background:var(--g1);transform:translateY(-2px);}
+.btn-o{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid rgba(255,255,255,.18);
+  color:var(--white);text-decoration:none;
+  font-size:10px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:15px 30px;
+  transition:border-color .22s,background .22s,transform .18s;
+  cursor:pointer;background:transparent;font-family:var(--fb);
+}
+.btn-o:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.04);transform:translateY(-2px);}
+
+/* ── SERVICES SECTION ── */
+.services-sec{
+  padding:clamp(70px,10vh,110px) clamp(20px,5vw,60px);
+}
+.sec-label{
+  font-size:10px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(244,244,244,.55);
+  margin-bottom:clamp(38px,6vh,58px);
+  display:flex;align-items:center;gap:14px;
+}
+.sec-label::before{
+  content:'';display:block;
+  width:24px;height:1px;
+  background:rgba(244,244,244,.35);
+}
+.services-intro{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:clamp(36px,5vh,52px);
+  gap:28px;flex-wrap:wrap;
+}
+.services-h2{
+  font-family:var(--fd);
+  font-size:clamp(28px,4vw,54px);
+  font-weight:700;
+  letter-spacing:-.04em;
+  line-height:.94;
+}
+.services-h2 span{color:rgba(255,255,255,.18);}
+.services-desc{
+  font-size:12.5px;font-weight:500;
+  color:rgba(255,255,255,.35);
+  max-width:300px;line-height:1.85;
+}
+
+/* ── SERVICES GRID ── */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.06);
+}
+@media(max-width:1100px){.services-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:780px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.services-grid{grid-template-columns:1fr;}}
+
+.svc-card{
+  background:var(--g9);
+  padding:20px 18px;
+  display:flex;flex-direction:column;
+  gap:0;
+  transition:background .22s;
+  position:relative;
+}
+.svc-card:hover{background:#111;}
+
+.svc-name{
+  font-size:12.5px;font-weight:700;
+  line-height:1.3;
+  margin-bottom:12px;
+  color:var(--white);
+}
+.svc-price{
+  font-family:var(--fd);
+  font-size:22px;font-weight:700;
+  letter-spacing:-.03em;
+  line-height:1;
+  color:var(--gold);
+  margin-bottom:3px;
+}
+.svc-price-note{
+  font-size:9px;font-weight:500;
+  color:rgba(255,255,255,.3);
+  letter-spacing:.05em;
+  margin-bottom:12px;
+}
+.svc-delivery{
+  font-size:9px;font-weight:500;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,255,255,.25);
+  margin-bottom:11px;
+  display:flex;align-items:center;gap:6px;
+}
+.svc-delivery::before{
+  content:'';
+  display:block;
+  width:12px;height:1px;
+  background:rgba(255,255,255,.18);
+  flex-shrink:0;
+}
+.svc-desc{
+  font-size:11px;font-weight:500;
+  color:rgba(255,255,255,.32);
+  line-height:1.7;
+  flex:1;
+  margin-bottom:14px;
+}
+.svc-btn{
+  margin-top:auto;
+  width:100%;
+  padding:8px 12px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  color:rgba(255,255,255,.4);
+  font-size:8.5px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  cursor:pointer;font-family:var(--fb);
+  transition:background .18s,color .18s,border-color .18s;
+  text-align:center;
+  text-decoration:none;
+  display:block;
+}
+.svc-btn:hover{
+  background:rgba(255,255,255,.1);
+  color:var(--white);
+  border-color:rgba(255,255,255,.2);
+}
+
+/* ── CTA SECTION ── */
+.cta-sec{
+  background:var(--black);
+  text-align:center;
+  padding:clamp(80px,12vh,130px) clamp(20px,5vw,60px);
+  border-top:1px solid rgba(255,255,255,.055);
+}
+.cta-sec .sec-label{justify-content:center;}
+.cta-sec .sec-label::before{background:rgba(255,255,255,.18);}
+.cta-h2{
+  font-family:var(--fd);
+  font-size:clamp(28px,4.5vw,58px);
+  font-weight:700;
+  letter-spacing:-.04em;
+  line-height:.92;
+  margin-bottom:18px;
+}
+.cta-p{
+  font-size:13.5px;font-weight:500;
+  color:rgba(255,255,255,.38);
+  margin-bottom:38px;
+  max-width:500px;
+  margin-left:auto;margin-right:auto;
+  line-height:1.85;
+}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* ── FOOTER ── */
+footer.sfoot{
+  background:var(--black);
+  border-top:1px solid rgba(255,255,255,.055);
+  padding:clamp(48px,7vh,68px) clamp(20px,5vw,60px) clamp(26px,4vh,36px);
+}
+.foot-top{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:36px;
+  margin-bottom:36px;
+}
+@media(min-width:640px){
+  .foot-top{grid-template-columns:200px 1fr;gap:60px;align-items:start;}
+}
+.foot-brand{display:flex;flex-direction:column;gap:14px;}
+.foot-copy{
+  font-size:9.5px;color:rgba(255,255,255,.22);
+  letter-spacing:.04em;line-height:1.7;margin-top:4px;
+}
+.foot-cols{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px 20px;
+}
+@media(min-width:640px){
+  .foot-cols{grid-template-columns:repeat(4,1fr);gap:0 28px;}
+}
+.foot-col-h{
+  font-size:8px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.22);
+  margin-bottom:12px;
+}
+.foot-col-links{list-style:none;}
+.foot-col-links li{margin-bottom:8px;}
+.foot-col-links a{
+  font-size:12px;
+  color:rgba(255,255,255,.36);
+  text-decoration:none;
+  transition:color .2s;
+  display:inline-block;
+}
+.foot-col-links a:hover{color:var(--white);}
+.foot-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+  padding-top:26px;
+  border-top:1px solid rgba(255,255,255,.055);
+}
+.foot-bar-txt{font-size:9px;color:rgba(255,255,255,.16);letter-spacing:.06em;}
+
+/* ── SCROLL INDICATOR ── */
+.scroll-ind{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  opacity:.22;
+  animation:sb 2.5s ease-in-out infinite;
+}
+.scroll-ind span{font-size:9px;letter-spacing:.2em;text-transform:uppercase;}
+.scroll-line{width:1px;height:36px;background:linear-gradient(var(--white),transparent);}
+@keyframes sb{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+
+/* ── RESPONSIVE NAV ── */
+@media(max-width:860px){
+  .snav-links{display:none;}
+  .snav-burger{display:flex;}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column;width:100%;max-width:280px;}
+  .hero-btns .btn-p,.hero-btns .btn-o{flex:1;justify-content:center;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .scroll-ind{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div id="mob-menu">
+  <a href="index.html">Home</a>
+  <a href="service-marketing.html">Marketing</a>
+  <a href="service-branding.html">Branding</a>
+  <a href="service-technology.html">Technology</a>
+  <a href="index.html" style="font-size:clamp(14px,3.5vw,20px);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:10px;">Book a Call →</a>
+</div>
+
+<!-- NAV -->
+<nav class="snav">
+  <a href="index.html" class="snav-logo">
+    <img src="BlvckLogo.svg" alt="BlvckCube" style="height:42px;display:block;">
+  </a>
+  <ul class="snav-links">
+    <li><a href="index.html">← Back to Site</a></li>
+    <li><a href="service-marketing.html">Marketing</a></li>
+    <li><a href="service-branding.html">Branding</a></li>
+    <li><a href="service-technology.html">Technology</a></li>
+    <li><a href="index.html" class="snav-cta">Book a Call</a></li>
+  </ul>
+  <button class="snav-burger" id="s-burger" onclick="(function(){var b=document.getElementById('s-burger'),m=document.getElementById('mob-menu');b.classList.toggle('open');m.classList.toggle('open');})()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">02 — Single Services</div>
+    <h1 class="hero-h1">
+      Precision Work.<br>
+      <span class="dim">Single Deliverable.</span><br>
+      Full Impact.
+    </h1>
+    <p class="hero-sub">Standalone services for brands that know exactly what they need — priced per deliverable, delivered with the same BlvckCube standard.</p>
+    <div class="hero-btns">
+      <a href="#plans" class="btn-o">View Services ↓</a>
+      <a href="index.html" class="btn-p">Book Free Call</a>
+    </div>
+  </div>
+  <div class="scroll-ind">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="services-sec" id="plans">
+  <div class="sec-label">Select a Service</div>
+  <div class="services-intro">
+    <h2 class="services-h2">Every Service.<br><span>One Standard.</span></h2>
+    <p class="services-desc">Choose exactly what your brand needs. Each deliverable is executed with the full weight of BlvckCube precision.</p>
+  </div>
+  <div class="services-grid">
+
+    <!-- Marketing Annual Plan -->
+    <div class="svc-card">
+      <div class="svc-name">Marketing Annual Plan</div>
+      <div class="svc-price">9,000 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">25 Days</div>
+      <p class="svc-desc">Comprehensive 12-month marketing roadmap tailored to your brand goals.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Market Analysis -->
+    <div class="svc-card">
+      <div class="svc-name">Market Analysis</div>
+      <div class="svc-price">8,000 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">25 Days</div>
+      <p class="svc-desc">Deep-dive competitor research and market positioning report.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Marketing Strategy -->
+    <div class="svc-card">
+      <div class="svc-name">Marketing Strategy</div>
+      <div class="svc-price">7,500 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">25 Days</div>
+      <p class="svc-desc">Actionable brand strategy with channel plan, messaging, and KPI framework.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Content Plan -->
+    <div class="svc-card">
+      <div class="svc-name">Content Plan</div>
+      <div class="svc-price">5,000 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">25 Days</div>
+      <p class="svc-desc">Monthly content calendar with topic clusters and post timing.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Content Plan + Designs -->
+    <div class="svc-card">
+      <div class="svc-name">Content Plan + Designs</div>
+      <div class="svc-price">8,000 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">25 Days</div>
+      <p class="svc-desc">Content calendar plus all graphic designs ready to publish.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Media Buying -->
+    <div class="svc-card">
+      <div class="svc-name">Media Buying</div>
+      <div class="svc-price">10,000 EGP</div>
+      <div class="svc-price-note">+ 5% of ad spend</div>
+      <div class="svc-delivery">30 Days</div>
+      <p class="svc-desc">Paid ad management — budget allocation, creative testing, performance reporting.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Moderation -->
+    <div class="svc-card">
+      <div class="svc-name">Moderation</div>
+      <div class="svc-price">2,500 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">30 Days</div>
+      <p class="svc-desc">Daily community management — replies, DMs, and engagement across social platforms.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Photoshoot -->
+    <div class="svc-card">
+      <div class="svc-name">Photoshoot</div>
+      <div class="svc-price">12,000 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">By Arrangement</div>
+      <p class="svc-desc">Professional brand photography session — product, portrait, or lifestyle.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Videoshoot -->
+    <div class="svc-card">
+      <div class="svc-name">Videoshoot</div>
+      <div class="svc-price">14,000 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">By Arrangement</div>
+      <p class="svc-desc">Full video production — scripting, filming, and raw footage delivery. Up to 6 minutes.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Video Editing -->
+    <div class="svc-card">
+      <div class="svc-name">Video Editing</div>
+      <div class="svc-price">5,500 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">5 Days</div>
+      <p class="svc-desc">Professional edit — cuts, colour grade, captions, music, motion graphics. Up to 8 min.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Reel Creation -->
+    <div class="svc-card">
+      <div class="svc-name">Reel Creation</div>
+      <div class="svc-price">6,000 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">By Arrangement</div>
+      <p class="svc-desc">Three 60-second short-form reels — filmed, edited, and optimised for social media.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Website Bug Fixing -->
+    <div class="svc-card">
+      <div class="svc-name">Website Bug Fixing</div>
+      <div class="svc-price">5,000 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">1 Day</div>
+      <p class="svc-desc">Rapid diagnosis and resolution of website bugs, broken links, and performance issues.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Website Editing -->
+    <div class="svc-card">
+      <div class="svc-name">Website Editing</div>
+      <div class="svc-price">8,500 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">5 Days</div>
+      <p class="svc-desc">Content updates, design tweaks, and structural improvements to an existing website.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+    <!-- Website Moderation -->
+    <div class="svc-card">
+      <div class="svc-name">Website Moderation</div>
+      <div class="svc-price">12,500 EGP</div>
+      <div class="svc-price-note">&nbsp;</div>
+      <div class="svc-delivery">30 Days</div>
+      <p class="svc-desc">Monthly website upkeep — content updates, security checks, and performance monitoring.</p>
+      <a href="index.html" class="svc-btn">SELECT →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-sec">
+  <div class="sec-label">Not sure?</div>
+  <h2 class="cta-h2">Not sure what<br>you need?</h2>
+  <p class="cta-p">Book a free 15-min call and we'll guide you to the right service for your brand — no commitment required.</p>
+  <div class="cta-btns">
+    <a href="index.html" class="btn-p">Book Free 15-Min Call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="sfoot">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <img src="BlvckLogo.svg" alt="BlvckCube" style="height:38px;display:block;">
+      <p class="foot-copy">&copy; 2025 BlvckCube.<br>All rights reserved.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <div class="foot-col-h">Company</div>
+        <ul class="foot-col-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">About</a></li>
+          <li><a href="index.html">Book a Call</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-h">Services</div>
+        <ul class="foot-col-links">
+          <li><a href="service-marketing.html">Marketing</a></li>
+          <li><a href="service-branding.html">Branding</a></li>
+          <li><a href="service-technology.html">Technology</a></li>
+          <li><a href="service-singles.html">Single Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-h">Single Services</div>
+        <ul class="foot-col-links">
+          <li><a href="#plans">Marketing Strategy</a></li>
+          <li><a href="#plans">Media Buying</a></li>
+          <li><a href="#plans">Photography</a></li>
+          <li><a href="#plans">Videography</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-h">Locations</div>
+        <ul class="foot-col-links">
+          <li><a href="index.html">Cairo, Egypt</a></li>
+          <li><a href="index.html">Canada</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span class="foot-bar-txt">BlvckCube — Architect of Market Dominance</span>
+    <span class="foot-bar-txt">imam@blvckcube.com</span>
+  </div>
+</footer>
+
+</body>
+</html>

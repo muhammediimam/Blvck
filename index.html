@@ -11,7 +11,7 @@
 <title>BlvckCube — Architect of Market Dominance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="blvckcube.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -31,9 +31,9 @@
   --black:#000;--white:#fff;
   --g9:#0a0a0a;--g8:#111;--g7:#1a1a1a;--g6:#222;--g5:#333;
   --g4:#555;--g3:#888;--g2:#bbb;--g1:#e5e5e5;--g0:#f8f8f8;
-  --gold:#d4a853;--gold2:rgba(212,168,83,.15);--gold3:rgba(212,168,83,.08);
+  --gold:#f4f4f4;--gold2:rgba(244,244,244,.15);--gold3:rgba(244,244,244,.08);
   --red:#c0392b;--green:#1d7a4a;--blue:#2563eb;
-  --fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif;
+  --fd:'Montserrat',sans-serif;--fb:'Montserrat',sans-serif;
   --sw:260px;--nh:66px;--ease:cubic-bezier(.16,1,.3,1);
 }
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
@@ -69,98 +69,6 @@ body{background:var(--black);color:var(--white);font-family:var(--fb);font-weigh
 .vmTrack{display:flex;flex-direction:column;animation:vmScrollV 22s linear infinite;}
 .vmItem{font-family:var(--fd);font-size:clamp(28px,4.2vw,60px);font-weight:300;letter-spacing:-.04em;line-height:1.05;padding:clamp(16px,2.8vh,28px) 0;color:rgba(255,255,255,.18);}
 @keyframes vmScrollV{from{transform:translateY(0)}to{transform:translateY(-50%)}}
-/* ══ LIGHT MODE ══ */
-html.light{color-scheme:light;--card:#ffffff;--ring:#a1a1a1;--input:#e5e5e5;--muted:#f5f5f5;--accent:#f5f5f5;--border:#e5e5e5;--popover:#ffffff;--primary:#171717;--sidebar:#fafafa;--secondary:#f5f5f5;--background:#ffffff;--foreground:#0a0a0a;--muted-foreground:#737373;--accent-foreground:#171717;--primary-foreground:#fafafa;--card-foreground:#0a0a0a;--sidebar-primary:#171717;--sidebar-foreground:#0a0a0a;--sidebar-accent:#f5f5f5;--sidebar-border:#e5e5e5;--sidebar-ring:#a1a1a1;--sidebar-accent-foreground:#171717;--sidebar-primary-foreground:#fafafa;--destructive-foreground:#ffffff;--black:#f3f3f3;--white:#0a0a0a;--g9:#e9e9e9;--g8:#e0e0e0;--g7:#d4d4d4;--g6:#c5c5c5;--g5:#b5b5b5;--g4:#888;--g3:#555;--g2:#333;--g1:#1a1a1a;--g0:#0a0a0a;--gold:#d4a853;--gold2:rgba(212,168,83,.1);--gold3:rgba(212,168,83,.05);}
-html.light body{background:#f3f3f3;color:#0a0a0a;}
-html.light #mNav{background:linear-gradient(rgba(243,243,243,.95),transparent);}
-html.light #mNav.sc{background:rgba(243,243,243,.97);border-bottom-color:rgba(0,0,0,.08);}
-html.light .nLogo,html.light #themeBtn{color:#0a0a0a;}
-html.light .nLinks a{color:rgba(0,0,0,.45);}
-html.light .nLinks a:hover,html.light .nLinks a.act{color:#0a0a0a;}
-html.light .nCta{background:#0a0a0a!important;color:#f3f3f3!important;}
-html.light .nCta:hover{background:#222!important;}
-html.light .nBurger span{background:#0a0a0a;}
-html.light #mobMenu{background:rgba(243,243,243,.99);}
-html.light #mobMenu a{color:rgba(0,0,0,.7);}
-html.light .hero{background:#f3f3f3;}
-html.light .hGrid{background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);}
-html.light .hH1{color:#0a0a0a;}
-html.light .hH1 em{color:rgba(0,0,0,.15);}
-html.light .ahBadge{border-color:rgba(0,0,0,.1);color:rgba(0,0,0,.5);}
-html.light .ahBadge:hover{border-color:rgba(0,0,0,.25);color:rgba(0,0,0,.8);}
-html.light .ahStatic{color:rgba(0,0,0,.32);}
-html.light .ahSub{color:rgba(0,0,0,.45);}
-html.light .ahWord{color:rgba(212,168,83,.9);}
-html.light .hSub{color:rgba(0,0,0,.5);}
-html.light .bO{border-color:rgba(0,0,0,.2);color:#0a0a0a;}
-html.light .bO:hover{border-color:rgba(0,0,0,.6);background:rgba(0,0,0,.04);}
-html.light .bP{background:#0a0a0a;color:#f3f3f3;}
-html.light .bP:hover{background:#222;}
-html.light .scLine{background:linear-gradient(#0a0a0a,transparent);}
-html.light .scInd{color:#0a0a0a;}
-/* ABOUT */
-html.light .sLbl{color:rgba(0,0,0,.4);}
-html.light .sLbl::before{background:rgba(0,0,0,.2);}
-html.light .abH2 span{color:rgba(0,0,0,.15);}
-html.light .abP{color:rgba(0,0,0,.5);}
-html.light .abP strong{color:#0a0a0a;}
-html.light .foundRole{color:rgba(0,0,0,.42);}
-html.light .statsRow{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
-html.light .stat{background:#f3f3f3;}
-html.light .stat:hover{background:rgba(0,0,0,.04);}
-html.light .statL{color:rgba(0,0,0,.4);}
-html.light .locs{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
-html.light .loc{background:#f3f3f3;}
-html.light .locD{color:rgba(0,0,0,.42);}
-/* PACKAGES */
-html.light .pkgSub{color:rgba(0,0,0,.45);}
-html.light .pkgTab{border-color:rgba(0,0,0,.12);color:rgba(0,0,0,.45);}
-html.light .pkgTab.on,html.light .pkgTab:hover{background:#0a0a0a;color:#f3f3f3;border-color:#0a0a0a;}
-html.light .c3,html.light .c2{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
-html.light .pkC{background:#e9e9e9;}
-html.light .pkC:hover{background:rgba(0,0,0,.04);}
-html.light .pkC.feat{background:#0a0a0a;color:#f3f3f3;}
-html.light .pkC.feat:hover{background:#222;}
-html.light .pkSec{color:rgba(0,0,0,.38);}
-html.light .pkNote{color:rgba(0,0,0,.42);}
-html.light .pkDiv{background:rgba(0,0,0,.09);}
-html.light .pkList li{color:rgba(0,0,0,.55);}
-html.light .pkList li::before{color:rgba(0,0,0,.25);}
-html.light .pkMeta{border-color:rgba(0,0,0,.09);color:rgba(0,0,0,.42);}
-html.light .pkSelBtn{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,.12);color:#0a0a0a;}
-html.light .pkSelBtn:hover{background:rgba(0,0,0,.12);}
-/* SINGLE SERVICES */
-html.light .svcsGrid{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
-html.light .svc{background:#e9e9e9;}
-html.light .svc:hover{background:rgba(0,0,0,.04);}
-html.light .svcDur{color:rgba(0,0,0,.38);}
-html.light .svcBtn{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.09);color:rgba(0,0,0,.55);}
-html.light .svcBtn:hover{background:rgba(0,0,0,.11);color:#0a0a0a;}
-/* PROCESS */
-html.light .procSec{background:rgba(0,0,0,.025);border-color:rgba(0,0,0,.07);}
-html.light .procP{color:rgba(0,0,0,.45);}
-html.light .stepGrid{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
-html.light .stepC{background:#f3f3f3;}
-html.light .stepN{color:rgba(0,0,0,.06);}
-html.light .stepP{color:rgba(0,0,0,.45);}
-/* TESTIMONIALS */
-html.light .testiGrid{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.07);}
-html.light .testi{background:#f3f3f3;}
-html.light .testi:hover{background:rgba(0,0,0,.04);}
-html.light .testiQ{color:rgba(0,0,0,.55);}
-html.light .testiRole{color:rgba(0,0,0,.38);}
-html.light .testiFlag{color:rgba(0,0,0,.28);}
-html.light .testiMk{color:rgba(0,0,0,.1);}
-/* CLIENT LOGOS */
-html.light .cliStrip{border-color:rgba(0,0,0,.07);}
-html.light .cliLbl{color:rgba(0,0,0,.3);}
-html.light .cliLogo{color:rgba(0,0,0,.18);}
-html.light .cliLogo:hover{color:rgba(0,0,0,.55);}
-/* FOOTER */
-html.light footer.mFoot{background:#f3f3f3;border-color:rgba(0,0,0,.07);}
-html.light .fCopy{color:rgba(0,0,0,.3);}
-html.light .fLinks a{color:rgba(0,0,0,.38);}
-html.light .fLinks a:hover{color:#0a0a0a;}
 .nBurger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
 .nBurger span{display:block;width:20px;height:1px;background:var(--white);transition:transform .3s,opacity .3s;}
 .nBurger.op span:nth-child(1){transform:translateY(6px) rotate(45deg);}
@@ -189,15 +97,15 @@ html.light .fLinks a:hover{color:#0a0a0a;}
 .ahSub{font-size:clamp(14px,1.55vw,16px);font-weight:300;color:rgba(255,255,255,.36);max-width:min(500px,88vw);line-height:2.0;margin-bottom:clamp(32px,5vh,52px);}
 .ahBtns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 .hGrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:60px 60px;z-index:2;pointer-events:none;}
-.hOrb{position:absolute;width:700px;height:700px;right:-8%;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(212,168,83,.12) 0%,transparent 65%);pointer-events:none;}
+.hOrb{position:absolute;width:700px;height:700px;right:-8%;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(244,244,244,.12) 0%,transparent 65%);pointer-events:none;}
 #threeHero{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
 #threeHero canvas{display:block;width:100%!important;height:100%!important;}
 .heroGrad{position:absolute;inset:0;background:linear-gradient(to top,#000 0%,rgba(0,0,0,.72) 35%,rgba(0,0,0,.18) 72%,transparent 100%);z-index:1;pointer-events:none;}
 .cubeScene{position:absolute;right:clamp(2%,7%,10%);top:50%;transform:translateY(-50%);width:clamp(180px,24vw,380px);height:clamp(180px,24vw,380px);perspective:clamp(400px,55vw,800px);pointer-events:none;}
 .cube3d{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:cRot 20s cubic-bezier(.45,.05,.55,.95) infinite;}
 @keyframes cRot{0%{transform:rotateX(20deg) rotateY(0)}25%{transform:rotateX(10deg) rotateY(90deg)}50%{transform:rotateX(20deg) rotateY(180deg)}75%{transform:rotateX(10deg) rotateY(270deg)}100%{transform:rotateX(20deg) rotateY(360deg)}}
-.cf{position:absolute;inset:0;border:1px solid rgba(212,168,83,.25);background:rgba(212,168,83,.03);}
-.cf::after{content:'';position:absolute;inset:14%;border:1px solid rgba(212,168,83,.1);}
+.cf{position:absolute;inset:0;border:1px solid rgba(244,244,244,.25);background:rgba(244,244,244,.03);}
+.cf::after{content:'';position:absolute;inset:14%;border:1px solid rgba(244,244,244,.1);}
 .cf-f{transform:translateZ(calc(clamp(90px,12vw,190px)))}
 .cf-b{transform:rotateY(180deg) translateZ(calc(clamp(90px,12vw,190px)))}
 .cf-l{transform:rotateY(-90deg) translateZ(calc(clamp(90px,12vw,190px)))}
@@ -205,7 +113,7 @@ html.light .fLinks a:hover{color:#0a0a0a;}
 .cf-t{transform:rotateX(90deg) translateZ(calc(clamp(90px,12vw,190px)))}
 .cf-d{transform:rotateX(-90deg) translateZ(calc(clamp(90px,12vw,190px)))}
 .cPts{position:absolute;inset:-25%;pointer-events:none;}
-.cp{position:absolute;width:2px;height:2px;background:rgba(212,168,83,.45);border-radius:50%;}
+.cp{position:absolute;width:2px;height:2px;background:rgba(244,244,244,.45);border-radius:50%;}
 .cp:nth-child(1){top:15%;left:20%;animation:cf1 6s ease-in-out infinite;}
 .cp:nth-child(2){top:70%;left:10%;animation:cf1 8s ease-in-out infinite .5s;}
 .cp:nth-child(3){top:30%;right:15%;animation:cf2 7s ease-in-out infinite 1s;}
@@ -231,8 +139,8 @@ html.light .fLinks a:hover{color:#0a0a0a;}
 .bP:hover{background:var(--g1);transform:translateY(-2px);}
 .bO{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.18);color:var(--white);text-decoration:none;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:15px 30px;transition:border-color .22s,background .22s,transform .18s;cursor:pointer;background:transparent;font-family:var(--fb);}
 .bO:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.04);transform:translateY(-2px);}
-.bG{display:inline-flex;align-items:center;gap:10px;background:var(--gold2);color:var(--gold);border:1px solid rgba(212,168,83,.22);text-decoration:none;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 30px;transition:background .22s,transform .18s;cursor:pointer;font-family:var(--fb);}
-.bG:hover{background:rgba(212,168,83,.22);transform:translateY(-2px);}
+.bG{display:inline-flex;align-items:center;gap:10px;background:var(--gold2);color:var(--gold);border:1px solid rgba(244,244,244,.22);text-decoration:none;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 30px;transition:background .22s,transform .18s;cursor:pointer;font-family:var(--fb);}
+.bG:hover{background:rgba(244,244,244,.22);transform:translateY(-2px);}
 .bD{display:inline-flex;align-items:center;gap:8px;background:rgba(192,57,43,.12);color:#e05252;border:1px solid rgba(192,57,43,.22);text-decoration:none;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:12px 20px;cursor:pointer;font-family:var(--fb);transition:background .2s;}
 .bD:hover{background:rgba(192,57,43,.22);}
 .arr::after{content:'→';transition:transform .22s;}
@@ -244,13 +152,13 @@ html.light .fLinks a:hover{color:#0a0a0a;}
 .tickT{display:inline-flex;animation:tick 32s linear infinite;}
 .ticker:hover .tickT{animation-play-state:paused;}
 .ti{font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);padding:0 38px;}
-.td{color:rgba(212,168,83,.38);}
+.td{color:rgba(244,244,244,.38);}
 @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ══ SECTIONS ══ */
 .ms{padding:clamp(70px,10vh,120px) clamp(20px,5vw,60px);}
-.sLbl{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,.65);margin-bottom:clamp(38px,6vh,62px);display:flex;align-items:center;gap:14px;}
-.sLbl::before{content:'';display:block;width:24px;height:1px;background:rgba(212,168,83,.35);}
+.sLbl{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,244,244,.65);margin-bottom:clamp(38px,6vh,62px);display:flex;align-items:center;gap:14px;}
+.sLbl::before{content:'';display:block;width:24px;height:1px;background:rgba(244,244,244,.35);}
 
 /* ABOUT */
 .abGrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,100px);align-items:start;}
@@ -258,7 +166,7 @@ html.light .fLinks a:hover{color:#0a0a0a;}
 .abH2 span{color:rgba(255,255,255,.18);}
 .abP{font-size:clamp(13.5px,1.35vw,15.5px);font-weight:300;line-height:2;color:rgba(255,255,255,.42);margin-bottom:20px;}
 .abP strong{color:var(--white);font-weight:500;}
-.foundBox{margin-top:38px;border-left:2px solid rgba(212,168,83,.28);padding-left:18px;}
+.foundBox{margin-top:38px;border-left:2px solid rgba(244,244,244,.28);padding-left:18px;}
 .foundName{font-family:var(--fd);font-size:14px;font-weight:700;margin-bottom:4px;}
 .foundRole{font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.06em;}
 .statsRow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.055);margin-top:clamp(46px,7vh,78px);}
@@ -279,13 +187,15 @@ html.light .fLinks a:hover{color:#0a0a0a;}
 .pkgTab{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:11px 20px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.38);cursor:pointer;transition:all .2s;background:transparent;font-family:var(--fb);}
 .pkgTab.on,.pkgTab:hover{background:var(--white);color:var(--black);border-color:var(--white);}
 .pkgPanels>div{display:none;}.pkgPanels>.on{display:block;}
+.pkgSectorLnk{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32);text-decoration:none;padding:7px 14px;border:1px solid rgba(255,255,255,.1);transition:color .2s,border-color .2s;}
+.pkgSectorLnk:hover{color:var(--white);border-color:rgba(255,255,255,.35);}
 .c3{grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.055);}
 .c2{grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.055);}
 .pkC{background:var(--g9);padding:clamp(24px,4vw,38px) clamp(18px,3vw,30px);position:relative;transition:background .28s;cursor:pointer;}
 .pkC:hover{background:rgba(255,255,255,.022);}
 .pkC.feat{background:var(--white);color:var(--black);}
 .pkC.feat:hover{background:var(--g0);}
-.pkBadge{font-size:8.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:4px 9px;background:rgba(212,168,83,.12);color:var(--gold);border:1px solid rgba(212,168,83,.22);display:inline-block;margin-bottom:18px;}
+.pkBadge{font-size:8.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:4px 9px;background:rgba(244,244,244,.12);color:var(--gold);border:1px solid rgba(244,244,244,.22);display:inline-block;margin-bottom:18px;}
 .pkC.feat .pkBadge{background:rgba(0,0,0,.07);color:rgba(0,0,0,.55);border-color:rgba(0,0,0,.1);}
 .pkName{font-family:var(--fd);font-size:clamp(14px,2vw,18px);font-weight:700;letter-spacing:-.02em;margin-bottom:5px;}
 .pkSec{font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:22px;}
@@ -293,7 +203,7 @@ html.light .fLinks a:hover{color:#0a0a0a;}
 .pkPr{font-family:var(--fd);font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.04em;margin-bottom:3px;line-height:1;}
 .pkNote{font-size:9.5px;color:rgba(255,255,255,.32);margin-bottom:3px;}
 .pkC.feat .pkNote{color:rgba(0,0,0,.42);}
-.pkDisc{font-size:8.5px;font-weight:700;color:var(--gold);background:rgba(212,168,83,.09);border:1px solid rgba(212,168,83,.18);display:inline-block;padding:3px 7px;margin-bottom:22px;letter-spacing:.08em;}
+.pkDisc{font-size:8.5px;font-weight:700;color:var(--gold);background:rgba(244,244,244,.09);border:1px solid rgba(244,244,244,.18);display:inline-block;padding:3px 7px;margin-bottom:22px;letter-spacing:.08em;}
 .pkC.feat .pkDisc{background:rgba(0,0,0,.05);color:rgba(0,0,0,.55);border-color:rgba(0,0,0,.1);}
 .pkDiv{height:1px;background:rgba(255,255,255,.07);margin-bottom:18px;}
 .pkC.feat .pkDiv{background:rgba(0,0,0,.09);}
@@ -373,8 +283,8 @@ html.light .bentoCta{color:rgba(0,0,0,.3);}
 @media(max-width:600px){.pkPlanRow2{grid-template-columns:1fr;}}
 .pkPlanCard{position:relative;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(160deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,.02) 100%);padding:clamp(22px,3vw,36px) clamp(18px,2.5vw,28px);cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;display:flex;flex-direction:column;}
 .pkPlanCard:hover{transform:translateY(-5px);box-shadow:0 16px 50px rgba(0,0,0,.5);}
-.pkPlanCard.pop{border-color:var(--gold);box-shadow:0 0 36px rgba(212,168,83,.14);}
-.pkPlanCard.pop:hover{box-shadow:0 16px 60px rgba(212,168,83,.22),0 0 36px rgba(212,168,83,.12);}
+.pkPlanCard.pop{border-color:var(--gold);box-shadow:0 0 36px rgba(244,244,244,.14);}
+.pkPlanCard.pop:hover{box-shadow:0 16px 60px rgba(244,244,244,.22),0 0 36px rgba(244,244,244,.12);}
 .pkPopBadge{display:inline-flex;align-items:center;padding:4px 12px;background:var(--gold);color:#000;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;border-radius:100px;margin-bottom:20px;width:fit-content;}
 .pkPlanBadge{display:inline-flex;align-items:center;padding:4px 12px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.45);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:100px;margin-bottom:20px;width:fit-content;}
 .pkPlanName{font-family:var(--fd);font-size:clamp(18px,2.2vw,24px);font-weight:800;letter-spacing:-.03em;margin-bottom:7px;line-height:1.1;}
@@ -418,16 +328,32 @@ html.light .bentoCta{color:rgba(0,0,0,.3);}
 .pkSingleCta{margin-top:2px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);transition:color .2s;}
 .pkSingleCard:hover .pkSingleCta{color:var(--gold);}
 
-/* PROCESS */
+/* PROCESS TIMELINE */
 .procSec{background:rgba(255,255,255,.018);border-top:1px solid rgba(255,255,255,.045);border-bottom:1px solid rgba(255,255,255,.045);}
-.procHd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(46px,7vh,70px);gap:30px;}
-.procH2{font-family:var(--fd);font-size:clamp(30px,4.5vw,58px);font-weight:800;letter-spacing:-.04em;line-height:.92;}
-.procP{font-size:12.5px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.38);max-width:290px;}
-.stepGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.055);}
-.stepC{background:var(--g9);padding:clamp(22px,4vw,38px) clamp(16px,3vw,26px);}
-.stepN{font-family:var(--fd);font-size:clamp(42px,6vw,58px);font-weight:800;letter-spacing:-.06em;line-height:1;color:rgba(255,255,255,.035);margin-bottom:18px;}
-.stepT{font-size:clamp(13.5px,1.5vw,15.5px);font-weight:600;margin-bottom:9px;}
-.stepP{font-size:11.5px;font-weight:300;line-height:1.9;color:rgba(255,255,255,.38);}
+.procLayout{display:grid;gap:clamp(48px,7vw,96px);}
+@media(min-width:1024px){.procLayout{grid-template-columns:260px 1fr;align-items:start;}}
+.procHeadSticky{position:sticky;top:calc(var(--nh) + 28px);}
+.procH2{font-family:var(--fd);font-size:clamp(28px,4vw,50px);font-weight:800;letter-spacing:-.04em;line-height:.95;margin-bottom:16px;}
+.procP{font-size:12.5px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.38);max-width:240px;}
+/* Process Timeline */
+.procTl{display:flex;flex-direction:column;}
+.procTlItem{position:relative;display:flex;gap:clamp(18px,3vw,30px);padding-bottom:clamp(32px,5vh,52px);}
+.procTlItem:last-child{padding-bottom:0;}
+.procTlItem:not(:last-child)::before{content:'';position:absolute;left:19px;top:42px;bottom:0;width:1px;background:rgba(255,255,255,.07);transition:background .4s;}
+.procTlItem.tl-done:not(:last-child)::before{background:rgba(244,244,244,.2);}
+.procTlIconWrap{position:relative;z-index:1;flex-shrink:0;margin-top:2px;}
+.procTlIcon{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:var(--black);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:10px;font-weight:700;letter-spacing:.04em;color:rgba(255,255,255,.25);transition:all .35s;}
+.procTlItem.tl-done .procTlIcon{border-color:rgba(244,244,244,.3);background:rgba(244,244,244,.055);color:rgba(244,244,244,.75);}
+.procTlItem.tl-active .procTlIcon{border-color:var(--white);background:var(--white);color:var(--black);box-shadow:0 0 0 5px rgba(244,244,244,.07),0 0 20px rgba(244,244,244,.06);}
+.procTlContent{flex:1;min-width:0;}
+.procTlStep{display:block;font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:7px;}
+.procTlItem.tl-active .procTlStep{color:rgba(244,244,244,.55);}
+.procTlItem.tl-done .procTlStep{color:rgba(255,255,255,.18);}
+.procTlTitle{font-family:var(--fd);font-size:clamp(15px,1.8vw,19px);font-weight:700;letter-spacing:-.025em;margin-bottom:9px;line-height:1.15;}
+.procTlDesc{font-size:12.5px;font-weight:300;line-height:1.95;color:rgba(255,255,255,.38);max-width:480px;}
+.procTlTag{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:5px 11px;border:1px solid rgba(255,255,255,.07);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);}
+.procTlItem.tl-active .procTlTag{border-color:rgba(244,244,244,.18);color:rgba(244,244,244,.6);background:rgba(244,244,244,.03);}
+.procTlItem.tl-done .procTlTag{border-color:rgba(255,255,255,.05);}
 
 /* TESTIMONIALS */
 .tColsOuter{width:100%;overflow:hidden;mask-image:linear-gradient(to bottom,transparent 0%,black 12%,black 88%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 12%,black 88%,transparent 100%);max-height:520px;}
@@ -437,7 +363,7 @@ html.light .bentoCta{color:rgba(0,0,0,.3);}
 .tColTrack.up{animation:tScrollUp 22s linear infinite;}
 .tColTrack.dn{animation:tScrollDown 26s linear infinite;}
 .tCard{background:linear-gradient(135deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,.025) 100%);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:clamp(20px,2.5vw,28px);display:flex;flex-direction:column;gap:14px;}
-.tCardMk{font-family:Georgia,serif;font-size:38px;color:rgba(212,168,83,.22);line-height:1;}
+.tCardMk{font-family:Georgia,serif;font-size:38px;color:rgba(244,244,244,.22);line-height:1;}
 .tCardQ{font-size:13px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.65);font-style:italic;flex:1;}
 .tCardFoot{display:flex;flex-direction:column;gap:3px;padding-top:10px;border-top:1px solid rgba(255,255,255,.07);}
 .tCardName{font-family:var(--fd);font-size:13px;font-weight:700;color:#fff;}
@@ -454,72 +380,126 @@ html.light .bentoCta{color:rgba(0,0,0,.3);}
 .cliLogo:hover{color:rgba(255,255,255,.45);}
 
 /* CTA */
-.ctaSec{background:var(--white);color:var(--black);text-align:center;padding:clamp(88px,14vh,148px) clamp(20px,5vw,60px);}
-.ctaSec .sLbl{justify-content:center;color:rgba(0,0,0,.32);}
-.ctaSec .sLbl::before{background:rgba(0,0,0,.18);}
+.ctaSec{background:var(--black);color:var(--white);text-align:center;padding:clamp(88px,14vh,148px) clamp(20px,5vw,60px);border-top:1px solid rgba(255,255,255,.055);}
+.ctaSec .sLbl{justify-content:center;color:rgba(255,255,255,.32);}
+.ctaSec .sLbl::before{background:rgba(255,255,255,.18);}
 .ctaH2{font-family:var(--fd);font-size:clamp(40px,8vw,108px);font-weight:800;line-height:.88;letter-spacing:-.05em;margin-bottom:18px;}
-.ctaSub{font-size:13.5px;font-weight:300;color:rgba(0,0,0,.42);margin-bottom:46px;}
+.ctaSub{font-size:13.5px;font-weight:300;color:rgba(255,255,255,.42);margin-bottom:46px;}
 .ctaRow{display:flex;justify-content:center;gap:clamp(26px,6vw,70px);margin-bottom:54px;flex-wrap:wrap;}
-.ciLbl{font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(0,0,0,.32);margin-bottom:7px;}
-.ciVal{font-size:clamp(11.5px,1.6vw,13.5px);font-weight:600;color:var(--black);text-decoration:none;display:block;transition:opacity .2s;}
+.ciLbl{font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:7px;}
+.ciVal{font-size:clamp(11.5px,1.6vw,13.5px);font-weight:600;color:var(--white);text-decoration:none;display:block;transition:opacity .2s;}
 .ciVal:hover{opacity:.55;}
 .stepBoxes{display:flex;justify-content:center;gap:2px;flex-wrap:wrap;margin-top:54px;}
-.stepBox{background:var(--g0);padding:17px 22px;min-width:126px;}
+.stepBox{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:17px 22px;min-width:126px;}
 .stepBoxN{font-family:var(--fd);font-size:21px;font-weight:800;margin-bottom:4px;}
-.stepBoxT{font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.38);}
+.stepBoxT{font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);}
 
 /* FOOTER */
-footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055);padding:clamp(22px,4vh,34px) clamp(20px,5vw,60px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055);padding:clamp(48px,7vh,72px) clamp(20px,5vw,60px) clamp(28px,4vh,40px);}
+.footTop{display:grid;grid-template-columns:1fr;gap:40px;}
+@media(min-width:768px){.footTop{grid-template-columns:200px 1fr;gap:60px;align-items:start;}}
+.footBrand{display:flex;flex-direction:column;gap:18px;}
 .fLogo{font-family:var(--fd);font-size:14px;font-weight:800;}
-.fCopy{font-size:9.5px;color:rgba(255,255,255,.22);letter-spacing:.06em;}
-.fLinks{display:flex;gap:18px;list-style:none;}
-.fLinks a{font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);text-decoration:none;cursor:pointer;transition:color .2s;}
-.fLinks a:hover{color:var(--white);}
+.fCopy{font-size:9.5px;color:rgba(255,255,255,.22);letter-spacing:.04em;line-height:1.7;margin-top:4px;}
+.footCols{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 20px;}
+@media(min-width:640px){.footCols{grid-template-columns:repeat(4,1fr);gap:0 32px;}}
+.footColH{font-size:8px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:14px;}
+.footColLinks{list-style:none;}
+.footColLinks li{margin-bottom:9px;}
+.footColLinks a{font-size:12px;color:rgba(255,255,255,.38);text-decoration:none;cursor:pointer;transition:color .2s;display:inline-flex;align-items:center;gap:5px;}
+.footColLinks a:hover{color:var(--white);}
+.footBar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:28px;margin-top:40px;border-top:1px solid rgba(255,255,255,.055);}
+.footBarTxt{font-size:9px;color:rgba(255,255,255,.18);letter-spacing:.06em;}
+/* CONTENT DETAIL (Who We Are) */
+.contentFeats{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px);padding-top:clamp(18px,3vh,28px);}
+@media(max-width:500px){.contentFeats{grid-template-columns:1fr;}}
+.contentFeatH{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:7px;}
+.contentFeatP{font-size:12px;color:rgba(255,255,255,.35);line-height:1.75;}
+.contentQuote{border-left:2px solid rgba(255,255,255,.12);padding:12px 16px;margin-top:clamp(18px,3vh,28px);}
+.contentQuote p{font-size:13px;color:rgba(255,255,255,.42);line-height:1.8;font-style:italic;}
+.contentQuote cite{display:block;margin-top:10px;font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.22);font-style:normal;}
 
 /* ANIM */
 .fu{opacity:0;transform:translateY(38px);transition:opacity .88s var(--ease),transform .88s var(--ease);}
 .fu.vis{opacity:1;transform:none;}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
-/* ══ AUTH ══ */
-.authWrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;position:relative;overflow:hidden;}
-.authBg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:48px 48px;}
-.authGlow{position:absolute;width:480px;height:480px;background:radial-gradient(circle,rgba(212,168,83,.038) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
-.authCard{background:rgba(255,255,255,.028);border:1px solid rgba(255,255,255,.075);padding:clamp(34px,5vw,52px);width:100%;max-width:430px;position:relative;z-index:1;animation:fadeUp .5s var(--ease);}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-.authLogo{font-family:var(--fd);font-size:17px;font-weight:800;margin-bottom:30px;display:block;color:var(--white);}
-.authTitle{font-family:var(--fd);font-size:clamp(22px,4vw,30px);font-weight:800;letter-spacing:-.03em;margin-bottom:7px;}
-.authSub{font-size:12.5px;font-weight:300;color:rgba(255,255,255,.38);margin-bottom:34px;line-height:1.75;}
-.authTabs{display:flex;gap:2px;margin-bottom:26px;}
+/* ══ AUTH SPLIT LAYOUT ══ */
+.authSplitWrap{display:grid;grid-template-columns:1fr;min-height:100svh;}
+@media(min-width:1024px){.authSplitWrap{grid-template-columns:1fr 1fr;overflow:hidden;height:100vh;max-height:100vh;}}
+/* Left Panel */
+.authSplitLeft{position:relative;display:none;flex-direction:column;border-right:1px solid rgba(255,255,255,.07);padding:40px;background:rgba(255,255,255,.025);}
+@media(min-width:1024px){.authSplitLeft{display:flex;height:100vh;overflow:hidden;}}
+.authSplitLeftGrad{position:absolute;inset:0;z-index:10;background:linear-gradient(to top,var(--black) 0%,transparent 60%);pointer-events:none;}
+.authPathsCont{position:absolute;inset:0;pointer-events:none;}
+.authPathsCont svg{width:100%;height:100%;color:rgba(255,255,255,.09);}
+.authSplitLeftContent{position:relative;z-index:10;display:flex;flex-direction:column;height:100%;}
+.authSplitLeftLogo{display:flex;align-items:center;gap:8px;}
+.authSplitQuote{margin-top:auto;display:flex;flex-direction:column;gap:9px;}
+.authSplitQuote p{font-size:18px;font-weight:500;line-height:1.65;}
+.authSplitQuote footer{font-family:monospace;font-size:12px;font-weight:700;color:rgba(255,255,255,.55);}
+/* Path animation */
+@keyframes authPathMove{0%{stroke-dashoffset:1800;opacity:.3}50%{opacity:.65}100%{stroke-dashoffset:-1800;opacity:.3}}
+/* Right Panel */
+.authSplitRight{position:relative;display:flex;min-height:100svh;flex-direction:column;justify-content:flex-start;padding:80px 20px 48px;overflow-y:auto;}
+@media(min-width:1024px){.authSplitRight{justify-content:center;padding:40px 20px;max-height:100vh;}}
+#threeAuth{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;opacity:.35;}
+#threeAuth canvas{display:block;width:100%!important;height:100%!important;}
+.authSplitRightBg{position:absolute;inset:0;z-index:0;opacity:.55;pointer-events:none;}
+.authSplitRightGrad1{position:absolute;top:0;right:0;width:560px;height:1280px;transform:translateY(-350px);border-radius:50%;background:radial-gradient(68.54% 68.72% at 55.02% 31.46%,rgba(255,255,255,.045) 0%,rgba(180,180,180,.018) 50%,rgba(255,255,255,.008) 80%);}
+.authSplitRightGrad2{position:absolute;top:0;right:0;width:240px;height:1280px;transform:translate(5%,-50%);border-radius:50%;background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.028) 0%,rgba(255,255,255,.007) 80%,transparent 100%);}
+.authSplitRightGrad3{position:absolute;top:0;right:0;width:240px;height:1280px;transform:translateY(-350px);border-radius:50%;background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.028) 0%,rgba(255,255,255,.007) 80%,transparent 100%);}
+.authSplitBack{position:absolute;top:28px;left:20px;z-index:10;display:flex;align-items:center;gap:6px;background:transparent;border:none;color:rgba(255,255,255,.45);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;padding:8px 12px;transition:color .2s;font-family:var(--fb);}
+.authSplitBack:hover{color:var(--white);}
+.authSplitFormWrap{position:relative;z-index:1;width:100%;max-width:400px;margin:0 auto;display:flex;flex-direction:column;gap:16px;padding:24px 0;}
+.authSplitMobileLogo{display:flex;align-items:center;gap:8px;}
+@media(min-width:1024px){.authSplitMobileLogo{display:none;}}
+.authSplitHeader{display:flex;flex-direction:column;gap:5px;}
+.authSplitTitle{font-family:var(--fd);font-size:clamp(20px,3vw,26px);font-weight:700;letter-spacing:-.02em;}
+.authSplitSub{font-size:12.5px;font-weight:300;color:rgba(255,255,255,.4);line-height:1.75;}
+/* Social buttons */
+.authSocialGroup{display:flex;flex-direction:column;gap:8px;}
+.authSocialBtn{width:100%;padding:12px 16px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);color:var(--white);font-size:12px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:background .2s,border-color .2s;font-family:var(--fb);letter-spacing:.02em;}
+.authSocialBtn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);}
+/* OR divider */
+.authOrDiv{display:flex;align-items:center;justify-content:center;gap:10px;}
+.authOrLine{flex:1;height:1px;background:rgba(255,255,255,.07);}
+.authOrText{font-size:9.5px;color:rgba(255,255,255,.25);letter-spacing:.12em;}
+/* Terms */
+.authTermsNote{font-size:10.5px;color:rgba(255,255,255,.28);line-height:1.7;}
+.authTermsNote a{text-decoration:underline;text-underline-offset:3px;transition:color .2s;}
+.authTermsNote a:hover{color:rgba(255,255,255,.65);}
+/* Keep existing auth form styles */
+.authTabs{display:flex;gap:2px;margin-bottom:20px;}
 .authTab{flex:1;padding:10px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.38);font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;font-family:var(--fb);transition:all .2s;}
 .authTab.on{background:var(--white);color:var(--black);border-color:var(--white);}
 .roleOpts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;}
 .roleOpt{border:1px solid rgba(255,255,255,.09);padding:13px;cursor:pointer;transition:all .2s;text-align:center;background:rgba(255,255,255,.025);}
-.roleOpt:hover,.roleOpt.sel{border-color:rgba(212,168,83,.38);background:rgba(212,168,83,.055);}
+.roleOpt:hover,.roleOpt.sel{border-color:rgba(244,244,244,.38);background:rgba(244,244,244,.055);}
 .roleOpt.sel .roleIco{color:var(--gold);}
 .roleIco{font-size:20px;margin-bottom:5px;display:block;color:rgba(255,255,255,.28);transition:color .2s;}
 .roleName{font-size:11.5px;font-weight:600;display:block;margin-bottom:2px;}
 .roleDesc{font-size:9.5px;color:rgba(255,255,255,.32);line-height:1.4;}
-.fGrp{margin-bottom:14px;}
-.fLab{font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);display:block;margin-bottom:7px;}
-.fInp{width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);color:var(--white);padding:13px 15px;font-size:12.5px;font-weight:300;font-family:var(--fb);outline:none;transition:border-color .2s,box-shadow .2s;}
-.fInp:focus{border-color:rgba(212,168,83,.45);box-shadow:0 0 0 3px rgba(212,168,83,.06);}
+.fGrp{margin-bottom:13px;}
+.fLab{font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);display:block;margin-bottom:6px;}
+.fInp{width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);color:var(--white);padding:12px 14px;font-size:12.5px;font-weight:300;font-family:var(--fb);outline:none;transition:border-color .2s,box-shadow .2s;}
+.fInp:focus{border-color:rgba(244,244,244,.4);box-shadow:0 0 0 3px rgba(244,244,244,.05);}
 .fInp::placeholder{color:rgba(255,255,255,.18);}
 .fInp.err{border-color:rgba(192,57,43,.5);}
-.fSel{width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);color:var(--white);padding:13px 15px;font-size:12.5px;font-weight:300;font-family:var(--fb);outline:none;transition:border-color .2s;cursor:pointer;}
-.fSel:focus{border-color:rgba(212,168,83,.45);}
+.fSel{width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);color:var(--white);padding:12px 14px;font-size:12.5px;font-weight:300;font-family:var(--fb);outline:none;transition:border-color .2s;cursor:pointer;}
+.fSel:focus{border-color:rgba(244,244,244,.4);}
 .fSel option{background:var(--g8);}
-.fTxt{width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);color:var(--white);padding:13px 15px;font-size:12.5px;font-weight:300;font-family:var(--fb);outline:none;transition:border-color .2s;resize:vertical;min-height:90px;}
-.fTxt:focus{border-color:rgba(212,168,83,.45);}
+.fTxt{width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);color:var(--white);padding:12px 14px;font-size:12.5px;font-weight:300;font-family:var(--fb);outline:none;transition:border-color .2s;resize:vertical;min-height:90px;}
+.fTxt:focus{border-color:rgba(244,244,244,.4);}
 .fTxt::placeholder{color:rgba(255,255,255,.18);}
 .fRow{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
 .fCheck{display:flex;align-items:flex-start;gap:9px;cursor:pointer;margin-bottom:10px;}
 .fCheck input{margin-top:2px;accent-color:var(--gold);}
 .fCheck span{font-size:11.5px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.6;}
-.authDiv{display:flex;align-items:center;gap:11px;margin:22px 0;}
+.authDiv{display:flex;align-items:center;gap:11px;margin:18px 0;}
 .authDiv::before,.authDiv::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07);}
 .authDiv span{font-size:9.5px;color:rgba(255,255,255,.22);letter-spacing:.1em;}
-.authLink{font-size:11.5px;font-weight:300;color:rgba(255,255,255,.38);text-align:center;margin-top:18px;cursor:pointer;transition:color .2s;}
+.authLink{font-size:11.5px;font-weight:300;color:rgba(255,255,255,.38);text-align:center;margin-top:14px;cursor:pointer;transition:color .2s;}
 .authLink:hover{color:var(--white);}
 .authLink em{color:var(--gold);font-style:normal;font-weight:500;}
 .authBack{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);cursor:pointer;display:flex;align-items:center;gap:5px;margin-bottom:26px;border:none;background:none;padding:0;font-family:var(--fb);transition:color .2s;}
@@ -533,18 +513,38 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 .pw-tog input{padding-right:42px;}
 .pw-eye{position:absolute;right:13px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.3);cursor:pointer;font-size:13px;padding:2px;}
 
+/* ══ FAQ PAGE ══ */
+.faqPage{padding:clamp(100px,14vh,140px) clamp(20px,5vw,60px) 0;max-width:1000px;margin:0 auto;}
+.faqGrid{display:grid;gap:clamp(40px,6vw,80px);margin-bottom:clamp(60px,10vh,100px);}
+@media(min-width:1024px){.faqGrid{grid-template-columns:260px 1fr;align-items:start;}}
+.faqHeadSticky{position:sticky;top:calc(var(--nh) + 24px);}
+.faqHeadH{font-family:var(--fd);font-size:clamp(26px,3.5vw,42px);font-weight:800;letter-spacing:-.04em;line-height:1.0;margin-bottom:14px;}
+.faqHeadSub{font-size:13px;font-weight:300;color:rgba(255,255,255,.35);line-height:1.85;margin-bottom:28px;}
+.faqItem{border-bottom:1px solid rgba(255,255,255,.07);}
+.faqItem:first-child{border-top:1px solid rgba(255,255,255,.07);}
+.faqQ{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;background:none;border:none;color:var(--white);font-family:var(--fb);font-size:13.5px;font-weight:600;text-align:left;cursor:pointer;transition:color .2s;}
+.faqQ:hover{color:rgba(255,255,255,.55);}
+.faqChev{flex-shrink:0;width:15px;height:15px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;color:rgba(255,255,255,.25);transition:transform .35s var(--ease),color .2s;}
+.faqItem.op .faqChev{transform:rotate(180deg);color:var(--white);}
+.faqA{max-height:0;overflow:hidden;transition:max-height .45s var(--ease),opacity .3s;}
+.faqItem.op .faqA{max-height:600px;}
+.faqAInner{padding-bottom:22px;}
+.faqAInner p{font-size:13px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.95;}
+.faqAInner ol,.faqAInner ul{padding-left:16px;margin-top:10px;display:flex;flex-direction:column;gap:8px;}
+.faqAInner li{font-size:12.5px;font-weight:300;color:rgba(255,255,255,.38);line-height:1.7;}
+
 /* ══ PORTAL LAYOUT ══ */
 .portalLayout{display:flex;min-height:100vh;}
 .sidebar{width:var(--sw);background:rgba(5,5,5,.96);border-right:1px solid rgba(255,255,255,.055);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:200;display:flex;flex-direction:column;transition:transform .32s var(--ease);}
 .sbLogo{padding:22px 18px;border-bottom:1px solid rgba(255,255,255,.055);display:flex;align-items:center;justify-content:space-between;}
 .sbLogoTxt{font-family:var(--fd);font-size:15px;font-weight:800;}
 .sbBadge{font-size:8px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;}
-.badgeClient{background:rgba(212,168,83,.1);color:var(--gold);border:1px solid rgba(212,168,83,.2);}
+.badgeClient{background:rgba(244,244,244,.1);color:var(--gold);border:1px solid rgba(244,244,244,.2);}
 .badgeTeam{background:rgba(37,99,235,.1);color:#60a5fa;border:1px solid rgba(37,99,235,.2);}
 .badgeAdmin{background:rgba(192,57,43,.12);color:#e05252;border:1px solid rgba(192,57,43,.25);}
 .sbUser{padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.055);display:flex;align-items:center;gap:11px;}
 .sbAv{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:12px;font-weight:800;flex-shrink:0;border:1.5px solid;}
-.sbAvClient{background:rgba(212,168,83,.12);border-color:rgba(212,168,83,.28);color:var(--gold);}
+.sbAvClient{background:rgba(244,244,244,.12);border-color:rgba(244,244,244,.28);color:var(--gold);}
 .sbAvTeam{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.25);color:#60a5fa;}
 .sbAvAdmin{background:rgba(192,57,43,.1);border-color:rgba(192,57,43,.28);color:#e05252;}
 .sbUName{font-size:12px;font-weight:600;margin-bottom:2px;}
@@ -553,11 +553,11 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 .sbSec{font-size:8.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.18);padding:14px 18px 5px;}
 .sbItem{display:flex;align-items:center;gap:9px;padding:9px 18px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.42);cursor:pointer;transition:all .18s;border:none;background:none;width:100%;font-family:var(--fb);text-align:left;position:relative;}
 .sbItem:hover{color:var(--white);background:rgba(255,255,255,.035);}
-.sbItem.on{color:var(--white);background:rgba(212,168,83,.055);}
+.sbItem.on{color:var(--white);background:rgba(244,244,244,.055);}
 .sbItem.on::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);}
 .sbItem svg{width:15px;height:15px;flex-shrink:0;opacity:.65;}
 .sbItem.on svg,.sbItem:hover svg{opacity:1;}
-.sbBadgeNum{margin-left:auto;font-size:8.5px;font-weight:700;padding:2px 6px;border-radius:10px;background:rgba(212,168,83,.14);color:var(--gold);}
+.sbBadgeNum{margin-left:auto;font-size:8.5px;font-weight:700;padding:2px 6px;border-radius:10px;background:rgba(244,244,244,.14);color:var(--gold);}
 .sbFoot{padding:14px 18px;border-top:1px solid rgba(255,255,255,.055);}
 .sbFoot button{width:100%;padding:9px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.38);font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--fb);transition:all .18s;}
 .sbFoot button:hover{background:rgba(255,255,255,.07);color:var(--white);}
@@ -585,12 +585,12 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 .projType{font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);}
 .sBadge{font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;white-space:nowrap;}
 .sActive{background:rgba(76,175,130,.1);color:#4caf82;border:1px solid rgba(76,175,130,.18);}
-.sReview{background:rgba(212,168,83,.1);color:var(--gold);border:1px solid rgba(212,168,83,.18);}
+.sReview{background:rgba(244,244,244,.1);color:var(--gold);border:1px solid rgba(244,244,244,.18);}
 .sPend{background:rgba(255,255,255,.055);color:rgba(255,255,255,.38);border:1px solid rgba(255,255,255,.09);}
 .sDone{background:rgba(100,100,100,.12);color:rgba(255,255,255,.28);border:1px solid rgba(255,255,255,.07);}
 .sHold{background:rgba(192,57,43,.09);color:#e05252;border:1px solid rgba(192,57,43,.18);}
 .progBar{height:2px;background:rgba(255,255,255,.07);margin-bottom:11px;}
-.progFill{height:100%;background:linear-gradient(to right,rgba(212,168,83,.5),var(--gold));transition:width .5s var(--ease);}
+.progFill{height:100%;background:linear-gradient(to right,rgba(244,244,244,.5),var(--gold));transition:width .5s var(--ease);}
 .projMeta{display:flex;justify-content:space-between;font-size:10.5px;color:rgba(255,255,255,.28);}
 .tbl{width:100%;border-collapse:collapse;}
 .tbl th{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);padding:11px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.055);}
@@ -611,12 +611,12 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 .fSteps{display:flex;gap:0;margin-bottom:30px;background:rgba(255,255,255,.022);border:1px solid rgba(255,255,255,.055);overflow:hidden;}
 .fStep{flex:1;padding:11px 14px;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);text-align:center;border-right:1px solid rgba(255,255,255,.055);}
 .fStep:last-child{border:none;}
-.fStep.on{color:var(--white);background:rgba(212,168,83,.055);}
+.fStep.on{color:var(--white);background:rgba(244,244,244,.055);}
 .fStep.done{color:var(--gold);}
 .fStep.done::after{content:' ✓';}
 .pkSelGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:11px;margin-bottom:22px;}
 .pkSelCard{background:rgba(255,255,255,.022);border:1px solid rgba(255,255,255,.055);padding:18px;cursor:pointer;transition:all .18s;position:relative;}
-.pkSelCard:hover,.pkSelCard.sel{border-color:rgba(212,168,83,.38);background:rgba(212,168,83,.038);}
+.pkSelCard:hover,.pkSelCard.sel{border-color:rgba(244,244,244,.38);background:rgba(244,244,244,.038);}
 .pkSelCard .chk{position:absolute;top:11px;right:11px;width:18px;height:18px;border:1px solid rgba(255,255,255,.14);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;transition:all .18s;}
 .pkSelCard.sel .chk{background:var(--gold);border-color:var(--gold);color:var(--black);}
 .pkSelName{font-family:var(--fd);font-size:13.5px;font-weight:700;margin-bottom:3px;}
@@ -640,7 +640,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 .kCardFoot{display:flex;align-items:center;justify-content:space-between;}
 .kPrio{font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;}
 .pH{background:rgba(224,82,82,.1);color:#e05252;border:1px solid rgba(224,82,82,.18);}
-.pM{background:rgba(212,168,83,.1);color:var(--gold);border:1px solid rgba(212,168,83,.18);}
+.pM{background:rgba(244,244,244,.1);color:var(--gold);border:1px solid rgba(244,244,244,.18);}
 .pL{background:rgba(76,175,130,.1);color:#4caf82;border:1px solid rgba(76,175,130,.18);}
 .kDue{font-size:9.5px;color:rgba(255,255,255,.28);}
 .kAvs{display:flex;}
@@ -651,21 +651,21 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 /* CRM */
 .crmSearch{display:flex;gap:7px;margin-bottom:14px;}
 .crmSearch input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:var(--white);padding:11px 13px;font-size:11.5px;font-weight:300;font-family:var(--fb);outline:none;transition:border-color .18s;}
-.crmSearch input:focus{border-color:rgba(212,168,83,.38);}
+.crmSearch input:focus{border-color:rgba(244,244,244,.38);}
 .crmSearch input::placeholder{color:rgba(255,255,255,.18);}
 .crmFilter{padding:9px 14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.38);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:var(--fb);transition:all .18s;}
 .crmFilter:hover,.crmFilter.on{background:rgba(255,255,255,.09);color:var(--white);border-color:rgba(255,255,255,.18);}
 .cliRow{display:grid;grid-template-columns:auto 1fr auto auto auto;align-items:center;gap:14px;padding:13px 14px;border-bottom:1px solid rgba(255,255,255,.035);cursor:pointer;transition:background .18s;}
 .cliRow:hover{background:rgba(255,255,255,.022);}
-.cliRowAv{width:34px;height:34px;border-radius:50%;background:rgba(212,168,83,.09);border:1px solid rgba(212,168,83,.2);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:11px;font-weight:800;color:var(--gold);flex-shrink:0;}
+.cliRowAv{width:34px;height:34px;border-radius:50%;background:rgba(244,244,244,.09);border:1px solid rgba(244,244,244,.2);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:11px;font-weight:800;color:var(--gold);flex-shrink:0;}
 .cliRowName{font-size:12.5px;font-weight:500;margin-bottom:2px;}
 .cliRowCo{font-size:10.5px;color:rgba(255,255,255,.32);}
 .cliRowVal{font-family:var(--fd);font-size:13.5px;font-weight:700;text-align:right;}
 .cliRowDate{font-size:10.5px;color:rgba(255,255,255,.28);text-align:right;}
 .revChart{display:flex;align-items:flex-end;gap:4px;height:112px;padding:0 4px;}
-.revBar{flex:1;background:rgba(212,168,83,.13);border:1px solid rgba(212,168,83,.18);border-bottom:none;transition:background .28s;cursor:pointer;min-width:18px;}
-.revBar:hover{background:rgba(212,168,83,.32);}
-.revBar.cur{background:rgba(212,168,83,.28);border-color:rgba(212,168,83,.48);}
+.revBar{flex:1;background:rgba(244,244,244,.13);border:1px solid rgba(244,244,244,.18);border-bottom:none;transition:background .28s;cursor:pointer;min-width:18px;}
+.revBar:hover{background:rgba(244,244,244,.32);}
+.revBar.cur{background:rgba(244,244,244,.28);border-color:rgba(244,244,244,.48);}
 .revLabels{display:flex;gap:4px;margin-top:5px;padding:0 4px;}
 .revLabel{flex:1;font-size:8.5px;color:rgba(255,255,255,.18);text-align:center;letter-spacing:.05em;min-width:18px;}
 /* TEAM CARDS */
@@ -710,7 +710,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 .toggle input{opacity:0;width:0;height:0;}
 .toggleSlider{position:absolute;cursor:pointer;inset:0;background:rgba(255,255,255,.1);transition:.3s;border-radius:20px;}
 .toggleSlider::before{content:'';position:absolute;height:14px;width:14px;left:3px;bottom:3px;background:rgba(255,255,255,.5);transition:.3s;border-radius:50%;}
-.toggle input:checked + .toggleSlider{background:rgba(212,168,83,.5);}
+.toggle input:checked + .toggleSlider{background:rgba(244,244,244,.5);}
 .toggle input:checked + .toggleSlider::before{transform:translateX(16px);background:var(--gold);}
 /* MSGS */
 .msgThread{display:flex;flex-direction:column;gap:14px;min-height:280px;margin-bottom:18px;}
@@ -720,7 +720,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 .msgTxt{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.055);padding:11px 14px;max-width:400px;}
 .msgTxt p{font-size:12.5px;font-weight:300;line-height:1.75;}
 .msgTxt span{font-size:9.5px;color:rgba(255,255,255,.22);display:block;margin-top:5px;}
-.msgBubble.me .msgTxt{background:rgba(212,168,83,.07);border-color:rgba(212,168,83,.14);}
+.msgBubble.me .msgTxt{background:rgba(244,244,244,.07);border-color:rgba(244,244,244,.14);}
 .msgInput{display:flex;gap:7px;}
 .msgInput input{flex:1;}
 /* RESPONSIVE */
@@ -771,7 +771,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 <div class="V on" id="V-home">
 <div id="mobMenu"><a onclick="scrollTo_('#hero');closeMob()">About</a><a onclick="scrollTo_('#packages');closeMob()">Services</a><a onclick="scrollTo_('#process');closeMob()">Process</a><a onclick="scrollTo_('#testimonials');closeMob()">Clients</a><a onclick="goTo('auth');closeMob()">Portal</a></div>
 <nav id="mNav">
-  <span class="nLogo" onclick="scrollTo_('#hero')">BlvckCube</span>
+  <span class="nLogo" onclick="scrollTo_('#hero')"><img src="BlvckLogo.svg" alt="BlvckCube" style="height:42px;display:block;"></span>
   <ul class="nLinks">
     <li><a onclick="scrollTo_('#about')">About</a></li>
     <li><a onclick="scrollTo_('#packages')">Services</a></li>
@@ -779,7 +779,6 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
     <li><a onclick="scrollTo_('#testimonials')">Clients</a></li>
     <li><a class="nCta" onclick="goTo('auth')">Client Portal</a></li>
   </ul>
-  <button id="themeBtn" aria-label="Toggle theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><defs><mask id="moonMask"><rect width="100%" height="100%" fill="white"/><circle class="t-mask-c" cx="33" cy="0" r="9" fill="black"/></mask></defs><circle class="t-circle" cx="12" cy="12" r="5" fill="currentColor" stroke="none" mask="url(#moonMask)"/><g class="t-rays"><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="5.64" y1="5.64" x2="4.22" y2="4.22"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/><line x1="5.64" y1="18.36" x2="4.22" y2="19.78"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/></g></svg></button>
   <button class="nBurger" id="mBurger" onclick="toggleMob()"><span></span><span></span><span></span></button>
 </nav>
 <section class="hero" id="hero">
@@ -819,8 +818,8 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
     </div>
     <div>
       <p class="abP fu">BlvckCube is a <strong>luxury brand management firm</strong> built on uncompromising precision. We redefine brand authority — not through noise, but through deliberate, structured power.</p>
-      <p class="abP fu d1">Founded in 2023, guided by one vision and brought to life by five legendary talents — the Dashers. We specialize in <strong>bespoke luxury branding and marketing</strong>, transforming ambitions into iconic legacies.</p>
-      <p class="abP fu d2">Mastery needs no name. <strong>Dashers weave legacies — unseen, yet unforgettable.</strong></p>
+      <p class="abP fu d1">Founded in 2023, guided by one vision and brought to life by five legendary talents — the Cubes. We specialize in <strong>bespoke luxury branding and marketing</strong>, transforming ambitions into iconic legacies.</p>
+      <p class="abP fu d2">Mastery needs no name. <strong>Cubes weave legacies — unseen, yet unforgettable.</strong></p>
       <div class="foundBox fu d3"><div class="foundName">Muhammad Imam</div><div class="foundRole">CEO &amp; Founder · 10+ Years in Brand &amp; Marketing</div></div>
     </div>
   </div>
@@ -829,6 +828,25 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
     <div class="stat"><div class="statN" data-t="38" data-s="+">0+</div><div class="statL">Marketing Strategies</div></div>
     <div class="stat"><div class="statN" data-t="97" data-s="%">0%</div><div class="statL">Customer Satisfaction</div></div>
     <div class="stat"><div class="statN" data-t="7">0</div><div class="statL">Industries Served</div></div>
+  </div>
+  <!-- Content Detail -->
+  <div style="margin-top:clamp(48px,8vh,80px);">
+    <p class="abP fu d1">BlvckCube stands at the intersection of strategy and aesthetics. <strong>We don't follow trends — we architect them.</strong> Each brand we build becomes a pillar of authority in its market.</p>
+    <p class="abP fu d2">From Cairo to Canada, our reach is global. Our methodology is surgical, our creative vision — relentless. The Cubes operate in silence and deliver in thunder.</p>
+    <div class="contentFeats fu d3">
+      <div>
+        <div class="contentFeatH">Precision</div>
+        <p class="contentFeatP">Every decision is deliberate. Every detail, intentional. We craft brand authority with surgical focus.</p>
+      </div>
+      <div>
+        <div class="contentFeatH">Power</div>
+        <p class="contentFeatP">We transform brands into market forces that command attention and drive unwavering loyalty.</p>
+      </div>
+    </div>
+    <blockquote class="contentQuote fu d4">
+      <p>"Working with BlvckCube transformed our brand from a local name into a commanding market presence. The Cubes don't just work — they architect legacies."</p>
+      <cite>Ali Hassan &middot; Strategic Partner</cite>
+    </blockquote>
   </div>
 </section>
 <!-- PACKAGES -->
@@ -840,6 +858,12 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
     <button class="pkgTab" onclick="mTab('branding',this)">Branding</button>
     <button class="pkgTab" onclick="mTab('tech',this)">Technology</button>
     <button class="pkgTab" onclick="mTab('singles',this)">Single Services</button>
+  </div>
+  <div id="pkgSectorLinks" style="margin-bottom:18px;display:flex;gap:10px;flex-wrap:wrap;">
+    <a href="service-marketing.html" id="slnk-marketing" class="pkgSectorLnk" style="display:inline-flex;">Explore Marketing →</a>
+    <a href="service-branding.html" id="slnk-branding" class="pkgSectorLnk" style="display:none;">Explore Branding →</a>
+    <a href="service-technology.html" id="slnk-tech" class="pkgSectorLnk" style="display:none;">Explore Technology →</a>
+    <a href="service-singles.html" id="slnk-singles" class="pkgSectorLnk" style="display:none;">Explore Single Services →</a>
   </div>
   <div class="pkgPanels">
 
@@ -1077,7 +1101,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
         <div class="pkSingleCard" onclick="startPkg('Marketing Strategy','7,500 EGP')"><div class="pkSingleName">Marketing Strategy</div><div class="pkSinglePrice">7,500 EGP</div><div class="pkSingleDesc">Actionable brand strategy with channel plan, messaging, and KPI framework.</div><div class="pkSingleMeta">25 Days</div><div class="pkSingleCta">SELECT →</div></div>
         <div class="pkSingleCard" onclick="startPkg('Content Plan','5,000 EGP')"><div class="pkSingleName">Content Plan</div><div class="pkSinglePrice">5,000 EGP</div><div class="pkSingleDesc">Monthly content calendar with topic clusters and post timing.</div><div class="pkSingleMeta">25 Days</div><div class="pkSingleCta">SELECT →</div></div>
         <div class="pkSingleCard" onclick="startPkg('Content Plan + Designs','8,000 EGP')"><div class="pkSingleName">Content Plan + Designs</div><div class="pkSinglePrice">8,000 EGP</div><div class="pkSingleDesc">Content calendar plus all graphic designs ready to publish.</div><div class="pkSingleMeta">25 Days</div><div class="pkSingleCta">SELECT →</div></div>
-        <div class="pkSingleCard" onclick="startPkg('Media Buying','10,000 EGP')"><div class="pkSingleName">Media Buying</div><div class="pkSinglePrice">10,000 EGP <span style="font-size:10px;font-weight:400;color:rgba(212,168,83,.6)">+ 5% spend</span></div><div class="pkSingleDesc">Paid ad management — budget allocation, creative testing, performance reporting.</div><div class="pkSingleMeta">30 Days</div><div class="pkSingleCta">SELECT →</div></div>
+        <div class="pkSingleCard" onclick="startPkg('Media Buying','10,000 EGP')"><div class="pkSingleName">Media Buying</div><div class="pkSinglePrice">10,000 EGP <span style="font-size:10px;font-weight:400;color:rgba(244,244,244,.6)">+ 5% spend</span></div><div class="pkSingleDesc">Paid ad management — budget allocation, creative testing, performance reporting.</div><div class="pkSingleMeta">30 Days</div><div class="pkSingleCta">SELECT →</div></div>
         <div class="pkSingleCard" onclick="startPkg('Moderation','2,500 EGP')"><div class="pkSingleName">Moderation</div><div class="pkSinglePrice">2,500 EGP</div><div class="pkSingleDesc">Daily community management — replies, DMs, and engagement across social platforms.</div><div class="pkSingleMeta">30 Days</div><div class="pkSingleCta">SELECT →</div></div>
         <div class="pkSingleCard" onclick="startPkg('Photoshoot','12,000 EGP')"><div class="pkSingleName">Photoshoot</div><div class="pkSinglePrice">12,000 EGP</div><div class="pkSingleDesc">Professional brand photography session — product, portrait, or lifestyle.</div><div class="pkSingleMeta">By Arrangement</div><div class="pkSingleCta">SELECT →</div></div>
         <div class="pkSingleCard" onclick="startPkg('Videoshoot','14,000 EGP')"><div class="pkSingleName">Videoshoot</div><div class="pkSinglePrice">14,000 EGP</div><div class="pkSingleDesc">Full video production — scripting, filming, and raw footage delivery. Up to 6 minutes.</div><div class="pkSingleMeta">By Arrangement</div><div class="pkSingleCta">SELECT →</div></div>
@@ -1094,13 +1118,79 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 <!-- PROCESS -->
 <section class="ms procSec" id="process">
   <div class="sLbl fu">03 — How We Work</div>
-  <div class="procHd"><h2 class="procH2 fu">Four Steps.<br>Zero Noise.</h2><p class="procP fu d1">Every engagement follows the same mathematical precision that defines our identity. From the first call to market dominance.</p></div>
-  <div class="stepGrid">
-    <div class="stepC fu"><div class="stepN">01</div><div class="stepT">Choose Your Package</div><p class="stepP">Browse our packages and services. Select what suits your budget and goals — or reach out and we'll guide you.</p></div>
-    <div class="stepC fu d1"><div class="stepN">02</div><div class="stepT">15-Min Discovery Call</div><p class="stepP">We hop on a free 15-minute call to understand your brand vision and discuss the scope of your project.</p></div>
-    <div class="stepC fu d2"><div class="stepN">03</div><div class="stepT">Quote &amp; Contract</div><p class="stepP">We send a formal quotation. Once approved, we sign the Contract, Client Agreement, and Code of Conduct.</p></div>
-    <div class="stepC fu d3"><div class="stepN">04</div><div class="stepT">We Build Your Legacy</div><p class="stepP">The Dashers get to work. Precise execution, structured reporting — until your brand commands the market.</p></div>
-  </div>
+  <div class="procLayout">
+
+    <!-- Left: sticky heading -->
+    <div class="procHeadSticky fu">
+      <h2 class="procH2">Four Steps.<br>Zero Noise.</h2>
+      <p class="procP">Every engagement follows the same mathematical precision that defines our identity. From the first call to market dominance.</p>
+    </div>
+
+    <!-- Right: timeline -->
+    <div class="procTl fu d1">
+
+      <div class="procTlItem tl-done">
+        <div class="procTlIconWrap">
+          <div class="procTlIcon">01</div>
+        </div>
+        <div class="procTlContent">
+          <span class="procTlStep">Step One</span>
+          <div class="procTlTitle">Choose Your Package</div>
+          <p class="procTlDesc">Browse our packages and services. Select what fits your goals and budget — or reach out and we'll guide you to the right engagement from the start.</p>
+          <div class="procTlTag">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            Marketing · Branding · Technology
+          </div>
+        </div>
+      </div>
+
+      <div class="procTlItem tl-active">
+        <div class="procTlIconWrap">
+          <div class="procTlIcon">02</div>
+        </div>
+        <div class="procTlContent">
+          <span class="procTlStep">Step Two</span>
+          <div class="procTlTitle">Free 15-Min Discovery Call</div>
+          <p class="procTlDesc">We hop on a short, focused call to understand your brand, your vision, and the scope of what you need. No commitment. No pitch. Just clarity.</p>
+          <div class="procTlTag">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            15 minutes · Free · No obligation
+          </div>
+        </div>
+      </div>
+
+      <div class="procTlItem">
+        <div class="procTlIconWrap">
+          <div class="procTlIcon">03</div>
+        </div>
+        <div class="procTlContent">
+          <span class="procTlStep">Step Three</span>
+          <div class="procTlTitle">Quote &amp; Contract</div>
+          <p class="procTlDesc">We deliver a formal, itemized quotation. Once approved, we sign the Contract, Client Agreement, and Code of Conduct — complete transparency before a single hour of work begins.</p>
+          <div class="procTlTag">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Itemized · Signed · Binding
+          </div>
+        </div>
+      </div>
+
+      <div class="procTlItem">
+        <div class="procTlIconWrap">
+          <div class="procTlIcon">04</div>
+        </div>
+        <div class="procTlContent">
+          <span class="procTlStep">Step Four</span>
+          <div class="procTlTitle">We Build Your Legacy</div>
+          <p class="procTlDesc">The Cubes get to work. Precise execution, structured milestones, and weekly reporting — relentlessly moving forward until your brand commands the market.</p>
+          <div class="procTlTag">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Execution · Reporting · Dominance
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end procTl -->
+  </div><!-- end procLayout -->
 </section>
 <!-- TESTIMONIALS -->
 <section class="ms" id="testimonials">
@@ -1160,58 +1250,352 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
   <div style="display:flex;justify-content:center;" class="fu d3"><button class="bP" onclick="goTo('auth')">Book a Free 15-Min Call <span class="arr"></span></button></div>
   <div class="stepBoxes fu"><div class="stepBox"><div class="stepBoxN">1</div><div class="stepBoxT">Select Package</div></div><div class="stepBox"><div class="stepBoxN">2</div><div class="stepBoxT">Free 15-Min Call</div></div><div class="stepBox"><div class="stepBoxN">3</div><div class="stepBoxT">Quote Approval</div></div><div class="stepBox"><div class="stepBoxN">4</div><div class="stepBoxT">Sign Contract</div></div></div>
 </section>
-<footer class="mFoot"><span class="fLogo">BlvckCube</span><p class="fCopy">© 2025–2026 BlvckCube. All rights reserved.</p><ul class="fLinks"><li><a onclick="scrollTo_('#about')">About</a></li><li><a onclick="scrollTo_('#packages')">Services</a></li><li><a onclick="scrollTo_('#testimonials')">Clients</a></li><li><a onclick="goTo('auth')">Portal</a></li></ul></footer>
+<footer class="mFoot">
+  <div class="footTop">
+    <div class="footBrand">
+      <span class="fLogo"><img src="BlvckLogo.svg" alt="BlvckCube" style="height:36px;display:block;"></span>
+      <p class="fCopy">Luxury brand management firm.<br>Cairo, Egypt &amp; Canada.</p>
+    </div>
+    <div class="footCols">
+      <div>
+        <div class="footColH">Company</div>
+        <ul class="footColLinks">
+          <li><a onclick="scrollTo_('#about')">Who We Are</a></li>
+          <li><a onclick="scrollTo_('#packages')">Services</a></li>
+          <li><a onclick="scrollTo_('#process')">Our Process</a></li>
+          <li><a onclick="scrollTo_('#testimonials')">Clients</a></li>
+          <li><a onclick="goTo('faq')">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footColH">Services</div>
+        <ul class="footColLinks">
+          <li><a onclick="scrollTo_('#packages')">Marketing</a></li>
+          <li><a onclick="scrollTo_('#packages')">Branding</a></li>
+          <li><a onclick="scrollTo_('#packages')">Technology</a></li>
+          <li><a onclick="scrollTo_('#packages')">Strategy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footColH">Legal</div>
+        <ul class="footColLinks">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footColH">Social</div>
+        <ul class="footColLinks">
+          <li><a href="https://instagram.com/blvckcube.co" target="_blank">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/blvckcube" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com/BlvckCube.co" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footBar">
+    <span class="footBarTxt">© 2025–2026 BlvckCube. All rights reserved.</span>
+    <span class="footBarTxt">Built with precision · Cairo &amp; Canada</span>
+  </div>
+</footer>
 </div><!-- end V-home -->
 
-<!-- ═══ VIEW: AUTH ═══ -->
+<!-- ═══ VIEW: AUTH (SPLIT LAYOUT) ═══ -->
 <div class="V" id="V-auth">
-  <div class="authWrap">
-    <div class="authBg"></div><div class="authGlow"></div>
-    <div class="authCard">
-      <button class="authBack" onclick="goTo('home')">← Back to Site</button>
-      <span class="authLogo">BlvckCube</span>
-      <h2 class="authTitle" id="authTitle">Welcome Back.</h2>
-      <p class="authSub" id="authSub">Sign in to your portal or create a client account to get started.</p>
-      <div class="authTabs">
-        <button class="authTab on" onclick="showAuthPanel('signin')">Sign In</button>
-        <button class="authTab" onclick="showAuthPanel('signup')">Create Account</button>
-      </div>
-      <!-- SIGN IN -->
-      <div id="panSignin">
-        <div class="errMsg" id="siErr"></div>
-        <div class="fGrp"><label class="fLab">Email Address</label><input class="fInp" type="email" id="siEmail" placeholder="you@company.com" autocomplete="email"></div>
-        <div class="fGrp"><label class="fLab">Password</label><div class="pw-tog"><input class="fInp" type="password" id="siPass" placeholder="••••••••" autocomplete="current-password"><button class="pw-eye" onclick="togglePw('siPass',this)" type="button">👁</button></div></div>
-        <button class="bP wF" style="margin-top:18px;" onclick="doSignIn()">Sign In <span class="arr"></span></button>
-        <div class="authDiv"><span>or</span></div>
-        <p class="authLink" onclick="showAuthPanel('signup')">New client? <em>Create a free account</em></p>
-        <p style="font-size:10px;color:rgba(255,255,255,.18);text-align:center;margin-top:11px;">Team members: use your @blvckcube.com email</p>
-      </div>
-      <!-- SIGN UP (clients only) -->
-      <div id="panSignup" style="display:none;">
-        <div style="background:rgba(212,168,83,.07);border:1px solid rgba(212,168,83,.18);padding:11px 14px;margin-bottom:18px;font-size:11px;color:rgba(212,168,83,.9);line-height:1.6;">
-          ⚠️ Client accounts only. Team accounts are created by admin only and require a @blvckcube.com email address.
+  <div class="authSplitWrap">
+    <!-- LEFT PANEL -->
+    <div class="authSplitLeft">
+      <div id="threeAuth"></div>
+      <div class="authSplitLeftGrad"></div>
+      <div class="authPathsCont" id="authPathsCont1"></div>
+      <div class="authPathsCont" id="authPathsCont2"></div>
+      <div class="authSplitLeftContent">
+        <div class="authSplitLeftLogo">
+          <img src="BlvckLogo.svg" alt="BlvckCube" style="height:42px;display:block;">
         </div>
-        <div class="errMsg" id="suErr"></div>
-        <div class="fRow">
-          <div class="fGrp"><label class="fLab">First Name *</label><input class="fInp" type="text" id="suFirst" placeholder="Ahmed" autocomplete="given-name"></div>
-          <div class="fGrp"><label class="fLab">Last Name *</label><input class="fInp" type="text" id="suLast" placeholder="Hassan" autocomplete="family-name"></div>
+        <blockquote class="authSplitQuote">
+          <p>&ldquo;This Platform has helped me to save time and serve my clients faster than ever before.&rdquo;</p>
+          <footer>~ Ali Hassan</footer>
+        </blockquote>
+      </div>
+    </div>
+    <!-- RIGHT PANEL -->
+    <div class="authSplitRight">
+      <div class="authSplitRightBg" aria-hidden="true">
+        <div class="authSplitRightGrad1"></div>
+        <div class="authSplitRightGrad2"></div>
+        <div class="authSplitRightGrad3"></div>
+      </div>
+      <button class="authSplitBack" onclick="goTo('home')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Home
+      </button>
+      <div class="authSplitFormWrap">
+        <!-- Mobile logo only -->
+        <div class="authSplitMobileLogo">
+          <img src="BlvckLogo.svg" alt="BlvckCube" style="height:34px;display:block;">
         </div>
-        <div class="fGrp"><label class="fLab">Email Address *</label><input class="fInp" type="email" id="suEmail" placeholder="you@company.com" autocomplete="email"></div>
-        <div class="fGrp"><label class="fLab">Company / Brand Name</label><input class="fInp" type="text" id="suCompany" placeholder="Your Company"></div>
-        <div class="fGrp"><label class="fLab">Password *</label><div class="pw-tog"><input class="fInp" type="password" id="suPass" placeholder="Min. 8 characters" autocomplete="new-password"><button class="pw-eye" onclick="togglePw('suPass',this)" type="button">👁</button></div></div>
-        <div class="fGrp"><label class="fLab">Confirm Password *</label><input class="fInp" type="password" id="suPass2" placeholder="Re-enter password" autocomplete="new-password"></div>
-        <button class="bP wF" style="margin-top:18px;" onclick="doSignUp()">Create Client Account <span class="arr"></span></button>
-        <p class="authLink" style="margin-top:14px;" onclick="showAuthPanel('signin')">Already have an account? <em>Sign in</em></p>
+        <!-- Header -->
+        <div class="authSplitHeader">
+          <h1 class="authSplitTitle" id="authTitle">Sign In or Join Now!</h1>
+          <p class="authSplitSub" id="authSub">Login or create your BlvckCube account.</p>
+        </div>
+        <!-- Social buttons -->
+        <div class="authSocialGroup">
+          <button type="button" class="authSocialBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><g><path d="M12.479,14.265v-3.279h11.049c0.108,0.571,0.164,1.247,0.164,1.979c0,2.46-0.672,5.502-2.84,7.669C18.744,22.829,16.051,24,12.483,24C5.869,24,0.308,18.613,0.308,12S5.869,0,12.483,0c3.659,0,6.265,1.436,8.223,3.307L18.392,5.62c-1.404-1.317-3.307-2.341-5.913-2.341C7.65,3.279,3.873,7.171,3.873,12s3.777,8.721,8.606,8.721c3.132,0,4.916-1.258,6.059-2.401c0.927-0.927,1.537-2.251,1.777-4.059L12.479,14.265z"/></g></svg>
+            Continue with Google
+          </button>
+          <button type="button" class="authSocialBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.07c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.39-1.32 2.76-2.53 4.32zM12.03 7c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+            Continue with Apple
+          </button>
+          <button type="button" class="authSocialBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            Continue with GitHub
+          </button>
+        </div>
+        <!-- OR separator -->
+        <div class="authOrDiv"><div class="authOrLine"></div><span class="authOrText">OR</span><div class="authOrLine"></div></div>
+        <!-- Auth tabs -->
+        <div class="authTabs">
+          <button class="authTab on" onclick="showAuthPanel('signin')">Sign In</button>
+          <button class="authTab" onclick="showAuthPanel('signup')">Create Account</button>
+        </div>
+        <!-- SIGN IN -->
+        <div id="panSignin">
+          <div class="errMsg" id="siErr"></div>
+          <div class="fGrp"><label class="fLab">Email Address</label><input class="fInp" type="email" id="siEmail" placeholder="you@company.com" autocomplete="email"></div>
+          <div class="fGrp"><label class="fLab">Password</label><div class="pw-tog"><input class="fInp" type="password" id="siPass" placeholder="••••••••" autocomplete="current-password"><button class="pw-eye" onclick="togglePw('siPass',this)" type="button">👁</button></div></div>
+          <button class="bP wF" style="margin-top:14px;" onclick="doSignIn()">Sign In <span class="arr"></span></button>
+          <p class="authLink" style="margin-top:12px;" onclick="showAuthPanel('signup')">New client? <em>Create a free account</em></p>
+          <p style="font-size:10px;color:rgba(255,255,255,.18);text-align:center;margin-top:8px;">Team members: use your @blvckcube.com email</p>
+        </div>
+        <!-- SIGN UP (clients only) -->
+        <div id="panSignup" style="display:none;">
+          <div style="background:rgba(244,244,244,.07);border:1px solid rgba(244,244,244,.18);padding:10px 13px;margin-bottom:14px;font-size:11px;color:rgba(244,244,244,.85);line-height:1.6;">
+            ⚠️ Client accounts only. Team accounts are created by admin only and require a @blvckcube.com email.
+          </div>
+          <div class="errMsg" id="suErr"></div>
+          <div class="fRow">
+            <div class="fGrp"><label class="fLab">First Name *</label><input class="fInp" type="text" id="suFirst" placeholder="Ahmed" autocomplete="given-name"></div>
+            <div class="fGrp"><label class="fLab">Last Name *</label><input class="fInp" type="text" id="suLast" placeholder="Hassan" autocomplete="family-name"></div>
+          </div>
+          <div class="fGrp"><label class="fLab">Email Address *</label><input class="fInp" type="email" id="suEmail" placeholder="you@company.com" autocomplete="email"></div>
+          <div class="fGrp"><label class="fLab">Company / Brand Name</label><input class="fInp" type="text" id="suCompany" placeholder="Your Company"></div>
+          <div class="fGrp"><label class="fLab">Password *</label><div class="pw-tog"><input class="fInp" type="password" id="suPass" placeholder="Min. 8 characters" autocomplete="new-password"><button class="pw-eye" onclick="togglePw('suPass',this)" type="button">👁</button></div></div>
+          <div class="fGrp"><label class="fLab">Confirm Password *</label><input class="fInp" type="password" id="suPass2" placeholder="Re-enter password" autocomplete="new-password"></div>
+          <button class="bP wF" style="margin-top:14px;" onclick="doSignUp()">Create Client Account <span class="arr"></span></button>
+          <p class="authLink" style="margin-top:12px;" onclick="showAuthPanel('signin')">Already have an account? <em>Sign in</em></p>
+        </div>
+        <!-- Terms -->
+        <p class="authTermsNote">By clicking continue, you agree to our <a href="#" onclick="return false;">Terms of Service</a> and <a href="#" onclick="return false;">Privacy Policy</a>.</p>
       </div>
     </div>
   </div>
 </div>
 
+<!-- ═══ VIEW: FAQ ═══ -->
+<div class="V" id="V-faq">
+  <div class="faqPage">
+    <div class="sLbl fu">FAQ — Questions &amp; Answers</div>
+    <div class="faqGrid">
+
+      <!-- Left: sticky heading -->
+      <div class="faqHeadSticky fu">
+        <h2 class="faqHeadH">Frequently<br>Asked<br>Questions</h2>
+        <p class="faqHeadSub">Everything you need to know<br>before we build your legacy.</p>
+        <button class="bO" style="padding:11px 22px;font-size:9px;" onclick="goTo('home')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          Back to Home
+        </button>
+      </div>
+
+      <!-- Right: accordion Q&As -->
+      <div class="faqList fu d1">
+
+        <div class="faqItem op">
+          <button class="faqQ" onclick="toggleFaq(this)">
+            What exactly does BlvckCube do?
+            <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faqA"><div class="faqAInner">
+            <p>BlvckCube is a luxury brand management firm. We build, position, and grow brands through precision strategy, bespoke creative direction, and full-spectrum marketing execution. We don't just run campaigns — we engineer authority. Everything we do is deliberate, structured, and calibrated for long-term market dominance.</p>
+          </div></div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" onclick="toggleFaq(this)">
+            Who is BlvckCube built for?
+            <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faqA"><div class="faqAInner">
+            <p>We work with ambitious founders, established businesses, and premium brands across 7+ industries who are ready to dominate their market — not merely compete in it. Our clients are decisive, results-oriented, and understand that brand authority is a long-term investment, not a one-time transaction. If you're looking for cheap and fast, we are not the right fit.</p>
+          </div></div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" onclick="toggleFaq(this)">
+            What services do you offer?
+            <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faqA"><div class="faqAInner">
+            <p>Our core pillars are:</p>
+            <ol>
+              <li><strong style="color:rgba(255,255,255,.7)">Brand Strategy &amp; Identity</strong> — naming, positioning, visual systems, and brand guidelines.</li>
+              <li><strong style="color:rgba(255,255,255,.7)">Marketing &amp; Campaign Management</strong> — full-funnel strategies, paid media, and growth execution.</li>
+              <li><strong style="color:rgba(255,255,255,.7)">Content &amp; Media Production</strong> — photography, video, copywriting, and editorial direction.</li>
+              <li><strong style="color:rgba(255,255,255,.7)">Technology &amp; Digital Presence</strong> — websites, platforms, and digital infrastructure.</li>
+              <li><strong style="color:rgba(255,255,255,.7)">Full Brand Management Retainers</strong> — end-to-end ongoing brand stewardship.</li>
+            </ol>
+            <p style="margin-top:10px;">Every engagement is bespoke. We don't replicate — we architect.</p>
+          </div></div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" onclick="toggleFaq(this)">
+            How does the process work?
+            <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faqA"><div class="faqAInner">
+            <p>It begins with a free 15-minute discovery call — no commitment, no sales pitch. From there:</p>
+            <ol>
+              <li>We assess your brand, identify gaps and opportunities, and present a tailored proposal.</li>
+              <li>Once aligned, we sign a contract with clearly defined scope, timeline, and deliverables.</li>
+              <li>Execution proceeds in structured phases with weekly reporting and full transparency throughout.</li>
+              <li>Final delivery is followed by a review session and optional handoff or ongoing retainer.</li>
+            </ol>
+          </div></div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" onclick="toggleFaq(this)">
+            How long does a project take?
+            <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faqA"><div class="faqAInner">
+            <p>Timelines are scope-dependent and defined before any work begins:</p>
+            <ul>
+              <li>Single-service projects run <strong style="color:rgba(255,255,255,.7)">2–4 weeks</strong> on average.</li>
+              <li>Full brand builds take <strong style="color:rgba(255,255,255,.7)">6–12 weeks</strong> depending on depth and client responsiveness.</li>
+              <li>Retainer clients operate on <strong style="color:rgba(255,255,255,.7)">monthly cycles</strong> with defined weekly deliverables and quarterly performance reviews.</li>
+            </ul>
+            <p style="margin-top:10px;">We do not rush work. Precision takes time — and time well spent is the foundation of authority.</p>
+          </div></div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" onclick="toggleFaq(this)">
+            How is pricing structured?
+            <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faqA"><div class="faqAInner">
+            <p>Every engagement is custom-quoted based on scope and scale. We do not offer fixed pricing because no two brands are the same. Our proposals are itemized, fully transparent, and signed before any work begins. You will never receive a surprise invoice from BlvckCube. Indicative package tiers are available on our Services page.</p>
+          </div></div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" onclick="toggleFaq(this)">
+            Do you work with international clients?
+            <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faqA"><div class="faqAInner">
+            <p>Yes. We operate out of Cairo, Egypt and Canada, with active clients across the Middle East, North Africa, North America, and Europe. All client management, communication, and delivery is conducted remotely with the same standard of precision as on-site engagements. Distance is irrelevant. Results are not.</p>
+          </div></div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" onclick="toggleFaq(this)">
+            Is there a minimum commitment?
+            <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faqA"><div class="faqAInner">
+            <p>Project-based work has no minimum beyond the agreed scope of the signed contract. Retainer clients commit to a minimum of <strong style="color:rgba(255,255,255,.7)">3 months</strong> — sufficient time for strategy to take root and for measurable results to materialize. Brand authority is not built overnight, and we will not pretend otherwise.</p>
+          </div></div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" onclick="toggleFaq(this)">
+            What makes BlvckCube different from other agencies?
+            <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faqA"><div class="faqAInner">
+            <p>We are not an agency — we are a firm. Agencies execute tasks. We build brands. The distinction is ownership: we treat every client's brand as if it were our own. The Cubes operate with the precision of consultants and the vision of artists. We move with urgency, report with clarity, and deliver with the kind of excellence that doesn't need to announce itself.</p>
+          </div></div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" onclick="toggleFaq(this)">
+            How do I get started?
+            <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faqA"><div class="faqAInner">
+            <p>Book a free 15-minute discovery call through the Client Portal on this site. No commitment, no pitch — just an honest conversation about your brand and where you want to take it. Come with clarity about where your brand is today and a vision for where it needs to be. We'll handle everything else.</p>
+            <div style="margin-top:16px;"><button class="bP" onclick="goTo('auth')" style="font-size:9px;padding:12px 22px;">Book a Free Call <span class="arr"></span></button></div>
+          </div></div>
+        </div>
+
+      </div><!-- end faqList -->
+    </div><!-- end faqGrid -->
+  </div><!-- end faqPage -->
+
+  <!-- Footer -->
+  <footer class="mFoot">
+    <div class="footTop">
+      <div class="footBrand">
+        <span class="fLogo"><img src="BlvckLogo.svg" alt="BlvckCube" style="height:36px;display:block;"></span>
+        <p class="fCopy">Luxury brand management firm.<br>Cairo, Egypt &amp; Canada.</p>
+      </div>
+      <div class="footCols">
+        <div>
+          <div class="footColH">Company</div>
+          <ul class="footColLinks">
+            <li><a onclick="goTo('home');setTimeout(()=>scrollTo_('#about'),120)">Who We Are</a></li>
+            <li><a onclick="goTo('home');setTimeout(()=>scrollTo_('#packages'),120)">Services</a></li>
+            <li><a onclick="goTo('faq')">FAQs</a></li>
+            <li><a onclick="goTo('auth')">Portal</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footColH">Services</div>
+          <ul class="footColLinks">
+            <li><a onclick="goTo('home');setTimeout(()=>scrollTo_('#packages'),120)">Marketing</a></li>
+            <li><a onclick="goTo('home');setTimeout(()=>scrollTo_('#packages'),120)">Branding</a></li>
+            <li><a onclick="goTo('home');setTimeout(()=>scrollTo_('#packages'),120)">Technology</a></li>
+            <li><a onclick="goTo('home');setTimeout(()=>scrollTo_('#packages'),120)">Strategy</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footColH">Legal</div>
+          <ul class="footColLinks">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footColH">Social</div>
+          <ul class="footColLinks">
+            <li><a href="https://instagram.com/blvckcube.co" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/company/blvckcube" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/BlvckCube.co" target="_blank">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footBar">
+      <span class="footBarTxt">© 2025–2026 BlvckCube. All rights reserved.</span>
+      <span class="footBarTxt">Built with precision · Cairo &amp; Canada</span>
+    </div>
+  </footer>
+</div><!-- end V-faq -->
+
 <!-- ═══ VIEW: CLIENT PORTAL ═══ -->
 <div class="V" id="V-client">
   <div class="portalLayout">
     <div class="sidebar" id="cSidebar">
-      <div class="sbLogo"><span class="sbLogoTxt">BlvckCube</span><span class="sbBadge badgeClient">Client</span></div>
+      <div class="sbLogo"><img src="BlvckLogo.svg" alt="BlvckCube" style="height:30px;display:block;"><span class="sbBadge badgeClient">Client</span></div>
       <div class="sbUser"><div class="sbAv sbAvClient" id="cAvatar">AH</div><div><div class="sbUName" id="cName">Client</div><div class="sbURole" id="cRole">Client</div></div></div>
       <nav class="sbNav">
         <div class="sbSec">Main</div>
@@ -1243,7 +1627,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
           </div>
           <div style="display:flex;flex-direction:column;gap:14px;">
             <div class="panel"><div class="panHd"><span class="panTitle">Recent Activity</span></div><div class="tl"><div class="tlItem"><div class="tlDot dGold"></div><div><div class="tlTitle">Logo concepts delivered</div><div class="tlTime">2 hours ago</div></div></div><div class="tlItem"><div class="tlDot dGreen"></div><div><div class="tlTitle">Brand guidelines approved</div><div class="tlTime">Yesterday</div></div></div><div class="tlItem"><div class="tlDot dBlue"></div><div><div class="tlTitle">Meeting scheduled — May 28</div><div class="tlTime">2 days ago</div></div></div><div class="tlItem"><div class="tlDot dGray"></div><div><div class="tlTitle">Invoice #INV-005 sent</div><div class="tlTime">3 days ago</div></div></div></div></div>
-            <div class="panel"><div class="panHd"><span class="panTitle">Notifications</span></div><div class="notif"><div style="width:30px;height:30px;background:rgba(212,168,83,.1);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">📋</div><div><div class="notifTitle">New deliverable ready for review</div><div class="notifTime">1 hour ago</div></div></div><div class="notif"><div style="width:30px;height:30px;background:rgba(76,175,130,.1);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">✅</div><div><div class="notifTitle">Invoice #INV-003 marked paid</div><div class="notifTime">Yesterday</div></div></div></div>
+            <div class="panel"><div class="panHd"><span class="panTitle">Notifications</span></div><div class="notif"><div style="width:30px;height:30px;background:rgba(244,244,244,.1);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">📋</div><div><div class="notifTitle">New deliverable ready for review</div><div class="notifTime">1 hour ago</div></div></div><div class="notif"><div style="width:30px;height:30px;background:rgba(76,175,130,.1);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">✅</div><div><div class="notifTitle">Invoice #INV-003 marked paid</div><div class="notifTime">Yesterday</div></div></div></div>
           </div>
         </div>
       </div>
@@ -1271,7 +1655,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
         <!-- Step 2 -->
         <div id="flowP2" style="display:none;">
           <div class="panel" style="max-width:580px;">
-            <div class="fGrp"><label class="fLab">Selected Package</label><div id="selPkgDisp" style="padding:11px 14px;background:rgba(212,168,83,.055);border:1px solid rgba(212,168,83,.18);font-size:12.5px;font-weight:500;color:var(--gold);"></div></div>
+            <div class="fGrp"><label class="fLab">Selected Package</label><div id="selPkgDisp" style="padding:11px 14px;background:rgba(244,244,244,.055);border:1px solid rgba(244,244,244,.18);font-size:12.5px;font-weight:500;color:var(--gold);"></div></div>
             <div class="fRow"><div class="fGrp"><label class="fLab">Full Name</label><input class="fInp" type="text" id="f2Name" placeholder="Your name"></div><div class="fGrp"><label class="fLab">Company</label><input class="fInp" type="text" id="f2Company" placeholder="Brand name"></div></div>
             <div class="fGrp"><label class="fLab">Email</label><input class="fInp" type="email" id="f2Email" placeholder="your@email.com"></div>
             <div class="fGrp"><label class="fLab">Phone</label><input class="fInp" type="tel" id="f2Phone" placeholder="+20 xx xxx xxxx"></div>
@@ -1302,9 +1686,9 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
         <div class="pHead"><div><div class="pTitle">Messages</div><div class="pSub">Your communication thread with the BlvckCube team.</div></div></div>
         <div class="panel" style="max-width:660px;">
           <div class="msgThread">
-            <div class="msgBubble"><div class="msgAv" style="background:rgba(212,168,83,.12);border:1px solid rgba(212,168,83,.2);color:var(--gold);">BC</div><div class="msgTxt"><p>Hi! The logo concepts are ready for your review. We've prepared 2 directions — please share your feedback by Friday.</p><span>BlvckCube Team · 2 hours ago</span></div></div>
+            <div class="msgBubble"><div class="msgAv" style="background:rgba(244,244,244,.12);border:1px solid rgba(244,244,244,.2);color:var(--gold);">BC</div><div class="msgTxt"><p>Hi! The logo concepts are ready for your review. We've prepared 2 directions — please share your feedback by Friday.</p><span>BlvckCube Team · 2 hours ago</span></div></div>
             <div class="msgBubble me"><div class="msgAv" style="background:rgba(255,255,255,.055);">You</div><div class="msgTxt"><p>Great, I'll review them today and send feedback tomorrow morning. Thank you!</p><span>You · 1 hour ago</span></div></div>
-            <div class="msgBubble"><div class="msgAv" style="background:rgba(212,168,83,.12);border:1px solid rgba(212,168,83,.2);color:var(--gold);">BC</div><div class="msgTxt"><p>Perfect! Also, your next meeting is scheduled for May 28 at 3PM. We'll send a calendar invite shortly.</p><span>BlvckCube Team · 30 min ago</span></div></div>
+            <div class="msgBubble"><div class="msgAv" style="background:rgba(244,244,244,.12);border:1px solid rgba(244,244,244,.2);color:var(--gold);">BC</div><div class="msgTxt"><p>Perfect! Also, your next meeting is scheduled for May 28 at 3PM. We'll send a calendar invite shortly.</p><span>BlvckCube Team · 30 min ago</span></div></div>
           </div>
           <div class="msgInput"><input class="fInp" type="text" placeholder="Type a message..."><button class="bP" style="padding:11px 18px;white-space:nowrap;">Send</button></div>
         </div>
@@ -1340,8 +1724,8 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 <div class="V" id="V-team">
   <div class="portalLayout">
     <div class="sidebar" id="tSidebar" style="background:rgba(3,3,8,.97);">
-      <div class="sbLogo"><span class="sbLogoTxt">BlvckCube</span><span class="sbBadge badgeTeam">Team</span></div>
-      <div class="sbUser"><div class="sbAv sbAvTeam" id="tAvatar">MI</div><div><div class="sbUName" id="tName">Team Member</div><div class="sbURole" id="tRole">Dasher</div></div></div>
+      <div class="sbLogo"><img src="BlvckLogo.svg" alt="BlvckCube" style="height:30px;display:block;"><span class="sbBadge badgeTeam">Team</span></div>
+      <div class="sbUser"><div class="sbAv sbAvTeam" id="tAvatar">MI</div><div><div class="sbUName" id="tName">Team Member</div><div class="sbURole" id="tRole">Cube</div></div></div>
       <nav class="sbNav">
         <div class="sbSec">CRM</div>
         <button class="sbItem on" data-page="overview" onclick="tNav('overview',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Overview</button>
@@ -1351,7 +1735,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
         <button class="sbItem" data-page="tasks" onclick="tNav('tasks',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Task Board<span class="sbBadgeNum">8</span></button>
         <button class="sbItem" data-page="projects" onclick="tNav('projects',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/></svg>All Projects</button>
         <div class="sbSec">Team</div>
-        <button class="sbItem" data-page="team" onclick="tNav('team',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>The Dashers</button>
+        <button class="sbItem" data-page="team" onclick="tNav('team',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>The Cubes</button>
         <button class="sbItem" data-page="reports" onclick="tNav('reports',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Reports</button>
       </nav>
       <div class="sbFoot"><button onclick="doLogout()">← Sign Out</button></div>
@@ -1401,12 +1785,12 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
       </div>
       <!-- TEAM -->
       <div class="tPage" id="tP-team" style="display:none;">
-        <div class="pHead"><div><div class="pTitle">The Dashers</div><div class="pSub">The five legends behind BlvckCube.</div></div></div>
+        <div class="pHead"><div><div class="pTitle">The Cubes</div><div class="pSub">The five legends behind BlvckCube.</div></div></div>
         <div class="teamGrid">
           <div class="teamCard"><div class="teamAv" style="background:rgba(224,82,82,.1);border:2px solid rgba(224,82,82,.2);color:#e05252;">MI</div><div class="teamName">Muhammad Imam</div><div class="teamRole">CEO &amp; Founder</div><div class="teamOnline"><span class="teamSt stOn"></span>Online</div></div>
           <div class="teamCard"><div class="teamAv" style="background:rgba(91,156,246,.1);border:2px solid rgba(91,156,246,.2);color:#5b9cf6;">SA</div><div class="teamName">Sara Ahmed</div><div class="teamRole">Creative Director</div><div class="teamOnline"><span class="teamSt stOn"></span>Online</div></div>
           <div class="teamCard"><div class="teamAv" style="background:rgba(76,175,130,.1);border:2px solid rgba(76,175,130,.2);color:#4caf82;">RK</div><div class="teamName">Rami Khalil</div><div class="teamRole">Content &amp; Media</div><div class="teamOnline"><span class="teamSt stAway"></span>Away</div></div>
-          <div class="teamCard"><div class="teamAv" style="background:rgba(212,168,83,.1);border:2px solid rgba(212,168,83,.2);color:var(--gold);">AM</div><div class="teamName">Amir Mostafa</div><div class="teamRole">Tech Lead</div><div class="teamOnline"><span class="teamSt stOn"></span>Online</div></div>
+          <div class="teamCard"><div class="teamAv" style="background:rgba(244,244,244,.1);border:2px solid rgba(244,244,244,.2);color:var(--gold);">AM</div><div class="teamName">Amir Mostafa</div><div class="teamRole">Tech Lead</div><div class="teamOnline"><span class="teamSt stOn"></span>Online</div></div>
           <div class="teamCard"><div class="teamAv" style="background:rgba(192,132,252,.1);border:2px solid rgba(192,132,252,.2);color:#c084fc;">FT</div><div class="teamName">Farida Taha</div><div class="teamRole">Photography &amp; Video</div><div class="teamOnline"><span class="teamSt stOff"></span>Offline</div></div>
         </div>
         <div class="panel" style="margin-top:14px;"><div class="panHd"><span class="panTitle">Workload Distribution</span></div><div style="display:flex;flex-direction:column;gap:13px;"><div><div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:5px;"><span>Sara Ahmed</span><span style="color:var(--gold)">8 tasks</span></div><div style="height:6px;background:rgba(255,255,255,.045);"><div style="width:80%;height:100%;background:rgba(91,156,246,.5);"></div></div></div><div><div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:5px;"><span>Amir Mostafa</span><span style="color:var(--gold)">6 tasks</span></div><div style="height:6px;background:rgba(255,255,255,.045);"><div style="width:60%;height:100%;background:rgba(224,82,82,.5);"></div></div></div><div><div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:5px;"><span>Rami Khalil</span><span style="color:var(--gold)">5 tasks</span></div><div style="height:6px;background:rgba(255,255,255,.045);"><div style="width:50%;height:100%;background:rgba(76,175,130,.5);"></div></div></div><div><div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:5px;"><span>Farida Taha</span><span style="color:var(--gold)">4 tasks</span></div><div style="height:6px;background:rgba(255,255,255,.045);"><div style="width:40%;height:100%;background:rgba(192,132,252,.5);"></div></div></div></div></div>
@@ -1431,7 +1815,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 <div class="V" id="V-admin">
   <div class="portalLayout">
     <div class="sidebar" id="aSidebar" style="background:rgba(8,3,3,.98);border-right-color:rgba(192,57,43,.15);">
-      <div class="sbLogo"><span class="sbLogoTxt">BlvckCube</span><span class="sbBadge badgeAdmin">Admin</span></div>
+      <div class="sbLogo"><img src="BlvckLogo.svg" alt="BlvckCube" style="height:30px;display:block;"><span class="sbBadge badgeAdmin">Admin</span></div>
       <div class="sbUser"><div class="sbAv sbAvAdmin" id="aAvatar">MI</div><div><div class="sbUName" id="aName">Admin</div><div class="sbURole">Super Admin · Full Access</div></div></div>
       <nav class="sbNav">
         <div class="sbSec">Operations</div>
@@ -1481,7 +1865,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
       <!-- USER MANAGEMENT -->
       <div class="aPage" id="aP-users" style="display:none;">
         <div class="pHead"><div><div class="pTitle">User Management</div><div class="pSub">Create, edit, enable/disable all platform users.</div></div><div class="pActions"><button class="bD" onclick="openModal('mNewTeamUser')">+ Create Team Account</button></div></div>
-        <div style="background:rgba(212,168,83,.07);border:1px solid rgba(212,168,83,.18);padding:11px 16px;margin-bottom:16px;font-size:11.5px;color:rgba(212,168,83,.9);">⚠️ Team accounts must use @blvckcube.com email. Clients self-register with any email. Only you (admin) can create team accounts.</div>
+        <div style="background:rgba(244,244,244,.07);border:1px solid rgba(244,244,244,.18);padding:11px 16px;margin-bottom:16px;font-size:11.5px;color:rgba(244,244,244,.9);">⚠️ Team accounts must use @blvckcube.com email. Clients self-register with any email. Only you (admin) can create team accounts.</div>
         <div class="panel">
           <div style="display:flex;gap:8px;margin-bottom:14px;"><input class="fInp" type="text" id="adminUserSrch" placeholder="Search users..." style="max-width:320px;"><button class="bP" style="padding:10px 16px;" onclick="openModal('mNewTeamUser')">+ Team Account</button></div>
           <table class="tbl"><thead><tr><th>Name / Email</th><th>Role</th><th>Company / Title</th><th>Joined</th><th>Status</th><th>Actions</th></tr></thead><tbody id="adminUserTable"></tbody></table>
@@ -1517,7 +1901,7 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
             <div class="colSwitch"><div><div class="swLabel">Maintenance Mode</div><div class="swDesc">Hide portal from clients</div></div><label class="toggle"><input type="checkbox" id="settMaintenance"><span class="toggleSlider"></span></label></div>
           </div>
           <div class="panel" style="grid-column:1/-1;"><div class="panHd"><span class="panTitle">Admin Credentials</span></div>
-            <div style="background:rgba(212,168,83,.07);border:1px solid rgba(212,168,83,.18);padding:11px 14px;font-size:11.5px;color:rgba(212,168,83,.8);margin-bottom:14px;">The admin account (admin@blvckcube.com) password can be changed below.</div>
+            <div style="background:rgba(244,244,244,.07);border:1px solid rgba(244,244,244,.18);padding:11px 14px;font-size:11.5px;color:rgba(244,244,244,.8);margin-bottom:14px;">The admin account (admin@blvckcube.com) password can be changed below.</div>
             <div class="fRow"><div class="fGrp"><label class="fLab">New Admin Password</label><input class="fInp" type="password" id="adminNewPw" placeholder="Min. 8 characters"></div><div class="fGrp"><label class="fLab">Confirm Password</label><input class="fInp" type="password" id="adminNewPw2" placeholder="Re-enter"></div></div>
             <button class="bD" style="margin-top:6px;" onclick="changeAdminPw()">Update Admin Password</button>
           </div>
@@ -1547,31 +1931,6 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 <div class="modalBg" id="mClientDetail"><div class="modal"><div class="mHead"><span class="mTitle" id="cDetailName">Client Detail</span><button class="mClose" onclick="closeModal('mClientDetail')">✕</button></div><div class="mBody"><div style="display:grid;gap:9px;margin-bottom:18px;font-size:12px;"><div style="display:flex;justify-content:space-between;"><span style="color:rgba(255,255,255,.4)">Email</span><span id="cDetailEmail"></span></div><div style="display:flex;justify-content:space-between;"><span style="color:rgba(255,255,255,.4)">Company</span><span id="cDetailCompany"></span></div><div style="display:flex;justify-content:space-between;"><span style="color:rgba(255,255,255,.4)">Client Since</span><span id="cDetailSince"></span></div></div><div class="panTitle" style="font-size:13px;margin-bottom:11px;">Projects</div><div id="cDetailProjs"></div></div><div class="mFoot"><button class="bO" onclick="closeModal('mClientDetail')">Close</button></div></div></div>
 
 <script>
-/* ── Theme Toggle ── */
-(function(){
-  var html=document.documentElement;
-  if(localStorage.getItem('bc_theme')==='light') html.classList.add('light');
-  var _ac=null,_buf=null;
-  function tickSound(){
-    try{
-      if(!_ac) _ac=new(window.AudioContext||window.webkitAudioContext)();
-      if(_ac.state==='suspended') _ac.resume();
-      var rate=_ac.sampleRate,len=Math.floor(rate*0.006);
-      if(!_buf||_buf.sampleRate!==rate){
-        _buf=_ac.createBuffer(1,len,rate);
-        var ch=_buf.getChannelData(0);
-        for(var i=0;i<len;i++){var t=i/len;ch[i]=(Math.sin(2*Math.PI*3400*t)*.6+(Math.random()*2-1)*.4)*Math.pow(1-t,3);}
-      }
-      var src=_ac.createBufferSource(),g=_ac.createGain();
-      src.buffer=_buf;g.gain.value=0.08;src.connect(g);g.connect(_ac.destination);src.start();
-    }catch(e){}
-  }
-  document.getElementById('themeBtn').addEventListener('click',function(){
-    var isLight=html.classList.toggle('light');
-    localStorage.setItem('bc_theme',isLight?'light':'dark');
-    tickSound();
-  });
-})();
 /* ── Animated Hero Word Cycle ── */
 (function(){
   var words=['Dominance.','Authority.','Influence.','Identity.','Legacy.'];
@@ -1668,6 +2027,7 @@ function goTo(v){
   qa('.V').forEach(el=>el.classList.remove('on'));
   const el=q('#V-'+v);if(el)el.classList.add('on');
   window.scrollTo(0,0);
+  if(v==='auth'&&!window._authSphereInit){window._authSphereInit=true;setTimeout(initAuthSphere,60);}
 }
 
 /* MARKETING */
@@ -1679,6 +2039,7 @@ const mNavEl=q('#mNav');
 if(mNavEl){window.addEventListener('scroll',()=>{if(q('#V-home').classList.contains('on'))mNavEl.classList.toggle('sc',window.scrollY>60);},{passive:true});}
 function toggleMob(){q('#mBurger').classList.toggle('op');q('#mobMenu').classList.toggle('op');document.body.style.overflow=q('#mobMenu').classList.contains('op')?'hidden':'';}
 function closeMob(){q('#mBurger').classList.remove('op');q('#mobMenu').classList.remove('op');document.body.style.overflow='';}
+function toggleFaq(btn){const item=btn.closest('.faqItem');const isOpen=item.classList.contains('op');qa('#V-faq .faqItem').forEach(i=>i.classList.remove('op'));if(!isOpen)item.classList.add('op');}
 
 /* SCROLL ANIMATIONS */
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:0.07,rootMargin:'0px 0px -40px 0px'});
@@ -1699,6 +2060,8 @@ function mTab(tab,btn){
   qa('.pkgPanels>div').forEach(p=>{p.classList.remove('on');p.style.display='none';});
   const panel=q('#mt-'+tab);if(!panel)return;
   panel.classList.add('on');panel.style.display='block';
+  qa('.pkgSectorLnk').forEach(l=>l.style.display='none');
+  const lnk=q('#slnk-'+tab);if(lnk)lnk.style.display='inline-flex';
 }
 const firstPkg=q('#mt-marketing');if(firstPkg)firstPkg.style.display='block';
 ['branding','tech','singles'].forEach(t=>{const p=q('#mt-'+t);if(p)p.style.display='none';});
@@ -2229,7 +2592,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     uniforms:{
       time:{value:0},
       pointLightPos:{value:new THREE.Vector3(0,0,5)},
-      color:{value:new THREE.Color('#d4a853')}
+      color:{value:new THREE.Color('#f4f4f4')}
     },
     vertexShader:vertexShader,
     fragmentShader:fragmentShader,
@@ -2272,6 +2635,76 @@ document.addEventListener('DOMContentLoaded',()=>{
       material.uniforms.pointLightPos.value.copy(pos);
     },{passive:true});
   }
+})();
+/* ── Auth Sphere ── */
+function initAuthSphere(){
+  var mount=document.getElementById('threeAuth');
+  if(!mount||typeof THREE==='undefined')return;
+  if(!mount.clientWidth){setTimeout(initAuthSphere,80);return;}
+  var scene=new THREE.Scene();
+  var w=mount.clientWidth,h=mount.clientHeight||window.innerHeight;
+  var camera=new THREE.PerspectiveCamera(60,w/h,0.1,1000);
+  camera.position.z=3.2;
+  var renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+  renderer.setSize(w,h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  mount.appendChild(renderer.domElement);
+  var geo=new THREE.IcosahedronGeometry(1.4,6);
+  var mat=new THREE.MeshBasicMaterial({color:0xf4f4f4,wireframe:true,opacity:0.12,transparent:true});
+  var mesh=new THREE.Mesh(geo,mat);
+  scene.add(mesh);
+  var geo2=new THREE.IcosahedronGeometry(1.0,3);
+  var mat2=new THREE.MeshBasicMaterial({color:0xffffff,wireframe:true,opacity:0.07,transparent:true});
+  var mesh2=new THREE.Mesh(geo2,mat2);
+  scene.add(mesh2);
+  function animate(){
+    mesh.rotation.y+=0.0006;mesh.rotation.x+=0.0002;
+    mesh2.rotation.y-=0.0008;mesh2.rotation.z+=0.0003;
+    renderer.render(scene,camera);
+    requestAnimationFrame(animate);
+  }
+  animate();
+  window.addEventListener('resize',function(){
+    var nw=mount.clientWidth,nh=mount.clientHeight||window.innerHeight;
+    if(!nw)return;
+    camera.aspect=nw/nh;camera.updateProjectionMatrix();
+    renderer.setSize(nw,nh);
+  },{passive:true});
+}
+/* ── Auth Floating Paths ── */
+(function(){
+  function makePaths(containerId,position){
+    var container=document.getElementById(containerId);
+    if(!container)return;
+    var ns='http://www.w3.org/2000/svg';
+    var svg=document.createElementNS(ns,'svg');
+    svg.setAttribute('viewBox','0 0 696 316');
+    svg.setAttribute('fill','none');
+    svg.style.cssText='position:absolute;inset:0;width:100%;height:100%;';
+    for(var i=0;i<36;i++){
+      var p=position;
+      var x0=-(380-i*5*p),y0=-(189+i*6);
+      var x2=-(312-i*5*p),y2=216-i*6;
+      var x3=152-i*5*p,y3=343-i*6;
+      var x4=616-i*5*p,y4=470-i*6;
+      var x5=684-i*5*p,y5=875-i*6;
+      var d='M'+x0+' '+y0+'C'+x0+' '+y0+' '+x2+' '+y2+' '+x3+' '+y3+'C'+x4+' '+y4+' '+x5+' '+y5+' '+x5+' '+y5;
+      var path=document.createElementNS(ns,'path');
+      path.setAttribute('d',d);
+      path.setAttribute('stroke','currentColor');
+      path.setAttribute('stroke-width',String(0.5+i*0.03));
+      path.setAttribute('stroke-opacity',String(0.1+i*0.03));
+      var dur=20+Math.random()*10;
+      var dashLen=250+i*8;
+      path.style.strokeDasharray=dashLen+' 1200';
+      path.style.strokeDashoffset=String(-(Math.random()*1500));
+      path.style.animation='authPathMove '+dur+'s linear infinite';
+      svg.appendChild(path);
+    }
+    container.appendChild(svg);
+  }
+  makePaths('authPathsCont1',1);
+  makePaths('authPathsCont2',-1);
 })();
 </script>
 </body>

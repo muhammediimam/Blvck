@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="BlvckCube Technology Services — UI/UX design, full-stack development, SEO, security, and ongoing moderation engineered for performance and authority.">
+<title>Technology Services — BlvckCube</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --black:#000;
+  --white:#fff;
+  --gold:#f4f4f4;
+  --gold2:rgba(244,244,244,.15);
+  --gold3:rgba(244,244,244,.08);
+  --g9:#0a0a0a;
+  --g8:#111;
+  --g7:#1a1a1a;
+  --g1:#e5e5e5;
+  --g0:#f8f8f8;
+  --fd:'Montserrat',sans-serif;
+  --fb:'Montserrat',sans-serif;
+  --nh:66px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{background:var(--black);color:var(--white);font-family:var(--fb);font-weight:500;overflow-x:hidden;}
+
+/* ── NAV ── */
+nav.sNav{
+  position:fixed;top:0;left:0;right:0;z-index:400;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(20px,5vw,60px);
+  height:var(--nh);
+  background:#000;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.nLogo a{display:flex;align-items:center;text-decoration:none;}
+.nLinks{display:flex;align-items:center;gap:clamp(14px,2vw,30px);list-style:none;}
+.nLinks a{
+  color:rgba(255,255,255,.45);
+  text-decoration:none;
+  font-size:10.5px;
+  font-weight:500;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  transition:color .25s;
+}
+.nLinks a:hover{color:var(--white);}
+.nCta{
+  background:var(--white)!important;
+  color:var(--black)!important;
+  padding:9px 20px!important;
+  font-weight:700!important;
+  transition:background .2s!important;
+}
+.nCta:hover{background:var(--g1)!important;}
+.nBurger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nBurger span{display:block;width:20px;height:1px;background:var(--white);transition:transform .3s,opacity .3s;}
+.nBurger.op span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.nBurger.op span:nth-child(2){opacity:0;}
+.nBurger.op span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+#mobMenu{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.98);z-index:399;
+  flex-direction:column;align-items:center;justify-content:center;gap:28px;
+}
+#mobMenu.op{display:flex;}
+#mobMenu a{
+  color:rgba(255,255,255,.7);text-decoration:none;
+  font-family:var(--fd);font-size:clamp(24px,6vw,42px);
+  font-weight:700;transition:color .2s;
+}
+#mobMenu a:hover{color:var(--white);}
+
+/* ── BUTTONS ── */
+.bP{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--white);color:var(--black);
+  text-decoration:none;font-size:10px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:15px 30px;transition:background .22s,transform .18s;
+  cursor:pointer;border:none;font-family:var(--fb);
+}
+.bP:hover{background:var(--g1);transform:translateY(-2px);}
+.bO{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid rgba(255,255,255,.18);color:var(--white);
+  text-decoration:none;font-size:10px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:15px 30px;transition:border-color .22s,background .22s,transform .18s;
+  cursor:pointer;background:transparent;font-family:var(--fb);
+}
+.bO:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.04);transform:translateY(-2px);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:clamp(100px,14vh,140px) clamp(20px,5vw,60px) clamp(80px,10vh,100px);
+  position:relative;overflow:hidden;text-align:center;
+}
+.hGrid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:60px 60px;
+  z-index:0;pointer-events:none;
+}
+.hGradBottom{
+  position:absolute;bottom:0;left:0;right:0;height:200px;
+  background:linear-gradient(to top,#000,transparent);
+  z-index:1;pointer-events:none;
+}
+.heroContent{position:relative;z-index:2;max-width:820px;width:100%;}
+.heroBadge{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 18px;
+  border:1px solid rgba(255,255,255,.1);
+  font-size:10px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(244,244,244,.6);
+  margin-bottom:clamp(28px,4vh,44px);
+  background:rgba(255,255,255,.02);
+}
+.heroBadge::before{content:'';display:block;width:18px;height:1px;background:rgba(244,244,244,.35);}
+.heroH1{
+  font-family:var(--fd);
+  font-size:clamp(46px,8vw,110px);
+  font-weight:700;
+  line-height:.93;
+  letter-spacing:-.04em;
+  margin-bottom:clamp(24px,3.5vh,38px);
+}
+.heroSub{
+  font-size:clamp(13px,1.5vw,15.5px);
+  font-weight:500;
+  color:rgba(255,255,255,.38);
+  max-width:560px;
+  line-height:2;
+  margin:0 auto clamp(34px,5vh,52px);
+}
+.heroBtns{
+  display:flex;gap:14px;flex-wrap:wrap;
+  justify-content:center;
+}
+
+/* ── SECTION COMMON ── */
+.ms{padding:clamp(70px,10vh,120px) clamp(20px,5vw,60px);}
+.sLbl{
+  font-size:10px;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(244,244,244,.55);
+  margin-bottom:clamp(38px,6vh,60px);
+  display:flex;align-items:center;gap:14px;
+}
+.sLbl::before{content:'';display:block;width:24px;height:1px;background:rgba(244,244,244,.35);}
+
+/* ── WHAT'S INCLUDED (3 tiles) ── */
+.inclGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.055);
+  margin-top:0;
+}
+.inclTile{
+  background:var(--g9);
+  padding:clamp(28px,4vw,46px) clamp(22px,3vw,36px);
+  transition:background .28s;
+}
+.inclTile:hover{background:rgba(255,255,255,.025);}
+.inclNum{
+  font-family:var(--fd);
+  font-size:10px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(244,244,244,.28);
+  margin-bottom:22px;
+}
+.inclName{
+  font-family:var(--fd);
+  font-size:clamp(16px,2.2vw,22px);
+  font-weight:700;
+  letter-spacing:-.03em;
+  margin-bottom:14px;
+  line-height:1.1;
+}
+.inclDesc{
+  font-size:12.5px;font-weight:500;
+  color:rgba(255,255,255,.38);
+  line-height:1.9;
+}
+.inclDiv{width:28px;height:1px;background:rgba(244,244,244,.22);margin-bottom:20px;}
+
+/* ── PLANS SECTION ── */
+.plansSection{
+  padding:clamp(70px,10vh,120px) clamp(20px,5vw,60px);
+  background:rgba(255,255,255,.01);
+  border-top:1px solid rgba(255,255,255,.055);
+  border-bottom:1px solid rgba(255,255,255,.055);
+}
+.plansIntro{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:30px;margin-bottom:clamp(40px,6vh,60px);
+  flex-wrap:wrap;
+}
+.plansH2{
+  font-family:var(--fd);
+  font-size:clamp(30px,4.5vw,58px);
+  font-weight:700;letter-spacing:-.04em;line-height:.92;
+}
+.plansSub{
+  font-size:12.5px;font-weight:500;
+  color:rgba(255,255,255,.38);
+  max-width:280px;line-height:1.85;
+}
+.plansGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.055);
+}
+.planCard{
+  background:var(--g9);
+  padding:clamp(28px,4vw,46px) clamp(22px,3vw,36px);
+  display:flex;flex-direction:column;
+  transition:background .28s;
+  position:relative;
+}
+.planCard:hover{background:rgba(255,255,255,.025);}
+.planCard.feat{
+  background:var(--white);
+  color:var(--black);
+}
+.planCard.feat:hover{background:var(--g0);}
+.planBadge{
+  font-size:8.5px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  padding:4px 10px;
+  background:rgba(244,244,244,.12);
+  color:var(--gold);
+  border:1px solid rgba(244,244,244,.22);
+  display:inline-block;
+  margin-bottom:20px;
+  width:fit-content;
+}
+.planCard.feat .planBadge{
+  background:rgba(0,0,0,.07);
+  color:rgba(0,0,0,.55);
+  border-color:rgba(0,0,0,.12);
+}
+.featBadge{
+  font-size:8.5px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  padding:4px 10px;
+  background:var(--black);
+  color:var(--white);
+  border:1px solid rgba(0,0,0,.2);
+  display:inline-block;
+  margin-bottom:20px;
+  width:fit-content;
+}
+.planName{
+  font-family:var(--fd);
+  font-size:clamp(18px,2.5vw,26px);
+  font-weight:700;letter-spacing:-.03em;
+  margin-bottom:6px;line-height:1.1;
+}
+.planType{
+  font-size:9.5px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.28);
+  margin-bottom:24px;
+}
+.planCard.feat .planType{color:rgba(0,0,0,.38);}
+.planPrice{
+  font-family:var(--fd);
+  font-size:clamp(26px,3.5vw,38px);
+  font-weight:700;letter-spacing:-.04em;
+  line-height:1;margin-bottom:4px;
+}
+.planNote{
+  font-size:9.5px;font-weight:500;
+  color:rgba(255,255,255,.32);
+  margin-bottom:4px;
+  letter-spacing:.04em;
+}
+.planCard.feat .planNote{color:rgba(0,0,0,.42);}
+.planDelivery{
+  font-size:9.5px;font-weight:500;
+  color:rgba(255,255,255,.22);
+  margin-bottom:26px;
+  letter-spacing:.06em;text-transform:uppercase;
+}
+.planCard.feat .planDelivery{color:rgba(0,0,0,.32);}
+.planDiv{height:1px;background:rgba(255,255,255,.07);margin-bottom:22px;}
+.planCard.feat .planDiv{background:rgba(0,0,0,.1);}
+.planList{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;}
+.planList li{
+  font-size:12px;font-weight:500;
+  color:rgba(255,255,255,.45);
+  display:flex;gap:9px;align-items:flex-start;line-height:1.5;
+}
+.planCard.feat .planList li{color:rgba(0,0,0,.58);}
+.planList li::before{
+  content:'—';font-size:9.5px;
+  color:rgba(255,255,255,.2);
+  flex-shrink:0;margin-top:1px;
+}
+.planCard.feat .planList li::before{color:rgba(0,0,0,.22);}
+.planBtn{
+  margin-top:26px;width:100%;padding:13px;
+  background:rgba(255,255,255,.065);
+  border:1px solid rgba(255,255,255,.1);
+  color:var(--white);
+  font-size:9.5px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  cursor:pointer;font-family:var(--fb);
+  transition:all .18s;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.planBtn:hover{background:rgba(255,255,255,.12);}
+.planCard.feat .planBtn{
+  background:var(--black);color:var(--white);
+  border-color:var(--black);
+}
+.planCard.feat .planBtn:hover{background:#111;}
+
+/* ── COMPARISON TABLE ── */
+.cmpSection{padding:clamp(60px,8vh,100px) clamp(20px,5vw,60px);}
+.cmpIntro{margin-bottom:clamp(30px,4vh,44px);}
+.cmpH2{
+  font-family:var(--fd);
+  font-size:clamp(22px,3vw,32px);
+  font-weight:700;letter-spacing:-.03em;
+  margin-bottom:8px;
+}
+.cmpSub{
+  font-size:12px;font-weight:500;
+  color:rgba(255,255,255,.32);
+}
+.cmpScroll{overflow-x:auto;}
+.cmpTable{
+  width:100%;border-collapse:collapse;
+  font-size:12.5px;min-width:480px;
+  border:1px solid rgba(255,255,255,.055);
+}
+.cmpTable thead th{
+  padding:14px 20px;
+  font-size:9px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.28);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  background:var(--g9);
+}
+.cmpTable thead th:first-child{text-align:left;}
+.cmpTable thead th:not(:first-child){text-align:center;}
+.cmpTable thead th.featH{
+  color:var(--white);
+  background:rgba(255,255,255,.04);
+}
+.cmpTable tbody td{
+  padding:13px 20px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  color:rgba(255,255,255,.5);
+  font-weight:500;
+}
+.cmpTable tbody td:first-child{
+  color:rgba(255,255,255,.58);text-align:left;
+  font-size:12px;
+}
+.cmpTable tbody td:not(:first-child){text-align:center;}
+.cmpTable tbody tr:last-child td{border-bottom:none;}
+.cmpTable tbody tr:hover td{background:rgba(255,255,255,.018);}
+.chk{color:var(--gold);font-size:15px;font-weight:700;}
+.dsh{color:rgba(255,255,255,.15);font-size:15px;}
+.val{color:rgba(255,255,255,.42);font-size:11px;font-weight:500;letter-spacing:.04em;}
+
+/* ── CTA SECTION ── */
+.ctaSec{
+  text-align:center;
+  padding:clamp(88px,14vh,148px) clamp(20px,5vw,60px);
+  border-top:1px solid rgba(255,255,255,.055);
+}
+.ctaLbl{
+  font-size:10px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(244,244,244,.45);
+  margin-bottom:clamp(20px,3vh,30px);
+  display:flex;align-items:center;justify-content:center;gap:14px;
+}
+.ctaLbl::before{content:'';display:block;width:24px;height:1px;background:rgba(244,244,244,.25);}
+.ctaLbl::after{content:'';display:block;width:24px;height:1px;background:rgba(244,244,244,.25);}
+.ctaH2{
+  font-family:var(--fd);
+  font-size:clamp(36px,6vw,80px);
+  font-weight:700;line-height:.92;
+  letter-spacing:-.05em;
+  margin-bottom:clamp(28px,4vh,44px);
+}
+.ctaBtns{
+  display:flex;gap:14px;flex-wrap:wrap;
+  justify-content:center;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--black);
+  border-top:1px solid rgba(255,255,255,.055);
+  padding:clamp(46px,7vh,70px) clamp(20px,5vw,60px) clamp(26px,4vh,38px);
+}
+.footTop{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+  margin-bottom:40px;
+}
+@media(min-width:640px){
+  .footTop{grid-template-columns:180px 1fr;gap:60px;align-items:start;}
+}
+.footBrand{display:flex;flex-direction:column;gap:16px;}
+.footCopy{
+  font-size:9.5px;color:rgba(255,255,255,.22);
+  letter-spacing:.04em;line-height:1.7;
+}
+.footCols{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px 16px;
+}
+@media(min-width:500px){
+  .footCols{grid-template-columns:repeat(4,1fr);gap:0 24px;}
+}
+.footColH{
+  font-size:8px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.25);
+  margin-bottom:14px;
+}
+.footColLinks{list-style:none;}
+.footColLinks li{margin-bottom:9px;}
+.footColLinks a{
+  font-size:11.5px;color:rgba(255,255,255,.38);
+  text-decoration:none;transition:color .2s;
+  display:inline-flex;align-items:center;gap:4px;
+  font-weight:500;
+}
+.footColLinks a:hover{color:var(--white);}
+.footBar{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+  padding-top:26px;border-top:1px solid rgba(255,255,255,.055);
+}
+.footBarTxt{
+  font-size:9px;color:rgba(255,255,255,.18);
+  letter-spacing:.06em;font-weight:500;
+}
+
+/* ── ANIMATIONS ── */
+.fu{opacity:0;transform:translateY(32px);transition:opacity .88s var(--ease),transform .88s var(--ease);}
+.fu.vis{opacity:1;transform:none;}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .inclGrid{grid-template-columns:1fr;}
+  .plansGrid{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .nLinks{display:none;}
+  .nBurger{display:flex;}
+  .plansIntro{flex-direction:column;align-items:flex-start;}
+  .heroBtns{flex-direction:column;width:100%;max-width:320px;}
+  .heroBtns .bP,.heroBtns .bO{flex:1;justify-content:center;}
+}
+@media(max-width:500px){
+  .inclGrid{grid-template-columns:1fr;}
+  .ctaBtns{flex-direction:column;width:100%;max-width:280px;margin:0 auto;}
+  .ctaBtns .bP,.ctaBtns .bO{flex:1;justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div id="mobMenu">
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="service-marketing.html" onclick="closeMob()">Marketing</a>
+  <a href="service-branding.html" onclick="closeMob()">Branding</a>
+  <a href="#plans" onclick="closeMob()">Plans</a>
+  <a href="index.html" onclick="closeMob()" style="color:var(--white);font-size:clamp(14px,3vw,18px);letter-spacing:.1em;margin-top:10px;">Book a Call</a>
+</div>
+
+<!-- NAV -->
+<nav class="sNav">
+  <div class="nLogo">
+    <a href="index.html"><img src="BlvckLogo.svg" alt="BlvckCube" style="height:42px;display:block;"></a>
+  </div>
+  <ul class="nLinks">
+    <li><a href="index.html">← Back to Site</a></li>
+    <li><a href="service-marketing.html">Marketing</a></li>
+    <li><a href="service-branding.html">Branding</a></li>
+    <li><a href="service-singles.html">Single Services</a></li>
+    <li><a href="index.html" class="nCta">Book a Call</a></li>
+  </ul>
+  <button class="nBurger" id="mBurger" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hGrid"></div>
+  <div class="hGradBottom"></div>
+  <div class="heroContent">
+    <div class="heroBadge fu">02 — Technology</div>
+    <h1 class="heroH1 fu d1">Digital Presence<br>Built to<br>Perform.</h1>
+    <p class="heroSub fu d2">UI/UX design, full-stack development, SEO, security, and ongoing moderation — engineered for performance and authority.</p>
+    <div class="heroBtns fu d3">
+      <a href="#plans" class="bO">View Plans ↓</a>
+      <a href="index.html" class="bP">Book Free Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="ms">
+  <div class="sLbl fu">What's Included</div>
+  <div class="inclGrid">
+
+    <div class="inclTile fu">
+      <div class="inclNum">01</div>
+      <div class="inclDiv"></div>
+      <div class="inclName">UI/UX Design</div>
+      <p class="inclDesc">Precision-crafted interfaces built to convert. Every screen, every interaction — designed with authority and optimized for performance across all devices.</p>
+    </div>
+
+    <div class="inclTile fu d1">
+      <div class="inclNum">02</div>
+      <div class="inclDiv"></div>
+      <div class="inclName">Secure Development</div>
+      <p class="inclDesc">Full-stack builds hardened from day one. Clean architecture, security-first implementation, and performance tuning that keeps your digital presence unassailable.</p>
+    </div>
+
+    <div class="inclTile fu d2">
+      <div class="inclNum">03</div>
+      <div class="inclDiv"></div>
+      <div class="inclName">SEO & Performance</div>
+      <p class="inclDesc">Technical SEO, speed optimization, and ongoing moderation support — built to rank, built to last, built to dominate search and user experience simultaneously.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="plansSection" id="plans">
+  <div class="plansIntro">
+    <h2 class="plansH2 fu">Choose Your<br>Stack.</h2>
+    <p class="plansSub fu d1">Two paths. Both engineered for authority. One-time investment, lasting digital dominance.</p>
+  </div>
+
+  <div class="plansGrid">
+
+    <!-- Standard Web -->
+    <div class="planCard fu">
+      <div class="planBadge">Standard</div>
+      <div class="planName">Standard Web</div>
+      <div class="planType">One-Time Project</div>
+      <div class="planPrice">17,500 <span style="font-size:.42em;font-weight:700;color:rgba(255,255,255,.45);">EGP</span></div>
+      <div class="planNote">one-time · 45 days delivery</div>
+      <div class="planDelivery">Standard Build</div>
+      <div class="planDiv"></div>
+      <ul class="planList">
+        <li>UI/UX Design</li>
+        <li>Website Build + Security</li>
+        <li>SEO Optimization</li>
+        <li>3 Months Moderation Support</li>
+      </ul>
+      <a href="index.html" class="planBtn">Get Started →</a>
+    </div>
+
+    <!-- Full Development (FEATURED) -->
+    <div class="planCard feat fu d1">
+      <div class="featBadge">Featured — Full Stack</div>
+      <div class="planName">Full Development</div>
+      <div class="planType">One-Time Project</div>
+      <div class="planPrice">24,500 <span style="font-size:.42em;font-weight:700;color:rgba(0,0,0,.38);">EGP</span></div>
+      <div class="planNote">one-time · 45 days delivery</div>
+      <div class="planDelivery">Full Stack Build</div>
+      <div class="planDiv"></div>
+      <ul class="planList">
+        <li>Everything in Standard</li>
+        <li>Full-Stack Development</li>
+        <li>Performance Tuning + Bug Fixes</li>
+        <li>6 Months Moderation Support</li>
+      </ul>
+      <a href="index.html" class="planBtn">Get Started →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="cmpSection">
+  <div class="cmpIntro fu">
+    <div class="sLbl" style="margin-bottom:14px;">Compare Plans</div>
+    <h2 class="cmpH2">Everything, side by side.</h2>
+    <p class="cmpSub">A full breakdown of what each technology plan delivers.</p>
+  </div>
+
+  <div class="cmpScroll fu d1">
+    <table class="cmpTable">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Standard Web</th>
+          <th class="featH">Full Development</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>UI/UX Design</td>
+          <td><span class="chk">✓</span></td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>Website Build + Security</td>
+          <td><span class="chk">✓</span></td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>SEO Optimization</td>
+          <td><span class="chk">✓</span></td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>Full-Stack Development</td>
+          <td><span class="dsh">—</span></td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>Performance Tuning</td>
+          <td><span class="dsh">—</span></td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>Bug Fixes Included</td>
+          <td><span class="dsh">—</span></td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>Moderation Support</td>
+          <td><span class="val">3 months</span></td>
+          <td><span class="val">6 months</span></td>
+        </tr>
+        <tr>
+          <td>Delivery Timeline</td>
+          <td><span class="val">45 days</span></td>
+          <td><span class="val">45 days</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ctaSec">
+  <div class="ctaLbl fu">Ready to Build</div>
+  <h2 class="ctaH2 fu d1">Power Your<br>Digital Presence.</h2>
+  <div class="ctaBtns fu d2">
+    <a href="index.html" class="bP">Book a Call →</a>
+    <a href="#plans" class="bO">View Plans ↑</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footTop">
+    <div class="footBrand">
+      <a href="index.html"><img src="BlvckLogo.svg" alt="BlvckCube" style="height:38px;display:block;"></a>
+      <p class="footCopy">© 2025 BlvckCube.<br>All rights reserved.</p>
+    </div>
+    <div class="footCols">
+      <div>
+        <div class="footColH">Company</div>
+        <ul class="footColLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#packages">Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footColH">Services</div>
+        <ul class="footColLinks">
+          <li><a href="service-marketing.html">Marketing</a></li>
+          <li><a href="service-branding.html">Branding</a></li>
+          <li><a href="service-technology.html">Technology</a></li>
+          <li><a href="service-singles.html">Single Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footColH">Technology</div>
+        <ul class="footColLinks">
+          <li><a href="#plans">Standard Web</a></li>
+          <li><a href="#plans">Full Development</a></li>
+          <li><a href="#plans">Compare Plans</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footColH">Contact</div>
+        <ul class="footColLinks">
+          <li><a href="index.html">Book a Call</a></li>
+          <li><a href="index.html">Client Portal</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footBar">
+    <span class="footBarTxt">BLVCKCUBE — CAIRO, EGYPT &amp; CANADA</span>
+    <span class="footBarTxt">TECHNOLOGY SERVICES</span>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+function toggleMob(){
+  document.getElementById('mBurger').classList.toggle('op');
+  document.getElementById('mobMenu').classList.toggle('op');
+  document.body.style.overflow = document.getElementById('mobMenu').classList.contains('op') ? 'hidden' : '';
+}
+function closeMob(){
+  document.getElementById('mBurger').classList.remove('op');
+  document.getElementById('mobMenu').classList.remove('op');
+  document.body.style.overflow = '';
+}
+
+// Scroll-triggered fade-in
+(function(){
+  var els = document.querySelectorAll('.fu');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+  // Trigger hero items immediately
+  setTimeout(function(){
+    document.querySelectorAll('.hero .fu').forEach(function(el){ el.classList.add('vis'); });
+  }, 80);
+})();
+</script>
+</body>
+</html>

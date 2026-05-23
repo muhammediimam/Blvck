@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Services — BlvckCube</title>
+  <meta name="description" content="Full-spectrum social media marketing, content strategy, media buying, and brand photography by BlvckCube — engineered to dominate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --black: #000;
+      --white: #fff;
+      --g9:    #0a0a0a;
+      --g8:    #111;
+      --g7:    #1a1a1a;
+      --g6:    #222;
+      --g5:    #333;
+      --g4:    #555;
+      --g3:    #888;
+      --g2:    #bbb;
+      --g1:    #e5e5e5;
+      --gold:  #f4f4f4;
+    }
+
+    /* ─── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      background: var(--black);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      height: 66px;
+      background: rgba(0,0,0,.95);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(20px,5vw,60px);
+      z-index: 100;
+      width: 100%;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    nav .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    nav .nav-logo img { display: block; }
+
+    nav .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 2.5vw, 36px);
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      color: var(--g2);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    nav .nav-links a:hover { color: var(--white); }
+
+    nav .nav-links a.nav-back {
+      color: var(--g4);
+    }
+
+    nav .nav-links a.nav-back:hover { color: var(--g2); }
+
+    .btn-nav {
+      display: inline-block;
+      background: var(--white);
+      color: var(--black) !important;
+      padding: 9px 22px;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      letter-spacing: .16em !important;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-nav:hover {
+      background: var(--g1) !important;
+      color: var(--black) !important;
+    }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px clamp(20px,5vw,60px) 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle ruled-line background texture */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 79px,
+        rgba(255,255,255,.025) 79px,
+        rgba(255,255,255,.025) 80px
+      );
+      pointer-events: none;
+    }
+
+    /* vertical accent lines */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 119px,
+        rgba(255,255,255,.018) 119px,
+        rgba(255,255,255,.018) 120px
+      );
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 900px; }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--g3);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 8px 18px;
+      margin-bottom: 44px;
+      animation: fadeUp .7s ease both;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 9vw, 112px);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -.02em;
+      margin-bottom: 32px;
+      animation: fadeUp .7s .12s ease both;
+    }
+
+    .hero h1 span.dim { color: var(--g5); }
+
+    .hero-sub {
+      font-size: clamp(13px, 1.5vw, 16px);
+      font-weight: 500;
+      color: var(--g3);
+      max-width: 540px;
+      margin: 0 auto 48px;
+      line-height: 1.75;
+      letter-spacing: .03em;
+      animation: fadeUp .7s .22s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp .7s .32s ease both;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--white);
+      color: var(--black);
+      padding: 15px 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+
+    .btn-primary:hover { background: var(--g1); }
+
+    .btn-ghost {
+      display: inline-block;
+      background: transparent;
+      color: var(--g2);
+      padding: 15px 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.15);
+      transition: border-color .2s, color .2s;
+    }
+
+    .btn-ghost:hover { border-color: rgba(255,255,255,.4); color: var(--white); }
+
+    /* ─── KEYFRAMES ──────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SECTION WRAPPER ────────────────────────────────── */
+    .section {
+      padding: clamp(80px,12vh,120px) clamp(20px,5vw,60px);
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--g4);
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--g3);
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    /* ─── WHY SECTION ────────────────────────────────────── */
+    .why-section {
+      background: var(--g9);
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .why-header { margin-bottom: 56px; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.07);
+    }
+
+    .why-tile {
+      background: var(--g9);
+      padding: 40px 36px;
+      position: relative;
+    }
+
+    .why-tile-number {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      color: var(--g5);
+      margin-bottom: 24px;
+    }
+
+    .why-tile h3 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin-bottom: 14px;
+      color: var(--white);
+    }
+
+    .why-tile p {
+      font-size: 13px;
+      color: var(--g3);
+      line-height: 1.75;
+    }
+
+    /* ─── PLANS SECTION ──────────────────────────────────── */
+    .plans-section { background: var(--black); }
+
+    .plans-header { margin-bottom: 56px; }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+
+    .plan-card {
+      background: var(--g9);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .plan-card.featured {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .plan-badge {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--g3);
+      margin-bottom: 8px;
+    }
+
+    .plan-card.featured .plan-badge { color: var(--g5); }
+
+    .plan-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin-bottom: 6px;
+      color: var(--white);
+    }
+
+    .plan-card.featured .plan-name { color: var(--black); }
+
+    .plan-price {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .plan-card.featured .plan-price { color: var(--black); }
+
+    .plan-period {
+      font-size: 11px;
+      color: var(--g3);
+      margin-bottom: 6px;
+      letter-spacing: .06em;
+    }
+
+    .plan-card.featured .plan-period { color: var(--g5); }
+
+    .plan-discount-note {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--g4);
+      margin-bottom: 28px;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.1);
+      display: inline-block;
+    }
+
+    .plan-card.featured .plan-discount-note {
+      color: var(--g5);
+      border: 1px solid rgba(0,0,0,.15);
+    }
+
+    .plan-divider {
+      height: 1px;
+      background: rgba(255,255,255,.08);
+      margin-bottom: 24px;
+    }
+
+    .plan-card.featured .plan-divider { background: rgba(0,0,0,.1); }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      margin-bottom: 32px;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--g2);
+      line-height: 1.5;
+    }
+
+    .plan-card.featured .plan-features li { color: var(--g6); }
+
+    .plan-features li svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .plan-cta {
+      display: block;
+      text-align: center;
+      background: var(--white);
+      color: var(--black);
+      padding: 13px 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .2s;
+      margin-top: auto;
+    }
+
+    .plan-cta:hover { background: var(--g1); }
+
+    .plan-card.featured .plan-cta {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .plan-card.featured .plan-cta:hover { background: var(--g8); }
+
+    /* featured label pill */
+    .featured-pill {
+      position: absolute;
+      top: -1px;
+      right: 28px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+
+    /* ─── COMPARISON TABLE ───────────────────────────────── */
+    .compare-section {
+      background: var(--g9);
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .compare-header { margin-bottom: 48px; }
+
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    thead tr {
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    thead th {
+      padding: 16px 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--g3);
+      text-align: left;
+    }
+
+    thead th:first-child { color: var(--g4); }
+
+    thead th.col-featured {
+      color: var(--white);
+      background: rgba(244,244,244,.06);
+    }
+
+    tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,.04);
+    }
+
+    tbody tr:nth-child(odd)  { background: rgba(255,255,255,.018); }
+    tbody tr:nth-child(even) { background: transparent; }
+
+    tbody td {
+      padding: 16px 20px;
+      font-size: 13px;
+      color: var(--g2);
+    }
+
+    tbody td:first-child {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      color: var(--g3);
+    }
+
+    tbody td.col-featured {
+      background: rgba(244,244,244,.04);
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .check-icon { color: var(--white); }
+    .dash-icon  { color: var(--g5); }
+
+    /* ─── CTA SECTION ────────────────────────────────────── */
+    .cta-section {
+      background: var(--g8);
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    .cta-section h2 {
+      font-size: clamp(32px, 5vw, 64px);
+      font-weight: 700;
+      letter-spacing: -.025em;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 15px;
+      color: var(--g3);
+      margin-bottom: 44px;
+      letter-spacing: .03em;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: var(--g9);
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 48px clamp(20px,5vw,60px);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--g4);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy {
+      font-size: 11px;
+      color: var(--g5);
+      letter-spacing: .06em;
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding-top: 24px;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 700px) {
+      nav .nav-links { gap: 12px; }
+      nav .nav-links .hide-mobile { display: none; }
+    }
+
+    @media (max-width: 520px) {
+      nav .nav-links .hide-small { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════ NAV ═══════════════════════════════════ -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="BlvckLogo.svg" height="42px" alt="BlvckCube" />
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="index.html" class="nav-back">← Back to Site</a></li>
+    <li class="hide-mobile"><a href="service-branding.html">Branding</a></li>
+    <li class="hide-mobile"><a href="service-technology.html">Technology</a></li>
+    <li class="hide-small"><a href="service-singles.html">Single Services</a></li>
+    <li><a href="index.html#contact" class="btn-nav">Book a Call</a></li>
+  </ul>
+</nav>
+
+
+<!-- ═══════════════════════════════ HERO ══════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">02 — Services &amp; Packages</div>
+
+    <h1>
+      Marketing<br />
+      <span class="dim">Engineered for</span><br />
+      Dominance.
+    </h1>
+
+    <p class="hero-sub">
+      Full-spectrum social media marketing, content, strategy,
+      media buying, and brand photography — built to dominate.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#plans" class="btn-primary">View Plans ↓</a>
+      <a href="index.html#contact" class="btn-ghost">Book Free Call</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ WHY SECTION ═══════════════════════════════ -->
+<section class="section why-section">
+  <div class="why-header">
+    <div class="section-label">Why BlvckCube Marketing</div>
+    <h2 class="section-title">Built different.<br />Priced for results.</h2>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-tile">
+      <div class="why-tile-number">01</div>
+      <h3>Strategy First</h3>
+      <p>
+        Every campaign opens with a rigorous audit, competitor analysis,
+        and a positioning map. We do not post content blindly — we build
+        architectures designed to convert.
+      </p>
+    </div>
+
+    <div class="why-tile">
+      <div class="why-tile-number">02</div>
+      <h3>Content at Scale</h3>
+      <p>
+        From copywriting and graphic design to video editing and brand
+        photography, our in-house team delivers high-volume, on-brand
+        content without sacrificing quality.
+      </p>
+    </div>
+
+    <div class="why-tile">
+      <div class="why-tile-number">03</div>
+      <h3>Full Accountability</h3>
+      <p>
+        You get transparent reporting, clear KPIs, and a dedicated point
+        of contact who owns your results — no vague metrics, no excuses,
+        just measurable growth.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ PLANS SECTION ═════════════════════════════ -->
+<section class="section plans-section" id="plans">
+  <div class="plans-header">
+    <div class="section-label">Packages</div>
+    <h2 class="section-title">Choose your<br />power tier.</h2>
+    <p class="section-sub">
+      Four packages engineered to match every stage of growth —
+      from entry-level presence to full brand domination.
+    </p>
+  </div>
+
+  <div class="plans-grid">
+
+    <!-- BLVCK-LITE -->
+    <div class="plan-card">
+      <div class="plan-badge">Entry Level</div>
+      <div class="plan-name">Blvck-Lite</div>
+      <div class="plan-price">20,000 EGP</div>
+      <div class="plan-period">per month</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Content Creation
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Graphic Design
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Social Media Moderation (3 platforms)
+        </li>
+      </ul>
+      <a href="index.html#contact" class="plan-cta">Get Started →</a>
+    </div>
+
+    <!-- BLVCK PACKAGE -->
+    <div class="plan-card">
+      <div class="plan-badge">Standard</div>
+      <div class="plan-name">Blvck Package</div>
+      <div class="plan-price">30,000 EGP</div>
+      <div class="plan-period">per month</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Content Creation &amp; Design
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Marketing Strategy
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Media Buying Management
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Video Editing
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Full Social Media Moderation
+        </li>
+      </ul>
+      <a href="index.html#contact" class="plan-cta">Get Started →</a>
+    </div>
+
+    <!-- CUBE PACKAGE — FEATURED -->
+    <div class="plan-card featured">
+      <div class="featured-pill">Most Popular</div>
+      <div class="plan-badge">Premium</div>
+      <div class="plan-name">Cube Package</div>
+      <div class="plan-price">45,000 EGP</div>
+      <div class="plan-period">per month</div>
+      <div class="plan-discount-note">Annual Contract — 20% OFF</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Everything in Blvck Package
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Brand Photography
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Video Production &amp; Editing
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          All Social Platforms
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          20% Annual Discount
+        </li>
+      </ul>
+      <a href="index.html#contact" class="plan-cta">Get Started →</a>
+    </div>
+
+    <!-- BRAND MANAGEMENT -->
+    <div class="plan-card">
+      <div class="plan-badge">Full Service</div>
+      <div class="plan-name">Brand Management</div>
+      <div class="plan-price">60,000 EGP</div>
+      <div class="plan-period">per month</div>
+      <div class="plan-discount-note">Annual Contract — 20% OFF</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Everything in Cube Package
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Website Management
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Risk Management
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          Dedicated Account Manager
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          20% Annual Discount
+        </li>
+      </ul>
+      <a href="index.html#contact" class="plan-cta">Get Started →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════ COMPARISON TABLE ═════════════════════════════ -->
+<section class="section compare-section">
+  <div class="compare-header">
+    <div class="section-label">Full Comparison</div>
+    <h2 class="section-title">What's included<br />in each plan.</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Blvck-Lite</th>
+          <th>Blvck Package</th>
+          <th class="col-featured">Cube Package</th>
+          <th>Brand Mgmt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Content Creation</td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td class="col-featured"><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+        </tr>
+        <tr>
+          <td>Graphic Design</td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td class="col-featured"><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+        </tr>
+        <tr>
+          <td>Social Moderation</td>
+          <td style="font-size:12px;color:var(--g3);">3 platforms</td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td class="col-featured"><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+        </tr>
+        <tr>
+          <td>Marketing Strategy</td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td class="col-featured"><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+        </tr>
+        <tr>
+          <td>Media Buying</td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td class="col-featured"><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+        </tr>
+        <tr>
+          <td>Video Editing</td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td class="col-featured"><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+        </tr>
+        <tr>
+          <td>Brand Photography</td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td class="col-featured"><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+        </tr>
+        <tr>
+          <td>Website Management</td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td class="col-featured"><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+        </tr>
+        <tr>
+          <td>Risk Management</td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td class="col-featured"><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+        </tr>
+        <tr>
+          <td>Annual 20% Discount</td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td><span class="dash-icon" aria-label="Not included">—</span></td>
+          <td class="col-featured"><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+          <td><span class="check-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
+          </span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════ CTA SECTION ═════════════════════════════ -->
+<section class="section cta-section">
+  <h2>Ready to Dominate?</h2>
+  <p>Book your free 15-minute discovery call.</p>
+  <a href="index.html#contact" class="btn-primary">Start Now →</a>
+</section>
+
+
+<!-- ══════════════════════════════ FOOTER ═════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <a href="index.html">
+      <img src="BlvckLogo.svg" height="36px" alt="BlvckCube" />
+    </a>
+
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="service-marketing.html">Marketing</a></li>
+      <li><a href="service-branding.html">Branding</a></li>
+      <li><a href="service-technology.html">Technology</a></li>
+      <li><a href="service-singles.html">Single Services</a></li>
+    </ul>
+  </div>
+
+  <p class="footer-copy">© 2025–2026 BlvckCube. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
