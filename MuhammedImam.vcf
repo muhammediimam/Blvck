@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Muhammed Imam
+N:Imam;Muhammed;;;
+TITLE:Founder & CEO
+ORG:BlvckCube
+TEL;TYPE=CELL,VOICE:+201100040605
+EMAIL;TYPE=WORK,INTERNET:imam@blvckcube.com
+URL;TYPE=WORK:https://blvckcube.com
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/muhammediimam/
+X-SOCIALPROFILE;TYPE=instagram;x-user=muhammediimam:https://instagram.com/muhammediimam
+X-SOCIALPROFILE;TYPE=instagram;x-user=blvckcube.co:https://instagram.com/blvckcube.co
+END:VCARD
