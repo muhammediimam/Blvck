@@ -53,6 +53,13 @@ body{background:var(--black);color:var(--white);font-family:var(--fb);font-weigh
 .nLinks a:hover,.nLinks a.act{color:var(--white);}
 .nCta{background:var(--white)!important;color:var(--black)!important;padding:9px 20px!important;font-weight:700!important;transition:background .2s!important;}
 .nCta:hover{background:var(--g1)!important;}
+/* ══ SECTORS DROPDOWN ══ */
+.nDrop{position:relative;}
+.nDropMenu{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:rgba(0,0,0,.96);border:1px solid rgba(255,255,255,.08);padding:6px 0;min-width:150px;z-index:401;}
+.nDrop:hover .nDropMenu{display:block;}
+.nDropMenu a{display:block;padding:8px 16px;color:rgba(255,255,255,.45);text-decoration:none;font-size:10.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;transition:color .25s;}
+.nDropMenu a:hover{color:var(--white);}
+.nDropTrig{cursor:pointer;}
 /* ══ MARQUEE CTA ══ */
 .vmCta{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,96px);align-items:center;}
 .vmCtaLeft{display:flex;flex-direction:column;gap:clamp(22px,3vh,34px);max-width:520px;}
@@ -765,8 +772,8 @@ footer.mFoot{background:var(--black);border-top:1px solid rgba(255,255,255,.055)
 #promoBanner .pb-close{position:absolute;right:16px;background:none;border:none;cursor:pointer;font-size:18px;color:var(--black);line-height:1;padding:0 4px;opacity:.5;transition:opacity .2s;}
 #promoBanner .pb-close:hover{opacity:1;}
 #promoBanner .pb-dot{color:rgba(0,0,0,.3);}
-#mNav{top:38px;}
-body{padding-top:38px;}
+#mNav{top:0;}
+body{padding-top:0;}
 
 /* ══ PRICE DISCOUNT ══ */
 .pkPriceOld{font-size:12px;font-weight:500;color:rgba(255,255,255,.3);text-decoration:line-through;letter-spacing:.02em;margin-bottom:2px;}
@@ -787,6 +794,28 @@ body{padding-top:38px;}
   opacity:0;
   z-index:0;
 }
+
+/* ══ CONTACT MODAL ══ */
+#cmOvl{display:none;position:fixed;inset:0;z-index:900;align-items:center;justify-content:center;padding:20px;}
+#cmOvl.open{display:flex;}
+#cmBd{position:absolute;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);cursor:pointer;}
+#cmBox{position:relative;z-index:1;max-width:460px;width:100%;border:1px solid rgba(255,255,255,.12);overflow:hidden;}
+#cmCanvas{display:block;width:100%;height:120px;}
+#cmBody{background:#0a0a0a;padding:28px 32px 32px;}
+#cmClose{position:absolute;top:12px;right:14px;background:none;border:none;color:rgba(255,255,255,.35);font-size:22px;cursor:pointer;line-height:1;transition:color .2s;z-index:2;}
+#cmClose:hover{color:#fff;}
+#cmTag{font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:10px;}
+#cmPkg{font-family:var(--fd);font-size:clamp(18px,4vw,26px);font-weight:800;letter-spacing:-.03em;margin-bottom:4px;line-height:1.1;}
+#cmPrice{font-size:13px;font-weight:600;color:rgba(255,255,255,.38);margin-bottom:16px;}
+#cmSectors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px;}
+.cmSectorPill{font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.5);}
+.cmDivider{height:1px;background:rgba(255,255,255,.07);margin-bottom:20px;}
+.cmRow{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.cmRow:last-child{margin-bottom:0;}
+.cmIcon{width:34px;height:34px;border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;}
+.cmLabel{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:2px;}
+.cmVal{font-size:12.5px;font-weight:600;color:#fff;text-decoration:none;transition:opacity .2s;}
+.cmVal:hover{opacity:.6;}
 </style>
 </head>
 <body>
@@ -794,15 +823,15 @@ body{padding-top:38px;}
 
 <!-- ═══ VIEW: HOME ═══ -->
 <div class="V on" id="V-home">
-<div id="mobMenu"><a onclick="scrollTo_('#hero');closeMob()">About</a><a onclick="scrollTo_('#packages');closeMob()">Services</a><a onclick="scrollTo_('#process');closeMob()">Process</a><a onclick="scrollTo_('#testimonials');closeMob()">Clients</a><a onclick="goTo('auth');closeMob()">Portal</a></div>
+<div id="mobMenu"><a onclick="scrollTo_('#hero');closeMob()">About</a><a onclick="scrollTo_('#packages');closeMob()">Services</a><a onclick="scrollTo_('#process');closeMob()">Process</a><a onclick="scrollTo_('#testimonials');closeMob()">Clients</a><a href="service-marketing.html">Marketing</a><a href="service-branding.html">Branding</a><a href="service-technology.html">Technology</a><a href="service-singles.html">Singles</a></div>
 <nav id="mNav">
   <span class="nLogo" onclick="scrollTo_('#hero')"><img src="BlvckLogo.svg" alt="BlvckCube" style="height:42px;display:block;"></span>
   <ul class="nLinks">
     <li><a onclick="scrollTo_('#about')">About</a></li>
     <li><a onclick="scrollTo_('#packages')">Services</a></li>
+    <li class="nDrop"><a class="nDropTrig">Sectors ▾</a><div class="nDropMenu"><a href="service-marketing.html">Marketing</a><a href="service-branding.html">Branding</a><a href="service-technology.html">Technology</a><a href="service-singles.html">Singles</a></div></li>
     <li><a onclick="scrollTo_('#process')">Process</a></li>
     <li><a onclick="scrollTo_('#testimonials')">Clients</a></li>
-    <li><a class="nCta" onclick="goTo('auth')">Client Portal</a></li>
   </ul>
   <button class="nBurger" id="mBurger" onclick="toggleMob()"><span></span><span></span><span></span></button>
 </nav>
@@ -824,7 +853,7 @@ body{padding-top:38px;}
     <p class="ahSub fu d2">We don't just build brands — we forge global legacies. Sharp, bold, engineered to command authority across every market we enter.</p>
     <div class="ahBtns fu d3">
       <button class="bO" onclick="scrollTo_('#packages')">View Packages <span class="arr"></span></button>
-      <button class="bP" onclick="goTo('auth')">Start a Project <span class="arr"></span></button>
+      <button class="bP" onclick="scrollTo_('#contact')">Start a Project <span class="arr"></span></button>
     </div>
   </div>
   <div class="scInd fu d3"><span>Scroll</span><div class="scLine"></div></div>
@@ -1263,7 +1292,7 @@ body{padding-top:38px;}
     <div><div class="ciLbl">Website</div><a href="https://blvckcube.com" target="_blank" class="ciVal">blvckcube.com</a></div>
     <div><div class="ciLbl">Social</div><a href="https://instagram.com/blvckcube.co" target="_blank" class="ciVal">@blvckcube.co</a></div>
   </div>
-  <div style="display:flex;justify-content:center;" class="fu d3"><button class="bP" onclick="goTo('auth')">Book a Free 15-Min Call <span class="arr"></span></button></div>
+  <div style="display:flex;justify-content:center;" class="fu d3"><button class="bP" onclick="scrollTo_('#contact')">Book a Free 15-Min Call <span class="arr"></span></button></div>
   <div class="stepBoxes fu"><div class="stepBox"><div class="stepBoxN">1</div><div class="stepBoxT">Select Package</div></div><div class="stepBox"><div class="stepBoxN">2</div><div class="stepBoxT">Free 15-Min Call</div></div><div class="stepBox"><div class="stepBoxN">3</div><div class="stepBoxT">Quote Approval</div></div><div class="stepBox"><div class="stepBoxN">4</div><div class="stepBoxT">Sign Contract</div></div></div>
 </section>
 <footer class="mFoot">
@@ -1547,8 +1576,8 @@ body{padding-top:38px;}
             <svg class="faqChev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="faqA"><div class="faqAInner">
-            <p>Book a free 15-minute discovery call through the Client Portal on this site. No commitment, no pitch — just an honest conversation about your brand and where you want to take it. Come with clarity about where your brand is today and a vision for where it needs to be. We'll handle everything else.</p>
-            <div style="margin-top:16px;"><button class="bP" onclick="goTo('auth')" style="font-size:9px;padding:12px 22px;">Book a Free Call <span class="arr"></span></button></div>
+            <p>Book a free 15-minute discovery call by reaching us directly via email or phone. No commitment, no pitch — just an honest conversation about your brand and where you want to take it. Come with clarity about where your brand is today and a vision for where it needs to be. We'll handle everything else.</p>
+            <div style="margin-top:16px;"><button class="bP" onclick="scrollTo_('#contact')" style="font-size:9px;padding:12px 22px;">Book a Free Call <span class="arr"></span></button></div>
           </div></div>
         </div>
 
@@ -1570,7 +1599,7 @@ body{padding-top:38px;}
             <li><a onclick="goTo('home');setTimeout(()=>scrollTo_('#about'),120)">Who We Are</a></li>
             <li><a onclick="goTo('home');setTimeout(()=>scrollTo_('#packages'),120)">Services</a></li>
             <li><a onclick="goTo('faq')">FAQs</a></li>
-            <li><a onclick="goTo('auth')">Portal</a></li>
+            <li><a onclick="scrollTo_('#contact')">Contact</a></li>
           </ul>
         </div>
         <div>
@@ -2082,13 +2111,6 @@ function mTab(tab,btn){
 }
 const firstPkg=q('#mt-marketing');if(firstPkg)firstPkg.style.display='block';
 ['branding','tech','singles'].forEach(t=>{const p=q('#mt-'+t);if(p)p.style.display='none';});
-
-function startPkg(name,price){
-  selectedPkg={name,price};goTo('auth');
-  const at=q('#authTitle');if(at)at.textContent='Ready to Start.';
-  const as=q('#authSub');if(as)as.textContent='Create a free account to submit your project request.';
-  showAuthPanel('signup');
-}
 
 /* AUTH */
 function showAuth(){goTo('auth');}
@@ -2742,6 +2764,49 @@ function initAuthSphere(){
   makePaths('authPathsCont1',1);
   makePaths('authPathsCont2',-1);
 })();
+</script>
+
+<!-- CONTACT MODAL -->
+<div id="cmOvl" role="dialog" aria-modal="true" aria-labelledby="cmPkg">
+  <div id="cmBd" onclick="closeContactModal()"></div>
+  <div id="cmBox">
+    <button id="cmClose" onclick="closeContactModal()" aria-label="Close">×</button>
+    <canvas id="cmCanvas"></canvas>
+    <div id="cmBody">
+      <div id="cmTag">Interested in</div>
+      <div id="cmPkg">—</div>
+      <div id="cmPrice"></div>
+      <div id="cmSectors"></div>
+      <div class="cmDivider"></div>
+      <div class="cmRow"><div class="cmIcon">✉</div><div><div class="cmLabel">Email</div><a href="mailto:info@blvckcube.com" class="cmVal">info@blvckcube.com</a></div></div>
+      <div class="cmRow"><div class="cmIcon">☎</div><div><div class="cmLabel">Phone</div><a href="tel:+201100040605" class="cmVal">+20 11 000 40 605</a></div></div>
+      <div class="cmRow"><div class="cmIcon">📸</div><div><div class="cmLabel">Instagram</div><a href="https://instagram.com/blvckcube.co" target="_blank" rel="noopener" class="cmVal">@blvckcube.co</a></div></div>
+      <div class="cmRow"><div class="cmIcon">🌐</div><div><div class="cmLabel">Website</div><a href="https://blvckcube.com" target="_blank" rel="noopener" class="cmVal">blvckcube.com</a></div></div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var _c,_x,_r,_w=[];
+  function mk(){_w=[];for(var i=0;i<8;i++)_w.push({o:Math.random()*Math.PI*2,s:0.018+Math.random()*0.025,a:8+Math.random()*22,f:0.4+Math.random()*1.2});}
+  function rs(){if(!_c)return;var b=document.getElementById('cmBox');_c.width=b?b.offsetWidth:460;_c.height=120;}
+  function dr(){if(!_x||!_c)return;_r=requestAnimationFrame(dr);var w=_c.width,h=_c.height;_x.clearRect(0,0,w,h);var g=_x.createLinearGradient(0,0,0,h);g.addColorStop(0,'#111');g.addColorStop(1,'#0a0a0a');_x.fillStyle=g;_x.fillRect(0,0,w,h);_w.forEach(function(wv,i){wv.o+=wv.s;_x.beginPath();_x.strokeStyle='rgba(255,255,255,'+(0.05+i*0.025)+')';_x.lineWidth=1;for(var x=0;x<=w;x+=2){var y=h/2+wv.a*Math.sin((x/w)*wv.f*Math.PI*2+wv.o);x===0?_x.moveTo(x,y):_x.lineTo(x,y);}  _x.stroke();});var fg=_x.createLinearGradient(0,h*0.55,0,h);fg.addColorStop(0,'rgba(10,10,10,0)');fg.addColorStop(1,'rgba(10,10,10,1)');_x.fillStyle=fg;_x.fillRect(0,0,w,h);}
+  function st(){if(_r){cancelAnimationFrame(_r);_r=null;}}
+  window.openContactModal=function(name,price,sectors){
+    document.getElementById('cmPkg').textContent=name;
+    document.getElementById('cmPrice').textContent=price||'';
+    var sp=document.getElementById('cmSectors');sp.innerHTML='';
+    if(sectors){sectors.split('·').forEach(function(s){var p=document.createElement('span');p.className='cmSectorPill';p.textContent=s.trim();sp.appendChild(p);});}
+    document.getElementById('cmOvl').classList.add('open');document.body.style.overflow='hidden';
+    _c=document.getElementById('cmCanvas');_x=_c?_c.getContext('2d'):null;mk();st();setTimeout(function(){rs();dr();},40);
+  };
+  window.closeContactModal=function(){document.getElementById('cmOvl').classList.remove('open');document.body.style.overflow='';st();};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContactModal();});
+})();
+function startPkg(name,price){
+  var m={'Blvck-Lite Package':'Marketing','Blvck Package':'Marketing','Cube Package':'Marketing · Technology','Brand Management':'Marketing · Branding · Technology','Basic Branding':'Branding','Premium Branding':'Branding','Platinum Branding':'Branding','Standard Web Creation':'Technology','Full Development Web Creation':'Technology','Marketing Annual Plan':'Marketing','Market Analysis':'Marketing','Marketing Strategy':'Marketing','Content Plan':'Marketing','Content Plan + Designs':'Marketing','Media Buying':'Marketing','Moderation':'Marketing','Photoshoot':'Marketing · Branding','Videoshoot':'Marketing · Branding','Video Editing':'Marketing · Branding','Reel Creation':'Marketing · Branding','Website Bug Fixing':'Technology','Website Editing':'Technology','Website Moderation':'Technology'};
+  openContactModal(name,price,m[name]||'');
+}
 </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -521,6 +521,35 @@ footer{
 @media(max-width:1100px){.bc-nav-links{gap:clamp(8px,1.1vw,14px);}.bc-cta{display:none;}}
 @media(max-width:900px){.bc-nav-links{display:none;}.bc-burger{display:flex;}.bc-login,.bc-signup{display:none;}}
 body{padding-top:36px!important;}
+/* ══ SECTORS DROPDOWN ══ */
+.bc-drop{position:relative;display:flex;align-items:center;}
+.bc-drop-trig{color:rgba(255,255,255,.42);font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;transition:color .22s;white-space:nowrap;}
+.bc-drop-trig:hover,.bc-drop-trig.active{color:#fff;}
+.bc-drop-menu{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);background:rgba(0,0,0,.96);border:1px solid rgba(255,255,255,.08);padding:6px 0;min-width:140px;z-index:200;}
+.bc-drop:hover .bc-drop-menu{display:block;}
+.bc-drop-menu a{display:block;padding:8px 16px;color:rgba(255,255,255,.42);text-decoration:none;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transition:color .22s;white-space:nowrap;}
+.bc-drop-menu a:hover,.bc-drop-menu a.active{color:#fff;}
+/* == CONTACT MODAL == */
+#cmOvl{display:none;position:fixed;inset:0;z-index:900;align-items:center;justify-content:center;padding:20px;}
+#cmOvl.open{display:flex;}
+#cmBd{position:absolute;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);cursor:pointer;}
+#cmBox{position:relative;z-index:1;max-width:460px;width:100%;border:1px solid rgba(255,255,255,.12);overflow:hidden;}
+#cmCanvas{display:block;width:100%;height:120px;}
+#cmBody{background:#0a0a0a;padding:28px 32px 32px;}
+#cmClose{position:absolute;top:12px;right:14px;background:none;border:none;color:rgba(255,255,255,.35);font-size:22px;cursor:pointer;line-height:1;transition:color .2s;z-index:2;}
+#cmClose:hover{color:#fff;}
+#cmTag{font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:10px;}
+#cmPkg{font-family:'Montserrat',sans-serif;font-size:clamp(18px,4vw,26px);font-weight:800;letter-spacing:-.03em;margin-bottom:4px;line-height:1.1;}
+#cmPrice{font-size:13px;font-weight:600;color:rgba(255,255,255,.38);margin-bottom:16px;}
+#cmSectors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px;}
+.cmSectorPill{font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.5);}
+.cmDivider{height:1px;background:rgba(255,255,255,.07);margin-bottom:20px;}
+.cmRow{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.cmRow:last-child{margin-bottom:0;}
+.cmIcon{width:34px;height:34px;border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;}
+.cmLabel{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:2px;}
+.cmVal{font-size:12.5px;font-weight:600;color:#fff;text-decoration:none;transition:opacity .2s;}
+.cmVal:hover{opacity:.6;}
 </style>
 </head>
 <body>
@@ -534,23 +563,13 @@ body{padding-top:36px!important;}
   <a href="index.html" onclick="closeMob()" style="color:var(--white);font-size:clamp(14px,3vw,18px);letter-spacing:.1em;margin-top:10px;">Book a Call</a>
 </div>
 
-<!-- PROMO BANNER -->
-<div id="bc-promo">
-  <span class="bc-promo-dot">✦</span>
-  <span>20% OFF All Services — Limited Time Offer</span>
-  <span class="bc-promo-dot">✦</span>
-  <button class="bc-promo-close" onclick="var p=this.parentElement;p.style.display='none';document.getElementById('bc-nav').style.top='0'">×</button>
-</div>
 <!-- NAV -->
 <header id="bc-nav">
   <a href="index.html" class="bc-logo"><img src="BlvckLogo.svg" alt="BlvckCube"></a>
   <div class="bc-nav-links">
     <a href="index.html">Home</a>
     <a href="index.html#about">About</a>
-    <a href="service-marketing.html">Marketing</a>
-    <a href="service-branding.html">Branding</a>
-    <a href="service-technology.html" class="active">Technology</a>
-    <a href="service-singles.html">Singles</a>
+    <div class="bc-drop"><span class="bc-drop-trig active">Sectors &#9662;</span><div class="bc-drop-menu"><a href="service-marketing.html">Marketing</a><a href="service-branding.html">Branding</a><a href="service-technology.html" class="active">Technology</a><a href="service-singles.html">Singles</a></div></div>
     <a href="index.html#projects">Projects</a>
   </div>
   <div class="bc-actions">
@@ -628,11 +647,8 @@ body{padding-top:36px!important;}
 
     <!-- Standard Web -->
     <div class="planCard fu">
-      <div class="planBadge">Standard</div>
-      <span class="bc-sale">20% OFF</span>
-      <div class="planName">Standard Web</div>
+      <div class="planBadge">Standard</div>      <div class="planName">Standard Web</div>
       <div class="planType">One-Time Project</div>
-      <span class="bc-old">17,500 EGP</span>
       <div class="planPrice">14,000 <span style="font-size:.42em;font-weight:700;color:rgba(255,255,255,.45);">EGP</span></div>
       <div class="planNote">one-time · 45 days delivery</div>
       <div class="planDelivery">Standard Build</div>
@@ -643,17 +659,14 @@ body{padding-top:36px!important;}
         <li>SEO Optimization</li>
         <li>3 Months Moderation Support</li>
       </ul>
-      <a href="index.html" class="planBtn">Get Started →</a>
+      <a href="#" onclick="event.preventDefault();openContactModal('Standard Web','14,000 EGP (one-time)','Technology')" class="planBtn">Get Started →</a>
     </div>
 
     <!-- Full Development (FEATURED) -->
     <div class="planCard feat fu d1">
-      <div class="featBadge">Featured — Full Stack</div>
-      <span class="bc-sale" style="background:rgba(0,0,0,.09);color:rgba(0,0,0,.65);border-color:rgba(0,0,0,.15);">20% OFF</span>
-      <div class="planName">Full Development</div>
+      <div class="featBadge">Featured — Full Stack</div>      <div class="planName">Full Development</div>
       <div class="planType">One-Time Project</div>
-      <span class="bc-old" style="color:rgba(0,0,0,.35);">24,500 EGP</span>
-      <div class="planPrice">19,600 <span style="font-size:.42em;font-weight:700;color:rgba(0,0,0,.38);">EGP</span></div>
+      <div class="planPrice">25,000 <span style="font-size:.42em;font-weight:700;color:rgba(0,0,0,.38);">EGP</span></div>
       <div class="planNote">one-time · 45 days delivery</div>
       <div class="planDelivery">Full Stack Build</div>
       <div class="planDiv"></div>
@@ -663,7 +676,7 @@ body{padding-top:36px!important;}
         <li>Performance Tuning + Bug Fixes</li>
         <li>6 Months Moderation Support</li>
       </ul>
-      <a href="index.html" class="planBtn">Get Started →</a>
+      <a href="#" onclick="event.preventDefault();openContactModal('Full Development','25,000 EGP (one-time)','Technology')" class="planBtn">Get Started →</a>
     </div>
 
   </div>
@@ -819,5 +832,43 @@ function closeMob(){
   }, 80);
 })();
 </script>
-</body>
+
+<!-- CONTACT MODAL -->
+<div id="cmOvl" role="dialog" aria-modal="true" aria-labelledby="cmPkg">
+  <div id="cmBd" onclick="closeContactModal()"></div>
+  <div id="cmBox">
+    <button id="cmClose" onclick="closeContactModal()" aria-label="Close">&#215;</button>
+    <canvas id="cmCanvas"></canvas>
+    <div id="cmBody">
+      <div id="cmTag">Interested in</div>
+      <div id="cmPkg">&#8212;</div>
+      <div id="cmPrice"></div>
+      <div id="cmSectors"></div>
+      <div class="cmDivider"></div>
+      <div class="cmRow"><div class="cmIcon">&#x2709;</div><div><div class="cmLabel">Email</div><a href="mailto:info@blvckcube.com" class="cmVal">info@blvckcube.com</a></div></div>
+      <div class="cmRow"><div class="cmIcon">&#x260E;</div><div><div class="cmLabel">Phone</div><a href="tel:+201100040605" class="cmVal">+20 11 000 40 605</a></div></div>
+      <div class="cmRow"><div class="cmIcon">&#x1F4F8;</div><div><div class="cmLabel">Instagram</div><a href="https://instagram.com/blvckcube.co" target="_blank" rel="noopener" class="cmVal">@blvckcube.co</a></div></div>
+      <div class="cmRow"><div class="cmIcon">&#x1F310;</div><div><div class="cmLabel">Website</div><a href="https://blvckcube.com" target="_blank" rel="noopener" class="cmVal">blvckcube.com</a></div></div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var _c,_x,_r,_w=[];
+  function mk(){_w=[];for(var i=0;i<8;i++)_w.push({o:Math.random()*Math.PI*2,s:0.018+Math.random()*0.025,a:8+Math.random()*22,f:0.4+Math.random()*1.2});}
+  function rs(){if(!_c)return;var b=document.getElementById('cmBox');_c.width=b?b.offsetWidth:460;_c.height=120;}
+  function dr(){if(!_x||!_c)return;_r=requestAnimationFrame(dr);var w=_c.width,h=_c.height;_x.clearRect(0,0,w,h);var g=_x.createLinearGradient(0,0,0,h);g.addColorStop(0,'#111');g.addColorStop(1,'#0a0a0a');_x.fillStyle=g;_x.fillRect(0,0,w,h);_w.forEach(function(wv,i){wv.o+=wv.s;_x.beginPath();_x.strokeStyle='rgba(255,255,255,'+(0.05+i*0.025)+')';_x.lineWidth=1;for(var x=0;x<=w;x+=2){var y=h/2+wv.a*Math.sin((x/w)*wv.f*Math.PI*2+wv.o);x===0?_x.moveTo(x,y):_x.lineTo(x,y);}  _x.stroke();});var fg=_x.createLinearGradient(0,h*0.55,0,h);fg.addColorStop(0,'rgba(10,10,10,0)');fg.addColorStop(1,'rgba(10,10,10,1)');_x.fillStyle=fg;_x.fillRect(0,0,w,h);}
+  function st(){if(_r){cancelAnimationFrame(_r);_r=null;}}
+  window.openContactModal=function(name,price,sectors){
+    document.getElementById('cmPkg').textContent=name;
+    document.getElementById('cmPrice').textContent=price||'';
+    var sp=document.getElementById('cmSectors');sp.innerHTML='';
+    if(sectors){sectors.split('\xb7').forEach(function(s){var p=document.createElement('span');p.className='cmSectorPill';p.textContent=s.trim();sp.appendChild(p);});}
+    document.getElementById('cmOvl').classList.add('open');document.body.style.overflow='hidden';
+    _c=document.getElementById('cmCanvas');_x=_c?_c.getContext('2d'):null;mk();st();setTimeout(function(){rs();dr();},40);
+  };
+  window.closeContactModal=function(){document.getElementById('cmOvl').classList.remove('open');document.body.style.overflow='';st();};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContactModal();});
+})();
+</script></body>
 </html>
