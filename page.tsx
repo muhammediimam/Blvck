@@ -1,9 +1,10 @@
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { ContactPage } from '@/components/ui/contact-page';
 
-export default function DemoOne() {
-  return (
-    <div className="flex min-h-[200px] w-full items-center justify-center">
-      <AnimatedThemeToggler />
-    </div>
-  );
+export const metadata = {
+  title: 'Contact — BlvckCube',
+  description: 'Get in touch with the BlvckCube team. We respond within 24 hours.',
+};
+
+export default function Contact() {
+  return <ContactPage />;
 }
