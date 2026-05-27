@@ -799,23 +799,31 @@ body{padding-top:0;}
 #cmOvl{display:none;position:fixed;inset:0;z-index:900;align-items:center;justify-content:center;padding:20px;}
 #cmOvl.open{display:flex;}
 #cmBd{position:absolute;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);cursor:pointer;}
-#cmBox{position:relative;z-index:1;max-width:460px;width:100%;border:1px solid rgba(255,255,255,.12);overflow:hidden;}
-#cmCanvas{display:block;width:100%;height:120px;}
-#cmBody{background:#0a0a0a;padding:28px 32px 32px;}
+#cmBox{position:relative;z-index:1;max-width:480px;width:100%;border:1px solid rgba(255,255,255,.12);overflow:hidden;}
+#cmCanvas{display:block;width:100%;height:100px;}
+#cmBody{background:#0a0a0a;padding:24px 28px 28px;}
 #cmClose{position:absolute;top:12px;right:14px;background:none;border:none;color:rgba(255,255,255,.35);font-size:22px;cursor:pointer;line-height:1;transition:color .2s;z-index:2;}
 #cmClose:hover{color:#fff;}
-#cmTag{font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:10px;}
-#cmPkg{font-family:var(--fd);font-size:clamp(18px,4vw,26px);font-weight:800;letter-spacing:-.03em;margin-bottom:4px;line-height:1.1;}
-#cmPrice{font-size:13px;font-weight:600;color:rgba(255,255,255,.38);margin-bottom:16px;}
-#cmSectors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px;}
+#cmTag{font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:8px;}
+#cmPkg{font-family:var(--fd);font-size:clamp(16px,3.5vw,22px);font-weight:800;letter-spacing:-.03em;margin-bottom:4px;line-height:1.1;}
+#cmPrice{font-size:12px;font-weight:600;color:rgba(255,255,255,.38);margin-bottom:12px;}
+#cmSectors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
 .cmSectorPill{font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.5);}
-.cmDivider{height:1px;background:rgba(255,255,255,.07);margin-bottom:20px;}
-.cmRow{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
-.cmRow:last-child{margin-bottom:0;}
-.cmIcon{width:34px;height:34px;border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;}
-.cmLabel{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:2px;}
-.cmVal{font-size:12.5px;font-weight:600;color:#fff;text-decoration:none;transition:opacity .2s;}
-.cmVal:hover{opacity:.6;}
+.cmDivider{height:1px;background:rgba(255,255,255,.07);margin-bottom:16px;}
+/* ══ CONSULTATION FORM ══ */
+.consultSection{max-width:660px;margin:clamp(40px,6vh,62px) auto 0;text-align:left;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.018);}
+.consultSHd{border-bottom:1px solid rgba(255,255,255,.07);padding:clamp(16px,2.5vw,22px) clamp(20px,3.5vw,28px);}
+.consultSTitle{font-family:var(--fd);font-size:clamp(15px,2vw,19px);font-weight:700;letter-spacing:-.025em;margin-bottom:4px;}
+.consultSSub{font-size:11px;font-weight:300;color:rgba(255,255,255,.32);line-height:1.7;}
+.consultSBody{padding:clamp(16px,2.5vw,22px) clamp(20px,3.5vw,28px);}
+.consultGrid{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+@media(max-width:540px){.consultGrid{grid-template-columns:1fr;}}
+.consultField{display:flex;flex-direction:column;gap:5px;}
+.consultLbl{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.consultInp{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:var(--white);padding:10px 12px;font-size:12px;font-weight:300;font-family:var(--fb);outline:none;transition:border-color .2s;width:100%;}
+.consultInp:focus{border-color:rgba(255,255,255,.36);}
+.consultInp::placeholder{color:rgba(255,255,255,.16);}
+.consultNote{font-size:9px;color:rgba(255,255,255,.18);margin-top:9px;line-height:1.6;}
 </style>
 </head>
 <body>
@@ -928,7 +936,7 @@ body{padding-top:0;}
         <div class="pkPlanCard" onclick="startPkg('Blvck-Lite Package','')">
           <span class="pkPlanBadge">Entry Level</span>
           <div class="pkPlanName">Blvck-Lite</div>
-          <div class="pkPlanDesc">Essential social media management — content creation, graphic design, and moderation across 3 platforms. The smart entry point for growing brands.</div>
+          <div class="pkPlanDesc">The smart entry point for brands building their online presence. We create and publish content, design professional graphics, and actively moderate your community across 3 core platforms — delivering a consistent, polished identity without the overhead of a full in-house team. Ideal for startups and growing businesses ready to establish real authority.</div>
           <div class="pkDivider"></div>
           <ul class="pkPlanFeats">
             <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Content Creation</li>
@@ -941,7 +949,7 @@ body{padding-top:0;}
         <div class="pkPlanCard" onclick="startPkg('Blvck Package','')">
           <span class="pkPlanBadge">Standard</span>
           <div class="pkPlanName">Blvck Package</div>
-          <div class="pkPlanDesc">A complete monthly marketing engine — strategy, content, design, media buying, video editing, and full social media moderation.</div>
+          <div class="pkPlanDesc">A complete monthly marketing engine built around your brand's growth objectives. We execute your content calendar, manage all social platforms, run targeted paid media campaigns, and produce and edit video content — all grounded in a data-backed strategy reviewed and refined each cycle. Every deliverable tracked, every metric reported.</div>
           <div class="pkDivider"></div>
           <ul class="pkPlanFeats">
             <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Content Creation &amp; Design</li>
@@ -956,7 +964,7 @@ body{padding-top:0;}
         <div class="pkPlanCard pop" onclick="startPkg('Cube Package','')">
           <span class="pkPopBadge">Most Popular</span>
           <div class="pkPlanName">Cube Package</div>
-          <div class="pkPlanDesc">Our most popular tier — everything in Blvck Package plus brand photography, video production, and coverage across all social platforms.</div>
+          <div class="pkPlanDesc">Our most powerful monthly package — the Cube adds professional brand photography and full video production to everything in Blvck. Your brand gets consistent, high-calibre visual storytelling across every platform, backed by a dedicated creative team executing at the highest standard. Billed annually, a 20% discount applies — making it our best value tier.</div>
           <div class="pkDivider"></div>
           <ul class="pkPlanFeats">
             <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Everything in Blvck Package</li>
@@ -971,7 +979,7 @@ body{padding-top:0;}
         <div class="pkPlanCard" onclick="startPkg('Brand Management','')">
           <span class="pkPlanBadge">Full Service</span>
           <div class="pkPlanName">Brand Management</div>
-          <div class="pkPlanDesc">Total brand command — full marketing, website management, risk management, and a dedicated account manager overseeing your brand 360°.</div>
+          <div class="pkPlanDesc">Total brand command — our highest and most comprehensive engagement tier. Everything in the Cube Package is included, amplified by active website management, proactive reputation and risk management that shields your brand from threats before they surface, and a dedicated account manager who treats your brand as their own. Your brand, fully protected and aggressively grown, 360°.</div>
           <div class="pkDivider"></div>
           <ul class="pkPlanFeats">
             <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Everything in Cube Package</li>
@@ -1013,7 +1021,7 @@ body{padding-top:0;}
         <div class="pkPlanCard" onclick="startPkg('Basic Branding','')">
           <span class="pkPlanBadge">Basic</span>
           <div class="pkPlanName">Basic Branding</div>
-          <div class="pkPlanDesc">Your brand's cornerstone — a precision-engineered logo with primary and secondary marks, delivered in all standard formats.</div>
+          <div class="pkPlanDesc">Your brand's cornerstone, engineered with precision. We deliver one logo design through structured revision rounds — primary mark, secondary mark, and a social media–optimised variant — in all standard formats: JPEG, PNG, SVG, and print-ready PDF. The essential identity asset every brand needs to present itself professionally from day one.</div>
           <div class="pkDivider"></div>
           <ul class="pkPlanFeats">
             <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>1 Logo Design + Revisions</li>
@@ -1027,7 +1035,7 @@ body{padding-top:0;}
         <div class="pkPlanCard" onclick="startPkg('Premium Branding','')">
           <span class="pkPlanBadge">Premium</span>
           <div class="pkPlanName">Premium Branding</div>
-          <div class="pkPlanDesc">Two logo concepts plus business card and letterhead — a complete visual foundation for your brand's first impression.</div>
+          <div class="pkPlanDesc">Two distinct logo concepts developed with full revision cycles, paired with a professionally designed business card and branded letterhead. This package builds your brand's first-impression toolkit — delivering the visual assets needed to show up consistently across digital and print touchpoints with credibility, coherence, and unmistakable authority.</div>
           <div class="pkDivider"></div>
           <ul class="pkPlanFeats">
             <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>2 Logo Concepts</li>
@@ -1041,7 +1049,7 @@ body{padding-top:0;}
         <div class="pkPlanCard pop" onclick="startPkg('Platinum Branding','')">
           <span class="pkPopBadge">Full Identity</span>
           <div class="pkPlanName">Platinum Branding</div>
-          <div class="pkPlanDesc">The full identity system — brand guidelines, all printable assets, email signature, and a comprehensive identity guide.</div>
+          <div class="pkPlanDesc">The complete brand identity system — built for organisations serious about long-term consistency and market authority. Two logo concepts, a comprehensive brand guideline document, a full identity guide your entire team can follow, branded email signature, letterhead, and every printable asset required to operate at a premium level. Everything documented, everything owned by you, forever.</div>
           <div class="pkDivider"></div>
           <ul class="pkPlanFeats">
             <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>2 Logo Concepts</li>
@@ -1083,7 +1091,7 @@ body{padding-top:0;}
         <div class="pkPlanCard" onclick="startPkg('Standard Web Creation','')">
           <span class="pkPlanBadge">Standard</span>
           <div class="pkPlanName">Standard Web</div>
-          <div class="pkPlanDesc">A fully designed, security-hardened website with SEO optimization and 3 months of post-launch moderation support.</div>
+          <div class="pkPlanDesc">A professionally designed, security-hardened website built for performance, credibility, and discoverability. We handle complete UI/UX design, full website development, and SEO optimisation to maximise search visibility — followed by 3 months of dedicated post-launch support to keep your site stable, current, and protected from the moment it goes live.</div>
           <div class="pkDivider"></div>
           <ul class="pkPlanFeats">
             <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>UI/UX Design</li>
@@ -1097,7 +1105,7 @@ body{padding-top:0;}
         <div class="pkPlanCard pop" onclick="startPkg('Full Development Web Creation','')">
           <span class="pkPopBadge">Full Stack</span>
           <div class="pkPlanName">Full Development</div>
-          <div class="pkPlanDesc">Full-stack build with everything in Standard — plus performance tuning, bug fix coverage, and 6 months of dedicated support.</div>
+          <div class="pkPlanDesc">Our flagship web offering — everything in Standard, elevated with full-stack development for complex functionality and custom integrations, performance engineering for speed and scalability under load, proactive bug fix coverage, and 6 months of dedicated post-launch support. Built for businesses that require more than a website — they need a complete, enterprise-grade digital infrastructure.</div>
           <div class="pkDivider"></div>
           <ul class="pkPlanFeats">
             <li><svg class="pkFeatCheck" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 9 6 13 14 4"/></svg>Everything in Standard</li>
@@ -1276,15 +1284,58 @@ body{padding-top:0;}
 <section class="ctaSec" id="contact">
   <div class="sLbl">05 — Let's Work</div>
   <h2 class="ctaH2 fu">Ready to<br>Dominate.</h2>
-  <p class="ctaSub fu d1">Start with a free 15-minute call. No commitment, no noise — just results.</p>
+  <p class="ctaSub fu d1">Start with a free discovery call. No commitment, no noise — just results.</p>
   <div class="ctaRow fu d2">
     <div><div class="ciLbl">Email</div><a href="mailto:info@blvckcube.com" class="ciVal">info@blvckcube.com</a></div>
     <div><div class="ciLbl">Phone</div><a href="tel:+201100040605" class="ciVal">+20 11 000 40 605</a></div>
     <div><div class="ciLbl">Website</div><a href="https://blvckcube.com" target="_blank" class="ciVal">blvckcube.com</a></div>
     <div><div class="ciLbl">Social</div><a href="https://instagram.com/blvckcube.co" target="_blank" class="ciVal">@blvckcube.co</a></div>
   </div>
-  <div style="display:flex;justify-content:center;" class="fu d3"><button class="bP" onclick="scrollTo_('#contact')">Book a Free 15-Min Call <span class="arr"></span></button></div>
-  <div class="stepBoxes fu"><div class="stepBox"><div class="stepBoxN">1</div><div class="stepBoxT">Select Package</div></div><div class="stepBox"><div class="stepBoxN">2</div><div class="stepBoxT">Free 15-Min Call</div></div><div class="stepBox"><div class="stepBoxN">3</div><div class="stepBoxT">Quote Approval</div></div><div class="stepBox"><div class="stepBoxN">4</div><div class="stepBoxT">Sign Contract</div></div></div>
+
+  <!-- Consultation booking form -->
+  <div class="consultSection fu d3">
+    <div class="consultSHd">
+      <div class="consultSTitle">Book a Discovery Call</div>
+      <div class="consultSSub">Tell us about your brand — we'll respond within one business day to schedule your free 30-minute strategy session.</div>
+    </div>
+    <div class="consultSBody">
+      <div class="consultGrid">
+        <div class="consultField">
+          <label class="consultLbl">Full Name</label>
+          <input type="text" id="ctName" class="consultInp" placeholder="Your full name" required>
+        </div>
+        <div class="consultField">
+          <label class="consultLbl">Email Address</label>
+          <input type="email" id="ctEmail" class="consultInp" placeholder="you@company.com" required>
+        </div>
+        <div class="consultField">
+          <label class="consultLbl">Phone Number</label>
+          <input type="tel" id="ctPhone" class="consultInp" placeholder="+1 (555) 000-0000" required>
+        </div>
+        <div class="consultField">
+          <label class="consultLbl">Business Industry</label>
+          <select id="ctIndustry" class="consultInp" required style="cursor:pointer;appearance:none;-webkit-appearance:none;">
+            <option value="" disabled selected>Select your industry</option>
+            <option>Fashion &amp; Luxury</option>
+            <option>Real Estate &amp; Property</option>
+            <option>Hospitality &amp; Travel</option>
+            <option>Finance &amp; Wealth Management</option>
+            <option>Technology &amp; SaaS</option>
+            <option>Health &amp; Wellness</option>
+            <option>Food &amp; Beverage</option>
+            <option>Entertainment &amp; Media</option>
+            <option>Professional Services</option>
+            <option>E-Commerce &amp; Retail</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <button class="bP" onclick="submitConsultForm()" style="margin-top:16px;">Send Inquiry <span class="arr"></span></button>
+      <p class="consultNote">Submission opens your email client pre-filled and addressed to info@blvckcube.com</p>
+    </div>
+  </div>
+
+  <div class="stepBoxes fu" style="margin-top:clamp(40px,6vh,60px);"><div class="stepBox"><div class="stepBoxN">1</div><div class="stepBoxT">Select Package</div></div><div class="stepBox"><div class="stepBoxN">2</div><div class="stepBoxT">Free Discovery Call</div></div><div class="stepBox"><div class="stepBoxN">3</div><div class="stepBoxT">Quote Approval</div></div><div class="stepBox"><div class="stepBoxN">4</div><div class="stepBoxT">Sign Contract</div></div></div>
 </section>
 <footer class="mFoot">
   <div class="footTop">
@@ -2764,15 +2815,21 @@ function initAuthSphere(){
     <button id="cmClose" onclick="closeContactModal()" aria-label="Close">×</button>
     <canvas id="cmCanvas"></canvas>
     <div id="cmBody">
-      <div id="cmTag">Interested in</div>
+      <div id="cmTag">Book a Discovery Call</div>
       <div id="cmPkg">—</div>
       <div id="cmPrice"></div>
       <div id="cmSectors"></div>
       <div class="cmDivider"></div>
-      <div class="cmRow"><div class="cmIcon">✉</div><div><div class="cmLabel">Email</div><a href="mailto:info@blvckcube.com" class="cmVal">info@blvckcube.com</a></div></div>
-      <div class="cmRow"><div class="cmIcon">☎</div><div><div class="cmLabel">Phone</div><a href="tel:+201100040605" class="cmVal">+20 11 000 40 605</a></div></div>
-      <div class="cmRow"><div class="cmIcon">📸</div><div><div class="cmLabel">Instagram</div><a href="https://instagram.com/blvckcube.co" target="_blank" rel="noopener" class="cmVal">@blvckcube.co</a></div></div>
-      <div class="cmRow"><div class="cmIcon">🌐</div><div><div class="cmLabel">Website</div><a href="https://blvckcube.com" target="_blank" rel="noopener" class="cmVal">blvckcube.com</a></div></div>
+      <div class="fRow" style="margin-bottom:11px;">
+        <div class="fGrp"><label class="fLab">Full Name *</label><input class="fInp" id="cmName" type="text" placeholder="Your full name" style="font-size:12px;padding:10px 12px;"></div>
+        <div class="fGrp"><label class="fLab">Email Address *</label><input class="fInp" id="cmEmail" type="email" placeholder="you@company.com" style="font-size:12px;padding:10px 12px;"></div>
+      </div>
+      <div class="fRow" style="margin-bottom:16px;">
+        <div class="fGrp"><label class="fLab">Phone Number *</label><input class="fInp" id="cmPhone" type="tel" placeholder="+1 (555) 000-0000" style="font-size:12px;padding:10px 12px;"></div>
+        <div class="fGrp"><label class="fLab">Business Industry *</label><select class="fSel" id="cmIndustry" style="font-size:12px;padding:10px 12px;"><option value="" disabled selected>Select industry</option><option>Fashion &amp; Luxury</option><option>Real Estate &amp; Property</option><option>Hospitality &amp; Travel</option><option>Finance &amp; Wealth Management</option><option>Technology &amp; SaaS</option><option>Health &amp; Wellness</option><option>Food &amp; Beverage</option><option>Entertainment &amp; Media</option><option>Professional Services</option><option>E-Commerce &amp; Retail</option><option>Other</option></select></div>
+      </div>
+      <button class="bP wF" onclick="submitModal()" style="font-size:10px;padding:13px;justify-content:center;">Send Inquiry →</button>
+      <p style="font-size:9px;color:rgba(255,255,255,.18);text-align:center;margin-top:9px;line-height:1.5;">Opens your email client addressed to info@blvckcube.com</p>
     </div>
   </div>
 </div>
@@ -2797,6 +2854,28 @@ function initAuthSphere(){
 function startPkg(name,price){
   var m={'Blvck-Lite Package':'Marketing','Blvck Package':'Marketing','Cube Package':'Marketing · Technology','Brand Management':'Marketing · Branding · Technology','Basic Branding':'Branding','Premium Branding':'Branding','Platinum Branding':'Branding','Standard Web Creation':'Technology','Full Development Web Creation':'Technology','Marketing Annual Plan':'Marketing','Market Analysis':'Marketing','Marketing Strategy':'Marketing','Content Plan':'Marketing','Content Plan + Designs':'Marketing','Media Buying':'Marketing','Moderation':'Marketing','Photoshoot':'Marketing · Branding','Videoshoot':'Marketing · Branding','Video Editing':'Marketing · Branding','Reel Creation':'Marketing · Branding','Website Bug Fixing':'Technology','Website Editing':'Technology','Website Moderation':'Technology'};
   openContactModal(name,price,m[name]||'');
+}
+function submitModal(){
+  var pkg=document.getElementById('cmPkg').textContent||'';
+  var n=(document.getElementById('cmName').value||'').trim();
+  var em=(document.getElementById('cmEmail').value||'').trim();
+  var ph=(document.getElementById('cmPhone').value||'').trim();
+  var ind=document.getElementById('cmIndustry').value||'';
+  if(!n||!em||!ph||!ind){alert('Please fill in all fields.');return;}
+  var sub=encodeURIComponent('Inquiry: '+pkg+' — '+ind);
+  var body=encodeURIComponent('Hi BlvckCube,\n\nI am interested in the '+pkg+' and would like to book a discovery call.\n\nName: '+n+'\nEmail: '+em+'\nPhone: '+ph+'\nBusiness Industry: '+ind+'\n\nLooking forward to connecting.');
+  window.location.href='mailto:info@blvckcube.com?subject='+sub+'&body='+body;
+  closeContactModal();
+}
+function submitConsultForm(){
+  var n=(document.getElementById('ctName').value||'').trim();
+  var em=(document.getElementById('ctEmail').value||'').trim();
+  var ph=(document.getElementById('ctPhone').value||'').trim();
+  var ind=document.getElementById('ctIndustry').value||'';
+  if(!n||!em||!ph||!ind){alert('Please fill in all fields.');return;}
+  var sub=encodeURIComponent('Discovery Call Request — '+ind);
+  var body=encodeURIComponent('Hi BlvckCube,\n\nI\'d like to book a discovery call.\n\nName: '+n+'\nEmail: '+em+'\nPhone: '+ph+'\nBusiness Industry: '+ind+'\n\nLooking forward to connecting.');
+  window.location.href='mailto:info@blvckcube.com?subject='+sub+'&body='+body;
 }
 </script>
 </body>
