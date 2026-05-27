@@ -332,6 +332,8 @@ nav.sNav{
   border-color:var(--black);
 }
 .planCard.feat .planBtn:hover{background:#111;}
+.planDesc{font-size:12px;font-weight:500;color:rgba(255,255,255,.42);line-height:1.75;margin-bottom:20px;}
+.planCard.feat .planDesc{color:rgba(0,0,0,.5);}
 
 /* ── COMPARISON TABLE ── */
 .cmpSection{padding:clamp(60px,8vh,100px) clamp(20px,5vw,60px);}
@@ -649,8 +651,7 @@ body{padding-top:36px!important;}
     <div class="planCard fu">
       <div class="planBadge">Standard</div>      <div class="planName">Standard Web</div>
       <div class="planType">One-Time Project</div>
-      <div class="planPrice">14,000 <span style="font-size:.42em;font-weight:700;color:rgba(255,255,255,.45);">EGP</span></div>
-      <div class="planNote">one-time · 45 days delivery</div>
+      <p class="planDesc">A fully designed, security-hardened website with SEO optimization and 3 months of post-launch moderation support.</p>
       <div class="planDelivery">Standard Build</div>
       <div class="planDiv"></div>
       <ul class="planList">
@@ -659,15 +660,14 @@ body{padding-top:36px!important;}
         <li>SEO Optimization</li>
         <li>3 Months Moderation Support</li>
       </ul>
-      <a href="#" onclick="event.preventDefault();openContactModal('Standard Web','14,000 EGP (one-time)','Technology')" class="planBtn">Get Started →</a>
+      <a href="#" onclick="event.preventDefault();openContactModal('Standard Web','','Technology')" class="planBtn">Get Started →</a>
     </div>
 
     <!-- Full Development (FEATURED) -->
     <div class="planCard feat fu d1">
       <div class="featBadge">Featured — Full Stack</div>      <div class="planName">Full Development</div>
       <div class="planType">One-Time Project</div>
-      <div class="planPrice">25,000 <span style="font-size:.42em;font-weight:700;color:rgba(0,0,0,.38);">EGP</span></div>
-      <div class="planNote">one-time · 45 days delivery</div>
+      <p class="planDesc">Full-stack build with everything in Standard — plus performance tuning, bug fix coverage, and 6 months of dedicated support.</p>
       <div class="planDelivery">Full Stack Build</div>
       <div class="planDiv"></div>
       <ul class="planList">
@@ -676,7 +676,7 @@ body{padding-top:36px!important;}
         <li>Performance Tuning + Bug Fixes</li>
         <li>6 Months Moderation Support</li>
       </ul>
-      <a href="#" onclick="event.preventDefault();openContactModal('Full Development','25,000 EGP (one-time)','Technology')" class="planBtn">Get Started →</a>
+      <a href="#" onclick="event.preventDefault();openContactModal('Full Development','','Technology')" class="planBtn">Get Started →</a>
     </div>
 
   </div>

@@ -326,6 +326,8 @@ body{background:var(--black);color:var(--white);font-family:var(--fb);font-weigh
   background:var(--black);color:var(--white);
 }
 .plan-card.featured .plan-btn:hover{background:#111;}
+.plan-desc{font-size:12px;font-weight:500;color:rgba(255,255,255,.42);line-height:1.75;margin-bottom:clamp(16px,2.5vh,22px);}
+.plan-card.featured .plan-desc{color:rgba(0,0,0,.5);}
 
 /* ── COMPARISON TABLE ── */
 #comparison{background:var(--g9);border-top:1px solid rgba(255,255,255,.06);}
@@ -604,14 +606,7 @@ body{padding-top:36px!important;}
     <!-- Basic -->
     <div class="plan-card">
       <div class="plan-tier">Basic</div>      <h3 class="plan-name">Basic Branding</h3>
-      <div class="plan-price">
-        <span class="amount">14,000</span>
-        <span class="currency">EGP</span>
-      </div>
-      <div class="plan-meta">
-        <span>One-time</span>
-        <span>45 days</span>
-      </div>
+      <p class="plan-desc">Your brand's cornerstone — a precision-engineered logo with primary and secondary marks, delivered in all standard formats.</p>
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li>1 Logo Design + Revisions</li>
@@ -619,20 +614,13 @@ body{padding-top:36px!important;}
         <li>Social Media Logo</li>
         <li>JPEG / PNG / SVG / PDF Delivery</li>
       </ul>
-      <a class="plan-btn" href="#" onclick="event.preventDefault();openContactModal('Basic Branding','14,000 EGP (one-time)','Branding')">Get Started</a>
+      <a class="plan-btn" href="#" onclick="event.preventDefault();openContactModal('Basic Branding','','Branding')">Get Started</a>
     </div>
 
     <!-- Premium -->
     <div class="plan-card">
       <div class="plan-tier">Premium</div>      <h3 class="plan-name">Premium Branding</h3>
-      <div class="plan-price">
-        <span class="amount">18,000</span>
-        <span class="currency">EGP</span>
-      </div>
-      <div class="plan-meta">
-        <span>One-time</span>
-        <span>45 days</span>
-      </div>
+      <p class="plan-desc">Two logo concepts plus business card and letterhead — a complete visual foundation for your brand's first impression.</p>
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li>2 Logo Concepts</li>
@@ -640,21 +628,14 @@ body{padding-top:36px!important;}
         <li>Social Media Logo</li>
         <li>Complete File Delivery</li>
       </ul>
-      <a class="plan-btn" href="#" onclick="event.preventDefault();openContactModal('Premium Branding','18,000 EGP (one-time)','Branding')">Get Started</a>
+      <a class="plan-btn" href="#" onclick="event.preventDefault();openContactModal('Premium Branding','','Branding')">Get Started</a>
     </div>
 
     <!-- Platinum (Featured) -->
     <div class="plan-card featured">
       <span class="featured-badge">Full Identity</span>
       <div class="plan-tier">Platinum</div>      <h3 class="plan-name">Platinum Branding</h3>
-      <div class="plan-price">
-        <span class="amount">25,000</span>
-        <span class="currency">EGP</span>
-      </div>
-      <div class="plan-meta">
-        <span>One-time</span>
-        <span>45 days</span>
-      </div>
+      <p class="plan-desc">The full identity system — brand guidelines, all printable assets, email signature, and a comprehensive identity guide.</p>
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li>2 Logo Concepts</li>
@@ -663,7 +644,7 @@ body{padding-top:36px!important;}
         <li>All Printables</li>
         <li>Complete File Delivery</li>
       </ul>
-      <a class="plan-btn" href="#" onclick="event.preventDefault();openContactModal('Platinum Branding','25,000 EGP (one-time)','Branding')">Get Started</a>
+      <a class="plan-btn" href="#" onclick="event.preventDefault();openContactModal('Platinum Branding','','Branding')">Get Started</a>
     </div>
 
   </div>

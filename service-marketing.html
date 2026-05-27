@@ -453,6 +453,9 @@
 
     .plan-card.featured .plan-cta:hover { background: var(--g8); }
 
+    .plan-desc{font-size:12px;font-weight:500;color:rgba(255,255,255,.42);line-height:1.75;margin-bottom:20px;}
+    .plan-card.featured .plan-desc{color:rgba(0,0,0,.5);}
+
     /* featured label pill */
     .featured-pill {
       position: absolute;
@@ -793,8 +796,7 @@ body{padding-top:36px!important;}
     <!-- BLVCK-LITE -->
     <div class="plan-card">
       <div class="plan-badge">Entry Level</div>      <div class="plan-name">Blvck-Lite</div>
-      <div class="plan-price">15,000 EGP</div>
-      <div class="plan-period">per month</div>
+      <p class="plan-desc">Essential social media management — content creation, graphic design, and moderation across 3 platforms. The smart entry point for growing brands.</p>
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li>
@@ -810,14 +812,13 @@ body{padding-top:36px!important;}
           Social Media Moderation (3 platforms)
         </li>
       </ul>
-      <a href="#" onclick="event.preventDefault();openContactModal('Blvck-Lite','15,000 EGP/mo','Marketing')" class="plan-cta">Get Started →</a>
+      <a href="#" onclick="event.preventDefault();openContactModal('Blvck-Lite','','Marketing')" class="plan-cta">Get Started →</a>
     </div>
 
     <!-- BLVCK PACKAGE -->
     <div class="plan-card">
       <div class="plan-badge">Standard</div>      <div class="plan-name">Blvck Package</div>
-      <div class="plan-price">24,000 EGP</div>
-      <div class="plan-period">per month</div>
+      <p class="plan-desc">A complete monthly marketing engine — strategy, content, design, media buying, video editing, and full social media moderation.</p>
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li>
@@ -841,15 +842,15 @@ body{padding-top:36px!important;}
           Full Social Media Moderation
         </li>
       </ul>
-      <a href="#" onclick="event.preventDefault();openContactModal('Blvck Package','24,000 EGP/mo','Marketing')" class="plan-cta">Get Started →</a>
+      <a href="#" onclick="event.preventDefault();openContactModal('Blvck Package','','Marketing')" class="plan-cta">Get Started →</a>
     </div>
 
     <!-- CUBE PACKAGE — FEATURED -->
     <div class="plan-card featured">
       <div class="featured-pill">Most Popular</div>
       <div class="plan-badge">Premium</div>      <div class="plan-name">Cube Package</div>
-      <div class="plan-price">35,000 EGP</div>
-      <div class="plan-period">per month</div>      <div class="plan-divider"></div>
+      <p class="plan-desc">Our most popular tier — everything in Blvck Package plus brand photography, video production, and full coverage across all social platforms.</p>
+      <div class="plan-divider"></div>
       <ul class="plan-features">
         <li>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
@@ -872,14 +873,14 @@ body{padding-top:36px!important;}
           20% Annual Discount
         </li>
       </ul>
-      <a href="#" onclick="event.preventDefault();openContactModal('Cube Package','35,000 EGP/mo','Marketing \xb7 Technology')" class="plan-cta">Get Started →</a>
+      <a href="#" onclick="event.preventDefault();openContactModal('Cube Package','','Marketing \xb7 Technology')" class="plan-cta">Get Started →</a>
     </div>
 
     <!-- BRAND MANAGEMENT -->
     <div class="plan-card">
       <div class="plan-badge">Full Service</div>      <div class="plan-name">Brand Management</div>
-      <div class="plan-price">50,000 EGP</div>
-      <div class="plan-period">per month</div>      <div class="plan-divider"></div>
+      <p class="plan-desc">Total brand command — full marketing, website management, risk management, and a dedicated account manager overseeing your brand 360°.</p>
+      <div class="plan-divider"></div>
       <ul class="plan-features">
         <li>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 9 6 13 14 4"/></svg>
@@ -902,7 +903,7 @@ body{padding-top:36px!important;}
           20% Annual Discount
         </li>
       </ul>
-      <a href="#" onclick="event.preventDefault();openContactModal('Brand Management','50,000 EGP/mo','Marketing \xb7 Branding \xb7 Technology')" class="plan-cta">Get Started →</a>
+      <a href="#" onclick="event.preventDefault();openContactModal('Brand Management','','Marketing \xb7 Branding \xb7 Technology')" class="plan-cta">Get Started →</a>
     </div>
 
   </div>
